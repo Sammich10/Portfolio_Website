@@ -186,6 +186,11 @@
     transition: ease-in .5s;
 }
 
+.info-card:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .4);
+    transition: ease 1s;
+}
+
 .card1header{
     margin: 20px;
     padding-top: 15px;
