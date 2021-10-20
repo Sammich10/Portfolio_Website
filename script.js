@@ -1,20 +1,20 @@
 
-const check = (window.innerHeight - 50);
+const check = (window.innerHeight - 15); //Point at which fade animation ends (i.e. background will be fulled faded)
 
 window.addEventListener("scroll", () => {
     const currentscroll = window.pageYOffset;
-    if (currentscroll <= check) {
-        opacity = 1 - (currentscroll / check);
+    if (currentscroll <= check) { 
+        opacity = 1 - (currentscroll / check); // If user scrolls past check, begin lowering the opacity
     } else {
         opacity = 0;
     }
-    document.querySelector(".website-top-section").style.opacity = opacity;
+    document.querySelector(".website-top-section").style.opacity = opacity; //Updates opacity
 });
 
 
-const scrollOffset = 120;
+const scrollOffset = 120; // How many visible pixels must be in view for animation to trigger
  
-const scrollElements = document.querySelectorAll(".js-scroll")
+const scrollElements = document.querySelectorAll(".js-scroll") //select all elements will "js-scroll" in the class name list
 
 scrollElements.forEach((el) => {
     el.style.opacity = 0
@@ -31,7 +31,6 @@ scrollElements.forEach((el) => {
 
 const displayScrollElement = (element) => {
     element.classList.add("scrolled");
-    console.log("Animation Triggered!")
 };
  
 const hideScrollElement = (element) => {
