@@ -248,7 +248,10 @@
 }
 
 .grid-pictures{
-    margin: 2vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 45px;
+    margin-bottom: 45px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 4vw);
@@ -323,7 +326,16 @@
 
 
 
+footer{
+    min-height: 180px;
+    text-align: center;
+    background-color: lightgrey;
+}
 
+footer p{
+    position: relative;
+    padding-top: 80px;
+}
 
 .js-scroll {
     animation: fade-out .5s;
