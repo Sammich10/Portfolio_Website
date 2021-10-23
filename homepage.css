@@ -327,14 +327,14 @@
 
 
 footer{
-    min-height: 240px;
+    min-height: 180px;
     text-align: center;
     background-color: lightgrey;
 }
 
 footer p{
     position: relative;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .js-scroll {
