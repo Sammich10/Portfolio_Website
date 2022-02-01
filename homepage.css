@@ -174,7 +174,8 @@
 
 .portfolio-container{
     min-height: 720px;
-    margin-top: 10vh;
+    margin-top: 5vh;
+    padding-top: 10vh;
     margin-bottom: 10vh;
     display: block;
     justify-content: center;
@@ -322,7 +323,8 @@
 
 .contact-links{
     padding-top: 5vh;
-    min-height: 360px;
+    padding-bottom:10vh;
+    height:300px;
     display: flex;
     justify-content: center;
 }
@@ -330,16 +332,71 @@
 .boxes {
     margin: 25px;
     animation: fadeInExpand .5s ease-out;
-    background-color: pink;
-    border-radius: 10px 30px 50px 75px;
-    height: 150px;
-    width: 150px;
+    background-color: white;
+    border-radius: 15px;
+    height: 200px;
+    width: 200px;
 }
 
 .boxes:hover{
     animation: fadeOutShrink .5s ease-in-out;
-    opacity: .9;
+    opacity: .8;
     transform: scale(.9);
+}
+
+.contact-link{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.box1{
+    background-image:url("images/linkedinlogo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position:0px 0px;
+}
+
+
+.box2{
+    background-image:url("images/githublogo.png");
+    background-repeat: no-repeat;
+    background-size: 135% 80%;
+    background-position: center;
+}
+
+.box3{
+    margin: 25px;
+    background-color: white;
+    border-radius: 15px;
+    height: 200px;
+    width: 200px;
+    background-image: url("images/downloadicon.png");
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: 0 10px;
+    animation: slide-up .25s ease-in-out;
+}
+
+.box3:hover{
+    animation: slide-down .5s ease-in;
+    transform: translateY(10%);
+    
+}
+
+@keyframes slide-down{
+    from{transform: translateY(0);}
+    to{
+        transform: translateY(10%);
+        opacity: .9;
+    }
+}
+
+@keyframes slide-up{
+    from{
+        transform: translateY(10%);
+        opacity: .9;
+    }
+    to{transform: translateY(0);}
 }
 
 footer{
