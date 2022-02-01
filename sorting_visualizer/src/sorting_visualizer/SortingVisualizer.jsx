@@ -56,6 +56,10 @@ export default class SortingVisualizer extends React.Component {
         }
       }
 
+    quickSort(){
+        
+    }
+
     render() {
         const {array} = this.state;
 

@@ -62,3 +62,4 @@ function doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animati
         mainArray[k++] = auxiliaryArray[j++];
       }
 }
+
