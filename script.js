@@ -1,5 +1,5 @@
 
-const check = (window.innerHeight - 15); //Point at which fade animation ends (i.e. background will be fulled faded)
+const check = (window.innerHeight - 25); //Point at which fade animation ends (i.e. background will be fulled faded)
 
 window.addEventListener("scroll", () => {
     const currentscroll = window.pageYOffset;
