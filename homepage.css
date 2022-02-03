@@ -239,10 +239,11 @@
 }
 
 .about-section-container{
-    min-height: 960px;
+    min-height: 800px;
     display: block;
     justify-content: center;
-    
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
 .about-me-header{
@@ -351,16 +352,45 @@
 }
 
 .q-card{
+    background: linear-gradient(to right, rgb(24, 235, 102) 34%, white 65%);
+    background-size: 300% 100%;
+    background-position: right bottom;
     height: 50px;
     width: 150px;
-    background-color: red;
     margin: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px;
+    transition: ease-in .5s;
+}
+
+.q-card:hover{
+    background-position: left 10% bottom;
+    box-shadow: 2.5px 2.5px 2.5px 2.5px;
+    transition: ease-out .5s;
 }
 
 .q-card-text{
-    
+    font-weight: bold;
     text-align: center;
     font-size: 24pt;
+}
+
+.k-card{
+    overflow: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+    width: 50vw;
+    height:50px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px;
+}
+
+.appear{
+    opacity: 0;
+}
+
+.appear:hover{
+    opacity:1;
+    transition: ease-in-out 1s;
 }
 
 .contact-links{
