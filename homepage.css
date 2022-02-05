@@ -183,7 +183,7 @@
 .portfolio-title{
     font-size: 80pt;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom:2%;
     color: black;
 }
@@ -243,7 +243,6 @@
     display: block;
     justify-content: center;
     margin-top: 3vh;
-    margin-bottom: 3vh;
 }
 
 .about-me-header{
@@ -252,9 +251,9 @@
 }
 
 .about-me-content{
-    margin: 15px;
+    margin: 50px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 26pt;
 }
 
 .grid-pictures{
@@ -273,17 +272,20 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: all .30s ease-in-out;
+    transform: scale(1);
+    transition: ease-out 1s;
 }
 
 .grid-image img{
     flex-shrink: 0;
     min-width: 100%;
     max-width: 100%;
+    transition: ease-out 1s;
 }
 
 .grid-image:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
+    transition: ease-out 1s;
 }
 
 .image1 {
@@ -336,6 +338,7 @@
 
 .qualifications-title{
     margin: 1vh;
+    margin-top: 20vh;
     text-align: center;
     font-size: 60pt;
 }
@@ -695,6 +698,10 @@ footer p{
 
     .portfolio-container{
         margin-top: 5vh;
+    }
+
+    .k-card{
+        width: 80%;
     }
 
 }
