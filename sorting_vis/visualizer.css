@@ -1,0 +1,126 @@
+.mySlides {
+	display: none;
+}
+
+body {
+	background-color: rgb(255, 235, 211);
+	font-family: Verdana, sans-serif;
+    display: block;
+    justify-content: center;
+}
+
+.div{
+    display: inline-block;
+}
+
+.head {
+	margin-top: 20px;
+	margin-right: 20vw;
+	margin-left: 20vw;
+	text-align: center;
+	font-size: 30px;
+	background-color: #2d7bc4;
+	color: white;
+	border-radius: 19px;
+	font-weight: bolder;
+}
+
+.data-container {
+	width: 900px;
+	height: 384px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.bar {
+    display: inline-block;
+	width: 24px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: #00b7ff;
+	transition: 0.1s all ease;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.bar_id {
+	position: absolute;
+	top: -24px;
+	width: 100%;
+	text-align: center;
+}
+.btn1 {
+	padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+	margin-top: 4vw;
+	margin-right: 1vw;
+}
+.btn2 {
+	padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-top: 4vw;
+    margin-right: 1vw;
+}
+.btn3 {
+	padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-top: 4vw;
+    margin-right: 1vw;
+}
+.stopButton{
+    padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-right: 1vw;
+    margin-top: 4vw;
+}
+.bubbleSortButton{
+    padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-right: 1vw;
+    margin-top: 4vw;
+}
+.insertionSortButton{
+    padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-right: 1vw;
+    margin-top: 4vw;
+}
+.speedselectcontainer{
+    margin: 30px;
+    text-align: center;
+
+}
