@@ -39,7 +39,7 @@ body {
 	left: 0;
 	bottom: 0;
 	background-color: #00b7ff;
-	transition: 0.1s all ease;
+	transition: 0.15s all ease;
 }
 
 .button-container{
@@ -109,6 +109,28 @@ body {
     margin-top: 4vw;
 }
 .insertionSortButton{
+    padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-right: 1vw;
+    margin-top: 4vw;
+}
+.mergeSortButton{
+    padding: 12px;
+	font-weight: bolder;
+	background-color: #2d7bc4;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: white;
+    margin-right: 1vw;
+    margin-top: 4vw;
+}
+.quickSortButton{
     padding: 12px;
 	font-weight: bolder;
 	background-color: #2d7bc4;

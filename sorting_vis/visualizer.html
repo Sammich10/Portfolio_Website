@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <!-- head -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" 
           content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      
-    <!-- title -->
     <title>Sorting Visualizer</title>
-  
-    <!-- linking style.css -->
     <link href="visualizer.css" rel="stylesheet" />
   </head>
   
-  <!-- body -->
   <body >
-   <section class="head">Sorting Algorithm Visualizer</section>
-   <section class="data-container"></section> 
+
+    <section class="head">Sorting Algorithm Visualizer</section>
+   
+    <section class="data-container"></section> 
       
 
-   <section class="button-container">
-   <!-- "Generate New Array" button -->
-   <button  class="btn1" onclick="generate()" id="Button1" >
-     Generate New Array</button>   
+    <section class="button-container">
+    <button  class="btn1" onclick="generate()" id="Button1" >Generate New Array</button>   
      
-   <!-- "Selection Sort" button -->
-   <button class="btn2" 
-           onclick="disable(),SelectionSort()" id="Button2" >
-        Selection Sort</button>
+    <button class="btn2" onclick="disable(),SelectionSort()" id="Button2" >
+    Selection Sort</button>
     
 
     <button class="bubbleSortButton" onclick="disable(),bubbleSort()" id="bubbleSortButton">Bubble Sort</button>
 
     <button class="insertionSortButton" onclick="disable(),insertionSort()" id="insertionSortButton">Insertion Sort</button>
+
+    <button class="mergeSortButton" onclick="disable(),mergeSort()" id="mergeSortButton">Merge Sort</button>
+
+    <button class="quickSortButton" onclick="disable(),quickSort()" id="quickSortButton">Quick Sort</button>
     
-     <button class="btn3" 
-            onclick="stopStartAlgorithm()" id="Button3" >
-        Pause Algorithm</button>
+    <button class="btn3" onclick="stopStartAlgorithm()" id="Button3" >Pause Algorithm</button>
 
     <button class="stopButton" onclick="stop()" id="Button4">Abort Execution</button>
-   </section>
+    </section>
 
-   <div class="speedselectcontainer">
+    <div class="speedselectcontainer">
     <label for="speed">Speed:</label>
     <select id="speed" class="speedselect">
         <option value="1">1x</option>
         <option value="2">2x</option>
         <option value="3">3x</option>
         <option value="4">4x</option>
-    </select>
-    </br>
+    </select></br>
     <p>Note: Speed cannot be altered mid-execution</p>
     </div>
 
   </body>
   
-  <!-- linking index.js -->
   <script src="sortingalgoritms.js"></script>
 </html>

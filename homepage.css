@@ -238,6 +238,11 @@
     transition: ease-out 1s;
 }
 
+.info-card a{
+    color: inherit;
+    font-style: italic;
+}
+
 .card1header{
     margin: 10px;
 }
@@ -245,7 +250,7 @@
 .card1content{
     overflow: auto;
     margin: 15px;
-    font-size: 16pt;
+    font-size: 110%;
 }
 
 .card2header{
@@ -734,6 +739,14 @@ footer p{
     }
 
     .card1content{
+        font-size: 12pt;
+    }
+
+    .card2content{
+        font-size: 12pt;
+    }
+
+    .card3content{
         font-size: 12pt;
     }
 

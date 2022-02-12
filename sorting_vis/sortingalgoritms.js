@@ -264,6 +264,231 @@ async function insertionSort(){
     enable()
 }
 
+async function mergeSort(){
+    var e = document.getElementById("speed")
+    var sc = parseInt(e.value)
+    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    let bars = document.querySelectorAll(".bar")
+    var valuesArray = []
+    for(var i = 0; i<bars.length; i++){
+        valuesArray.push(parseInt(bars[i].childNodes[0].innerHTML))
+    }
+    doMergeSort(valuesArray, 0, valuesArray.length - 1)
+    async function doMergeSort(valueArray,start,end){
+
+        if(ABORT_ALGORITHM){
+            enable()
+            generate()
+            return}
+
+        while(!runAlgorithm){
+            await new Promise((resolve)=>
+            setTimeout(()=>{
+                resolve();
+            }, SPEED_CONSTANT)
+        );}
+
+        await new Promise((resolve) =>
+                setTimeout(() => {
+                resolve();
+                }, SPEED_CONSTANT)
+            );
+
+        if(start<end){
+
+            var mid = parseInt((start + end) / 2)
+
+            await doMergeSort(valueArray, start, mid)
+            await doMergeSort(valuesArray, mid+1, end)
+
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                resolve();
+                }, SPEED_CONSTANT)
+            );
+
+            await merge(valuesArray, start, mid, end)
+        }
+    }
+    async function merge(valueArray,start,mid,end){
+
+        if(ABORT_ALGORITHM){
+            enable()
+            generate()
+            return}
+
+        var tempArray = []
+        var i = start
+        var j  = mid + 1
+        var k = 0
+
+        while(i <= mid && j <= end){
+
+            bars[i].style.backgroundColor = "red"
+            bars[j].style.backgroundColor = "red"
+
+            await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, SPEED_CONSTANT * 1.5)
+            );
+
+            bars[i].style.backgroundColor = "green"
+            bars[j].style.backgroundColor = "green"
+            
+            if(valueArray[i] <= valueArray[j]){
+
+                tempArray[k] = valueArray[i]
+                k++
+                i++
+                }else{
+                
+                tempArray[k] = valueArray[j]
+                k++
+                j++
+            }
+        }
+        while(i <= mid){
+            tempArray[k] = valueArray[i]
+            k++
+            i++
+        }
+        while(j <= end){
+            tempArray[k] = valueArray[j]
+            k++
+            j++
+        }
+        for(var i = start; i <= end; i++){
+            
+            //swap the value of the ith bar with sorted values in tempArray
+            var newbarheight = parseInt(tempArray[i-start])
+            bars[i].style.height = `${newbarheight * 3}px`;
+            bars[i].childNodes[0].innerText = newbarheight
+            bars[i].style.backgroundColor = "#00b7ff"
+
+            //actually performing the algorithm
+            valueArray[i] = tempArray[i - start]
+        }
+
+        if(tempArray.length == valueArray.length){
+            enable()
+        }
+
+    }
+}
+
+
+async function quickSort(){
+    var e = document.getElementById("speed")
+    var sc = parseInt(e.value)
+    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    let bars = document.querySelectorAll(".bar")
+    var valuesArray = []
+    for(var i = 0; i<bars.length; i++){
+        valuesArray.push(parseInt(bars[i].childNodes[0].innerHTML))
+    }
+
+    sort(valuesArray,0,valuesArray.length-1)
+
+    async function partition(array, low, high){
+
+        if(ABORT_ALGORITHM){
+            enable()
+            generate()
+            return}
+
+        while(!runAlgorithm){
+            await new Promise((resolve)=>
+            setTimeout(()=>{
+                resolve();
+            }, SPEED_CONSTANT)
+        );}
+
+        bars[high].style.backgroundColor = "green"
+
+        await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, SPEED_CONSTANT)
+        );
+
+        var pivot = array[high]
+        var i = (low-1)
+        for(var j = low; j<high; j++){
+            bars[j].style.backgroundColor = "DarkBlue" //turn the current value being compared to pivot blue
+            bars[i+1].style.backgroundColor = "red" //turn the current index to that the value being compared to pivot will be swapped to if it is less than pivot
+            await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, SPEED_CONSTANT)
+            );
+
+            bars[j].style.backgroundColor = "#00b7ff"
+            bars[i+1].style.backgroundColor = "#00b7ff"
+            if(array[j] <= pivot){ // if the jth element in the array is smaller than the pivot, swap it with the ith element
+                
+                i++
+                var temp1 = array[i]
+                array[i] = array[j]
+                array[j] = temp1
+                
+                var temp1 = bars[i].style.height;
+                var temp2 = bars[i].childNodes[0].innerText;
+                bars[i].style.height = bars[j].style.height;
+                bars[j].style.height = temp1;
+                bars[i].childNodes[0].innerText = bars[j].childNodes[0].innerText;
+                bars[j].childNodes[0].innerText = temp2;
+                
+            }
+        }
+
+        var temp1 = bars[high].style.height;
+        var temp2 = bars[high].childNodes[0].innerText;
+        bars[high].style.height = bars[i+1].style.height;
+        bars[i+1].style.height = temp1;
+        bars[high].childNodes[0].innerText = bars[i+1].childNodes[0].innerText;
+        bars[i+1].childNodes[0].innerText = temp2;
+
+        bars[high].style.backgroundColor = "#00b7ff"
+        bars[i+1].style.backgroundColor = "lime"
+        await new Promise((resolve) =>
+            setTimeout(() => {
+            resolve();
+            }, SPEED_CONSTANT * 1.5)
+            );
+        //bars[i+1].style.backgroundColor = "#00b7ff"
+        
+
+        var temp3 = array[i+1]
+        array[i+1] = array[high]
+        array[high] = temp3
+
+
+        return i+1
+
+    }
+
+    async function sort(array,low,high){
+
+        if(ABORT_ALGORITHM){
+            enable()
+            generate()
+            return}
+
+        if(low<high){
+            var pi = await partition(array,low,high)
+
+            await sort(array, low, pi-1)
+            await sort(array,pi+1,high)
+        }
+    }
+
+}
+
+
+
+
+
 
 generatebars();
 
@@ -289,6 +514,12 @@ function disable()
   
   document.getElementById("insertionSortButton").disabled = true;
   document.getElementById("insertionSortButton").style.backgroundColor = "#2d7bc480"; 
+
+  document.getElementById("mergeSortButton").disabled = true;
+  document.getElementById("mergeSortButton").style.backgroundColor = "#2d7bc480"; 
+
+  document.getElementById("quickSortButton").disabled = true;
+  document.getElementById("quickSortButton").style.backgroundColor = "#2d7bc480"; 
 }
 
 function enable(){
@@ -307,4 +538,10 @@ function enable(){
 
   document.getElementById("insertionSortButton").disabled = false;
   document.getElementById("insertionSortButton").style.backgroundColor = "#2d7bc4"; 
+
+  document.getElementById("mergeSortButton").disabled = false;
+  document.getElementById("mergeSortButton").style.backgroundColor = "#2d7bc4"; 
+
+  document.getElementById("quickSortButton").disabled = false;
+  document.getElementById("quickSortButton").style.backgroundColor = "#2d7bc4"; 
 }
