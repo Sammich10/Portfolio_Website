@@ -34,6 +34,7 @@ function generatebars(num = 35) {
             previousbars[0].parentNode.removeChild(previousbars[0])
         }
     }
+    SPEED_CONSTANT = 400
     //for loop to generate 20 bars
     for (let i = 0; i < num; i += 1) {
   
@@ -78,7 +79,7 @@ function stopStartAlgorithm(){
 async function SelectionSort(delay = 300) {
     var e = document.getElementById("speed")//modify speed on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / (sc*1.3)
+    SPEED_CONSTANT = SPEED_CONSTANT / (sc*2.5)
 
     let bars = document.querySelectorAll(".bar");
     // Assign 0 to min_idx
@@ -438,6 +439,23 @@ async function quickSort(){
 
             await sort(array, low, pi-1)
             await sort(array,pi+1,high)
+        }
+        var temparray = []
+        for(var i = 0; i<bars.length; i++){
+            temparray.push(parseInt(bars[i].childNodes[0].innerHTML))
+        }
+        function isArraySorted(arr) {
+            for (let i = 0; i < arr.length; i++) {
+              if (arr[i + 1] && arr[i + 1] > arr[i]) {
+                continue;
+              } else if (arr[i + 1] && arr[i + 1] < arr[i]) {
+                return false;
+              }
+            }
+            return true;
+          }
+        if(isArraySorted(temparray)){
+            enable()
         }
     }
 
