@@ -47,7 +47,7 @@ function generatebars(num = 35) {
     bar.classList.add("bar");
   
     // Provide height to the bar
-    bar.style.height = `${value * 3}px`;
+    bar.style.height = `${value * 5}px`;
   
     // Translate the bar towards positive X axis 
     bar.style.transform = `translateX(${i * 26}px)`;
@@ -339,7 +339,7 @@ async function mergeSort(){
             
             //swap the value of the ith bar with sorted values in tempArray
             var newbarheight = parseInt(tempArray[i-start])
-            bars[i].style.height = `${newbarheight * 3}px`;
+            bars[i].style.height = `${newbarheight * 5}px`;
             bars[i].childNodes[0].innerText = newbarheight
             bars[i].style.backgroundColor = BAR_COLOR
 
