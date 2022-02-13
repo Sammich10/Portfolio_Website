@@ -258,7 +258,7 @@ async function insertionSort(){
 async function mergeSort(){
     var e = document.getElementById("speed")//modify speed constant on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / (sc*3)
+    SPEED_CONSTANT = SPEED_CONSTANT / (sc*2)
 
     let bars = document.querySelectorAll(".bar")
     //store all the bar values into an array of integers to make it easier to work with
