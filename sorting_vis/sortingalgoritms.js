@@ -6,11 +6,17 @@ var runAlgorithm = true
 
 var ABORT_ALGORITHM = false
 
-var SPEED_CONSTANT = 100
+var SPEED_CONSTANT = 400
+
+const BUTTON_COLOR = "#2d7bc4"
+
+const BUTTON_COLOR_DISABLED = "#2d7bc480"
+
+const BAR_COLOR = "deepskyblue"
 
 function stop(){
-    document.getElementById("Button4").disabled = true
-    document.getElementById("Button4").style.backgroundColor = "#2d7bc480";
+    document.getElementById("abortButton").disabled = true
+    document.getElementById("abortButton").style.backgroundColor = BUTTON_COLOR_DISABLED;
     if(!ABORT_ALGORITHM){
         ABORT_ALGORITHM = true;
     }
@@ -18,19 +24,18 @@ function stop(){
   
 // function to generate bars
 function generatebars(num = 35) {
-    document.getElementById("Button4").disabled = false
-    document.getElementById("Button4").style.backgroundColor = "#2d7bc4";
+    document.getElementById("abortButton").disabled = false
+    document.getElementById("abortButton").style.backgroundColor = BUTTON_COLOR;
     ABORT_ALGORITHM = false
+
     previousbars = document.getElementsByClassName("bar")
-    if(previousbars.length>0){
+    if(previousbars.length>0){//if there were bars from a previous array, remove them all
         while(previousbars.length > 0){
             previousbars[0].parentNode.removeChild(previousbars[0])
         }
     }
-
-    SPEED_CONSTANT = 150
-  //for loop to generate 20 bars
-  for (let i = 0; i < num; i += 1) {
+    //for loop to generate 20 bars
+    for (let i = 0; i < num; i += 1) {
   
     //generate random values from 1 to max_value
     const value = Math.floor(Math.random() * MAX_VALUE) + 1; 
@@ -55,42 +60,38 @@ function generatebars(num = 35) {
     bar.appendChild(barLabel);
   
     container.appendChild(bar);
-  }
+    }
 }
 
 function stopStartAlgorithm(){
-
     if(runAlgorithm){
         runAlgorithm = false;
-        document.getElementById("Button3").innerHTML = "Start Algorithm"
+        document.getElementById("pauseButton").innerHTML = "Start Algorithm"
     }else{
         runAlgorithm = true;
-        document.getElementById("Button3").innerHTML = "Pause Algorithm"
+        document.getElementById("pauseButton").innerHTML = "Pause Algorithm"
     }
 }
 
   
 // asynchronous function to perform "Selection Sort"
 async function SelectionSort(delay = 300) {
-    var e = document.getElementById("speed")
+    var e = document.getElementById("speed")//modify speed on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    SPEED_CONSTANT = SPEED_CONSTANT / (sc*1.3)
+
     let bars = document.querySelectorAll(".bar");
     // Assign 0 to min_idx
     var min_idx = 0;
     for (var i = 0; i < bars.length; i += 1) {
 
-    if(ABORT_ALGORITHM){
+    if(ABORT_ALGORITHM){//if the abort button is clicked, the algorithm will stop here
         enable()
         generate()
         return}
 
-    while(!runAlgorithm){
-        await new Promise((resolve)=>
-        setTimeout(()=>{
-            resolve();
-        }, SPEED_CONSTANT)
-    );
+    while(!runAlgorithm){//if the pause button is clicked, stay in a loop to "pause"
+        await sleep(SPEED_CONSTANT)
     }
   
     // Assign i to min_idx
@@ -100,22 +101,15 @@ async function SelectionSort(delay = 300) {
     bars[i].style.backgroundColor = "darkblue";
     for (var j = i + 1; j < bars.length; j += 1) {
 
+        // Provide red color to the jth bar
+        bars[j].style.backgroundColor = "red";
+        //if the pause button is clicked, stay in a loop to "pause"
         while(!runAlgorithm){
-            await new Promise((resolve)=>
-            setTimeout(()=>{
-                resolve();
-            }, SPEED_CONSTANT)
-        );
+            await sleep(SPEED_CONSTANT)
         }
   
-      // Provide red color to the jth bar
-      bars[j].style.backgroundColor = "red";
         
-      await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, SPEED_CONSTANT)
-      );
+      await sleep(SPEED_CONSTANT)
   
       // To store the integer value of jth bar to var1 
       var val1 = parseInt(bars[j].childNodes[0].innerHTML);
@@ -128,13 +122,13 @@ async function SelectionSort(delay = 300) {
         if (min_idx !== i) {
   
           // Provide skyblue color to the (min-idx)th bar
-          bars[min_idx].style.backgroundColor = "  rgb(24, 190, 255)";
+          bars[min_idx].style.backgroundColor = BAR_COLOR;
         }
         min_idx = j;
       } else {
   
         // Provide skyblue color to the jth bar
-        bars[j].style.backgroundColor = "  rgb(24, 190, 255)";
+        bars[j].style.backgroundColor = BAR_COLOR;
       }
     }
   
@@ -146,54 +140,52 @@ async function SelectionSort(delay = 300) {
     bars[min_idx].childNodes[0].innerText = bars[i].childNodes[0].innerText;
     bars[i].childNodes[0].innerText = temp2;
       
-    // To pause the execution of code for 300 milliseconds
-    await new Promise((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, SPEED_CONSTANT)
-    );
+    await sleep(SPEED_CONSTANT)
   
     // Provide skyblue color to the (min-idx)th bar
-    bars[min_idx].style.backgroundColor = "  rgb(24, 190, 255)";
+    bars[min_idx].style.backgroundColor = BAR_COLOR;
   
     // Provide lightgreen color to the ith bar
-    bars[i].style.backgroundColor = " rgb(49, 226, 13)";
+    bars[i].style.backgroundColor = BAR_COLOR;
   }
   enable()
 }
 
 
 async function bubbleSort(){
-    var e = document.getElementById("speed")
+    var e = document.getElementById("speed")//modify speed on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    SPEED_CONSTANT = SPEED_CONSTANT / (sc * 3)
+
     let bars = document.querySelectorAll(".bar");
-    var swapped = true
+    var swapped = true //keep track of weather a swap took place 
     while(swapped){
-        if(ABORT_ALGORITHM){
+
+        if(ABORT_ALGORITHM){//if the abort button is clicked, end execution here
             enable()
             generate()
             return}
-        swapped = false
+
+        swapped = false //set swapped to false by default
         for(var i = 0; i < bars.length - 1; i++){
             while(!runAlgorithm){
-                await new Promise((resolve)=>
-                setTimeout(()=>{
-                    resolve();
-                }, SPEED_CONSTANT)
-            );
+                await sleep(SPEED_CONSTANT)
             }
-            var val1 = parseInt(bars[i].childNodes[0].innerHTML);
+            // get the value of the i and ith+1 bar 
+            var val1 = parseInt(bars[i].childNodes[0].innerHTML); 
             var val2 = parseInt(bars[i+1].childNodes[0].innerHTML);
-            bars[i].style.backgroundColor = "red";
+            //change the bars red to show comparison
+            bars[i].style.backgroundColor = "red";  
             bars[i+1].style.backgroundColor = "red";
-            await new Promise((resolve) =>
-                setTimeout(() => {
-                resolve();
-                }, SPEED_CONSTANT)
-            );
-            if(val1 > val2){
-                swapped = true
+
+            await sleep(SPEED_CONSTANT)
+            
+            if(val1 > val2){//if the ith value is greater than the value after is, swap the values
+                            //over time this will "bubble" the smaller values to the beginning of the list
+
+                //change swapped to true because there was a swap
+                swapped = true 
+                //swaps the bars values and heights
                 var temp1 = bars[i].style.height;
                 var temp2 = bars[i].childNodes[0].innerText;
                 bars[i].style.height = bars[i+1].style.height;
@@ -201,36 +193,44 @@ async function bubbleSort(){
                 bars[i].childNodes[0].innerText = bars[i+1].childNodes[0].innerText;
                 bars[i+1].childNodes[0].innerText = temp2;
             }
-            bars[i].style.backgroundColor="#00b7ff";
-            bars[i+1].style.backgroundColor="#00b7ff";
+            //change bars back to their normal color
+            bars[i].style.backgroundColor=BAR_COLOR;
+            bars[i+1].style.backgroundColor=BAR_COLOR;
         }
     }
-    for( var d = 0; d < bars.length; d++){
+    for( var d = 0; d < bars.length; d++){//after there are no more swaps to be done change all the bars colors to green
         bars[d].style.backgroundColor = " rgb(49, 226, 13)"
     }
-    enable()
+    enable()//re-enable the buttons
 }
 
 async function insertionSort(){
-    var e = document.getElementById("speed")
+    var e = document.getElementById("speed")//modify the speed on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    SPEED_CONSTANT = (SPEED_CONSTANT+100) / (sc*2)
+
     let bars = document.querySelectorAll(".bar");
     for(var i = 0; i<bars.length; i++){
+        //make the ith bar the "key"
         bars[i].style.backgroundColor = "darkBlue"
         key = parseInt(bars[i].childNodes[0].innerHTML)
-        var j = i - 1
-        if(ABORT_ALGORITHM){
+        //j is the index in front of the key
+        var j = i - 1 
+
+        if(ABORT_ALGORITHM){//abort if button is clicked
             enable()
             generate()
             return}
-        while(j>=0 && parseInt(bars[j].childNodes[0].innerHTML) > key){
+        
+        while(j>=0 && parseInt(bars[j].childNodes[0].innerHTML) > key){ //while there is still a value in front of the key index and that value is larger than the key,
+                                                                        //swap the two values until you can "insert" the key in between a value smaller than it and a value larger than it
+            //change the jth bar red to show comparison 
             bars[j].style.backgroundColor = "red"
-            await new Promise((resolve) =>
-                setTimeout(() => {
-                resolve();
-                }, SPEED_CONSTANT)
-            );
+            await sleep(SPEED_CONSTANT)
+            while(!runAlgorithm){
+                await sleep(SPEED_CONSTANT)
+            }
+            //swap the ith and the jth values values (i = j+1)
             var temp1 = bars[j].style.height;
             var temp2 = bars[j].childNodes[0].innerText;
             bars[j].style.height = bars[j+1].style.height;
@@ -238,61 +238,46 @@ async function insertionSort(){
             bars[j].childNodes[0].innerText = bars[j+1].childNodes[0].innerText;
             bars[j+1].childNodes[0].innerText = temp2;
             bars[j].style.backgroundColor = "darkBlue"
-            bars[j+1].style.backgroundColor = "#00b7ff"
+            bars[j+1].style.backgroundColor = BAR_COLOR
+            //decrement j
             j--
-            await new Promise((resolve) =>
-                setTimeout(() => {
-                resolve();
-                }, SPEED_CONSTANT)
-            );
-            while(!runAlgorithm){
-                await new Promise((resolve)=>
-                setTimeout(()=>{
-                    resolve();
-                }, SPEED_CONSTANT)
-            );
-            }
+            await sleep(SPEED_CONSTANT)
         }
-        bars[i].style.backgroundColor = "#00b7ff"
+        bars[i].style.backgroundColor = BAR_COLOR
         bars[j+1].style.height = key * 30
-        bars[j+1].style.backgroundColor = "#00b7ff"
+        bars[j+1].style.backgroundColor = BAR_COLOR
         bars[j+1].childNodes[0].innterText = key
     }
-    for( var d = 0; d < bars.length; d++){
+    for( var d = 0; d < bars.length; d++){//change all the buttons green when sorted
         bars[d].style.backgroundColor = " rgb(49, 226, 13)"
     }
     enable()
 }
 
 async function mergeSort(){
-    var e = document.getElementById("speed")
+    var e = document.getElementById("speed")//modify speed constant on function call
     var sc = parseInt(e.value)
-    SPEED_CONSTANT = SPEED_CONSTANT / sc
+    SPEED_CONSTANT = SPEED_CONSTANT / (sc*3)
+
     let bars = document.querySelectorAll(".bar")
+    //store all the bar values into an array of integers to make it easier to work with
     var valuesArray = []
     for(var i = 0; i<bars.length; i++){
         valuesArray.push(parseInt(bars[i].childNodes[0].innerHTML))
     }
+    //make the initial function call on the array
     doMergeSort(valuesArray, 0, valuesArray.length - 1)
+
     async function doMergeSort(valueArray,start,end){
 
-        if(ABORT_ALGORITHM){
+        if(ABORT_ALGORITHM){//abort here if button is clicked
             enable()
             generate()
             return}
 
-        while(!runAlgorithm){
-            await new Promise((resolve)=>
-            setTimeout(()=>{
-                resolve();
-            }, SPEED_CONSTANT)
-        );}
+        while(!runAlgorithm){await sleep(SPEED_CONSTANT)}
 
-        await new Promise((resolve) =>
-                setTimeout(() => {
-                resolve();
-                }, SPEED_CONSTANT)
-            );
+        await sleep(SPEED_CONSTANT)
 
         if(start<end){
 
@@ -300,13 +285,7 @@ async function mergeSort(){
 
             await doMergeSort(valueArray, start, mid)
             await doMergeSort(valuesArray, mid+1, end)
-
-            await new Promise((resolve) =>
-                setTimeout(() => {
-                resolve();
-                }, SPEED_CONSTANT)
-            );
-
+            await sleep(SPEED_CONSTANT*1.5)
             await merge(valuesArray, start, mid, end)
         }
     }
@@ -323,16 +302,13 @@ async function mergeSort(){
         var k = 0
 
         while(i <= mid && j <= end){
-
+            //change bar color to red to show comparison
             bars[i].style.backgroundColor = "red"
             bars[j].style.backgroundColor = "red"
 
-            await new Promise((resolve) =>
-            setTimeout(() => {
-            resolve();
-            }, SPEED_CONSTANT * 1.5)
-            );
+            await sleep(SPEED_CONSTANT)
 
+            //change bar color to green to show its been added to the temporary sorted array
             bars[i].style.backgroundColor = "green"
             bars[j].style.backgroundColor = "green"
             
@@ -364,12 +340,12 @@ async function mergeSort(){
             var newbarheight = parseInt(tempArray[i-start])
             bars[i].style.height = `${newbarheight * 3}px`;
             bars[i].childNodes[0].innerText = newbarheight
-            bars[i].style.backgroundColor = "#00b7ff"
+            bars[i].style.backgroundColor = BAR_COLOR
 
             //actually performing the algorithm
             valueArray[i] = tempArray[i - start]
         }
-
+        //re-enables the buttons when the algorithm is finished
         if(tempArray.length == valueArray.length){
             enable()
         }
@@ -397,34 +373,23 @@ async function quickSort(){
             generate()
             return}
 
-        while(!runAlgorithm){
-            await new Promise((resolve)=>
-            setTimeout(()=>{
-                resolve();
-            }, SPEED_CONSTANT)
-        );}
+        while(!runAlgorithm){await sleep(SPEED_CONSTANT)}
 
         bars[high].style.backgroundColor = "green"
 
-        await new Promise((resolve) =>
-            setTimeout(() => {
-            resolve();
-            }, SPEED_CONSTANT)
-        );
+        await sleep(SPEED_CONSTANT)
 
         var pivot = array[high]
         var i = (low-1)
         for(var j = low; j<high; j++){
             bars[j].style.backgroundColor = "DarkBlue" //turn the current value being compared to pivot blue
             bars[i+1].style.backgroundColor = "red" //turn the current index to that the value being compared to pivot will be swapped to if it is less than pivot
-            await new Promise((resolve) =>
-            setTimeout(() => {
-            resolve();
-            }, SPEED_CONSTANT)
-            );
 
-            bars[j].style.backgroundColor = "#00b7ff"
-            bars[i+1].style.backgroundColor = "#00b7ff"
+            await sleep(SPEED_CONSTANT)
+            while(!runAlgorithm){await sleep(SPEED_CONSTANT)}
+
+            bars[j].style.backgroundColor = BAR_COLOR
+            bars[i+1].style.backgroundColor = BAR_COLOR
             if(array[j] <= pivot){ // if the jth element in the array is smaller than the pivot, swap it with the ith element
                 
                 i++
@@ -441,7 +406,7 @@ async function quickSort(){
                 
             }
         }
-
+        //swap the values of the high 
         var temp1 = bars[high].style.height;
         var temp2 = bars[high].childNodes[0].innerText;
         bars[high].style.height = bars[i+1].style.height;
@@ -449,23 +414,16 @@ async function quickSort(){
         bars[high].childNodes[0].innerText = bars[i+1].childNodes[0].innerText;
         bars[i+1].childNodes[0].innerText = temp2;
 
-        bars[high].style.backgroundColor = "#00b7ff"
+        bars[high].style.backgroundColor = BAR_COLOR
         bars[i+1].style.backgroundColor = "lime"
-        await new Promise((resolve) =>
-            setTimeout(() => {
-            resolve();
-            }, SPEED_CONSTANT * 1.5)
-            );
-        //bars[i+1].style.backgroundColor = "#00b7ff"
-        
 
+        await sleep(SPEED_CONSTANT)
+        
         var temp3 = array[i+1]
         array[i+1] = array[high]
         array[high] = temp3
 
-
         return i+1
-
     }
 
     async function sort(array,low,high){
@@ -486,13 +444,15 @@ async function quickSort(){
 }
 
 
+async function sleep(ms){
+    return new Promise((resolve) =>
+        setTimeout(() => {
+        resolve();
+        }, ms)
+    );
+}
 
-
-
-
-generatebars();
-
-
+generatebars()//generate initial array when page is loaded
   
 //generate a new array
  function generate()
@@ -503,45 +463,47 @@ generatebars();
 //disables buttons after they are clicked
 function disable()
 {
-  document.getElementById("Button1").disabled = true;
-  document.getElementById("Button1").style.backgroundColor = "#2d7bc480";
+    
+  document.getElementById("generateButton").disabled = true;
+  document.getElementById("generateButton").style.backgroundColor = BUTTON_COLOR_DISABLED;
   
-  document.getElementById("Button2").disabled = true;
-  document.getElementById("Button2").style.backgroundColor = "#2d7bc480"; 
+  document.getElementById("selectionSortButton").disabled = true;
+  document.getElementById("selectionSortButton").style.backgroundColor = BUTTON_COLOR_DISABLED; 
   
   document.getElementById("bubbleSortButton").disabled = true;
-  document.getElementById("bubbleSortButton").style.backgroundColor = "#2d7bc480"; 
+  document.getElementById("bubbleSortButton").style.backgroundColor = BUTTON_COLOR_DISABLED; 
   
   document.getElementById("insertionSortButton").disabled = true;
-  document.getElementById("insertionSortButton").style.backgroundColor = "#2d7bc480"; 
+  document.getElementById("insertionSortButton").style.backgroundColor = BUTTON_COLOR_DISABLED; 
 
   document.getElementById("mergeSortButton").disabled = true;
-  document.getElementById("mergeSortButton").style.backgroundColor = "#2d7bc480"; 
+  document.getElementById("mergeSortButton").style.backgroundColor = BUTTON_COLOR_DISABLED; 
 
   document.getElementById("quickSortButton").disabled = true;
-  document.getElementById("quickSortButton").style.backgroundColor = "#2d7bc480"; 
+  document.getElementById("quickSortButton").style.backgroundColor = BUTTON_COLOR_DISABLED; 
 }
 
+//re-enables buttons
 function enable(){
 
-  document.getElementById("Button1").disabled = false;
-  document.getElementById("Button1").style.backgroundColor = "#2d7bc4";
+  document.getElementById("generateButton").disabled = false;
+  document.getElementById("generateButton").style.backgroundColor = BUTTON_COLOR;
   
-  document.getElementById("Button2").disabled = false;
-  document.getElementById("Button2").style.backgroundColor = "#2d7bc4";
+  document.getElementById("selectionSortButton").disabled = false;
+  document.getElementById("selectionSortButton").style.backgroundColor = BUTTON_COLOR;
 
-  document.getElementById("Button4").disabled = false;
-  document.getElementById("Button4").style.backgroundColor = "#2d7bc4";
+  document.getElementById("abortButton").disabled = false;
+  document.getElementById("abortButton").style.backgroundColor = BUTTON_COLOR;
 
   document.getElementById("bubbleSortButton").disabled = false;
-  document.getElementById("bubbleSortButton").style.backgroundColor = "#2d7bc4";
+  document.getElementById("bubbleSortButton").style.backgroundColor = BUTTON_COLOR;
 
   document.getElementById("insertionSortButton").disabled = false;
-  document.getElementById("insertionSortButton").style.backgroundColor = "#2d7bc4"; 
+  document.getElementById("insertionSortButton").style.backgroundColor = BUTTON_COLOR; 
 
   document.getElementById("mergeSortButton").disabled = false;
-  document.getElementById("mergeSortButton").style.backgroundColor = "#2d7bc4"; 
+  document.getElementById("mergeSortButton").style.backgroundColor = BUTTON_COLOR; 
 
   document.getElementById("quickSortButton").disabled = false;
-  document.getElementById("quickSortButton").style.backgroundColor = "#2d7bc4"; 
+  document.getElementById("quickSortButton").style.backgroundColor = BUTTON_COLOR; 
 }

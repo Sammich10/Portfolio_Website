@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sorting Visualizer</title>
     <link href="visualizer.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
   </head>
   
   <body >
@@ -14,26 +17,16 @@
     <section class="head">Sorting Algorithm Visualizer</section>
    
     <section class="data-container"></section> 
-      
 
     <section class="button-container">
-    <button  class="btn1" onclick="generate()" id="Button1" >Generate New Array</button>   
-     
-    <button class="btn2" onclick="disable(),SelectionSort()" id="Button2" >
-    Selection Sort</button>
-    
-
-    <button class="bubbleSortButton" onclick="disable(),bubbleSort()" id="bubbleSortButton">Bubble Sort</button>
-
-    <button class="insertionSortButton" onclick="disable(),insertionSort()" id="insertionSortButton">Insertion Sort</button>
-
-    <button class="mergeSortButton" onclick="disable(),mergeSort()" id="mergeSortButton">Merge Sort</button>
-
-    <button class="quickSortButton" onclick="disable(),quickSort()" id="quickSortButton">Quick Sort</button>
-    
-    <button class="btn3" onclick="stopStartAlgorithm()" id="Button3" >Pause Algorithm</button>
-
-    <button class="stopButton" onclick="stop()" id="Button4">Abort Execution</button>
+      <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
+      <button class="button" onclick="disable(),SelectionSort()" id="selectionSortButton" >Selection Sort</button>
+      <button class="button" onclick="disable(),bubbleSort()" id="bubbleSortButton">Bubble Sort</button>
+      <button class="button" onclick="disable(),insertionSort()" id="insertionSortButton">Insertion Sort</button>
+      <button class="button" onclick="disable(),mergeSort()" id="mergeSortButton">Merge Sort</button>
+      <button class="button" onclick="disable(),quickSort()" id="quickSortButton">Quick Sort</button>
+      <button class="button" onclick="stopStartAlgorithm()" id="pauseButton" >Pause Algorithm</button>
+      <button class="button" onclick="stop()" id="abortButton">Abort Execution</button>
     </section>
 
     <div class="speedselectcontainer">

@@ -1,3 +1,10 @@
+*{
+	font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+    font-family: 'Georama', sans-serif;
+}
+
+
 .mySlides {
 	display: none;
 }
@@ -18,8 +25,8 @@ body {
 	margin-right: 20vw;
 	margin-left: 20vw;
 	text-align: center;
-	font-size: 30px;
-	background-color: #2d7bc4;
+	font-size: 40pt;
+	background-color: #2a92e1;
 	color: white;
 	border-radius: 19px;
 	font-weight: bolder;
@@ -38,7 +45,7 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background-color: #00b7ff;
+	background-color: deepskyblue;
 	transition: 0.15s all ease;
 }
 
@@ -52,96 +59,22 @@ body {
 	top: -24px;
 	width: 100%;
 	text-align: center;
+	font-size: 10pt;
+	font-weight: 999;
 }
-.btn1 {
+.button {
 	padding: 12px;
 	font-weight: bolder;
 	background-color: #2d7bc4;
 	border-radius: 10px;
 	color: white;
-	font-size: 16px;
+	font-size: 16pt;
 	border: white;
 	margin-top: 4vw;
 	margin-right: 1vw;
 }
-.btn2 {
-	padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-top: 4vw;
-    margin-right: 1vw;
-}
-.btn3 {
-	padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-top: 4vw;
-    margin-right: 1vw;
-}
-.stopButton{
-    padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-right: 1vw;
-    margin-top: 4vw;
-}
-.bubbleSortButton{
-    padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-right: 1vw;
-    margin-top: 4vw;
-}
-.insertionSortButton{
-    padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-right: 1vw;
-    margin-top: 4vw;
-}
-.mergeSortButton{
-    padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-right: 1vw;
-    margin-top: 4vw;
-}
-.quickSortButton{
-    padding: 12px;
-	font-weight: bolder;
-	background-color: #2d7bc4;
-	border-radius: 10px;
-	color: white;
-	font-size: 16px;
-	border: white;
-    margin-right: 1vw;
-    margin-top: 4vw;
-}
 .speedselectcontainer{
+	font-size: 16pt;
     margin: 30px;
     text-align: center;
 
