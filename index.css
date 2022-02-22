@@ -8,10 +8,12 @@
 
 }
 
-body{
+html, body{
     position: relative;
     width: 100%;
     min-width: 530px;
+    max-width: 100%;
+    overflow-x:auto;
 }
 
 .navbar {
@@ -188,6 +190,7 @@ body{
     height: 25vh;
     min-height: 160px;
     width: 80vw;
+    min-width: 480px;
     margin-top: 3%;
     position: relative;
     left: 120px;
