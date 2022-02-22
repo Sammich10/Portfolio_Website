@@ -8,6 +8,12 @@
 
 }
 
+body{
+    position: relative;
+    width: 100%;
+    min-width: 530px;
+}
+
 .navbar {
     height: 90px;
     z-index: 99999;
@@ -17,12 +23,12 @@
 }
 
 .navbar-container {
+    justify-content: center;
     display:flex;
     height: 80px;
     z-index: 999;
     width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 50px;
 }
 
@@ -30,10 +36,8 @@
     display: flex;
     align-items: center;
     list-style: none;
-    min-width: 480px;
+    min-width: 360px;
     justify-content: center;
-    position: relative;
-    left:300px;
 }
 
 .navbar-items {
@@ -71,34 +75,6 @@
        opacity: .25;
     }
   }
-
-.contact-button{
-    height: 50px;
-    width: 160px;
-    justify-content: center;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    position: relative;
-    top:25%;
-    background:#04051b;
-    text-align: center;
-    border-radius: 5px;;
-    animation: slide-in-right .5s ease-in-out both;
-}
-
-.contact-button:hover{
-    opacity: 70%;
-    transition: background-color 300ms linear 0s, transform 300ms ease-in-out 0s;
-}
-
-.contact-button a{
-    text-align: center;
-    font-size: 16pt;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    top: 13px;
-}
 
 .navbar-items a{
     text-align: center;
@@ -155,12 +131,14 @@
     height: 35px;
     width: 220px;
     bottom: 100px;
-    left: 50%;
-    margin-left: -110px;
     text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    
 }
 
 .view-content-button{
+    
     text-align: center;
     font-size: 16pt;
     text-decoration: none;
@@ -626,9 +604,6 @@ footer p{
 }
 
 @media screen and (max-width:960px) {
-    .navbar-menu{
-        left:60px;
-    }
     .navbar-items a{
         font-size: 12pt;    
     }
