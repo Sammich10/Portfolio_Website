@@ -51,12 +51,12 @@ body{
     position: relative;
     top:30%;
     text-align: center;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn .25s ease-in;
 }
 
 .navbar-items:hover{
     opacity: 70%;
-    animation: fadeOut 2s;
+    animation: fadeOut .75s ease-out;
     opacity: .25;
 }
 
@@ -104,7 +104,7 @@ body{
 
 .hero {
     margin: auto;
-    min-height: 680px;
+    min-height: 560px;
     width: auto;
     justify-content: center;
 }
@@ -185,7 +185,7 @@ body{
 
 .info-card {
     display: flex;
-    height: 25vh;
+    height: 30vh;
     min-height: 160px;
     width: 80vw;
     min-width: 480px;
@@ -198,7 +198,7 @@ body{
 }
 
 .info-card-picture{
-    height: 25vh;
+    height: 30vh;
     border-radius: 10px 1px 1px 10px;
 }
 
@@ -458,7 +458,7 @@ body{
     background-image: url("images/downloadicon.png");
     background-repeat: no-repeat;
     background-size: 80% 80%;
-    background-position: 0 10px;
+    background-position: center;
     animation: slide-up .25s ease-in-out;
 }
 
@@ -467,6 +467,13 @@ body{
     transform: translateY(10%);
     opacity: .9;
     
+}
+
+.download-link{
+    font-size: 9pt;
+    text-decoration: none;
+    color: black;
+    text-align: center;
 }
 
 footer{
@@ -624,7 +631,9 @@ footer p{
     .view-content-button-container{
         padding-top: 100px;
     }
-
+    .hero{
+        min-height: 680px;
+    }
     .about-me-content{
         font-size: 18pt;
         margin-top: 45px;
@@ -697,7 +706,9 @@ footer p{
         height: 100px;
         width: 100px;
     }
-
+    .download-link{
+        
+    }
     .contact-links{
         height: 120px;
     }
@@ -725,7 +736,7 @@ footer p{
     }
 
     .info-card{
-        height: 15vh;
+        height: 30vh;
         width: 90%;
     }
 
@@ -750,5 +761,4 @@ footer p{
         margin-left: auto;
         margin-right: auto;
     }
-
 }
