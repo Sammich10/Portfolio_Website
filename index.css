@@ -13,7 +13,7 @@ body{
     width: 100%;
     min-width: 530px;
     max-width: 100%;
-    overflow-x:auto;
+    
 }
 
 .navbar {
@@ -90,7 +90,7 @@ body{
     background: linear-gradient(0deg, rgba(255,255,255,0.8491771708683473) 0%, rgba(18,76,78,1) 5%, rgba(34,193,195,1) 30%, rgba(253,187,45,1) 100%);
     width:100%;
     height: 105vh;
-    min-height: 660px;
+    min-height: 1200px;
     animation: fade-in .25s;
 }
 
@@ -110,7 +110,7 @@ body{
 }
 
 .hero h1{
-    font-size: 88pt;
+    font-size: 90pt;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -129,8 +129,7 @@ body{
 }
 
 .view-content-button-container{
-    position: relative;
-    height: 35px;
+    
     width: 220px;
     bottom: 100px;
     text-align: center;
@@ -140,7 +139,6 @@ body{
 }
 
 .view-content-button{
-    
     text-align: center;
     font-size: 16pt;
     text-decoration: none;
@@ -608,24 +606,23 @@ footer p{
 
 @media screen and (max-width:960px) {
     .navbar-items a{
-        font-size: 12pt;    
+        font-size: 18px;    
     }
     .hero h1{
         font-size: 68pt;
     }
     .hero p{
-        font-size: 18pt;
+        font-size: 20pt;
     }
     .info-card{
         left: 25px;
     }
-    .contact-button a{
-        font-size: 12pt;
-    }
     .navbar-menu{
         left: 0px;
     }
-
+    .view-content-button-container{
+        padding-top: 100px;
+    }
     .grid-pictures{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
