@@ -183,6 +183,7 @@
 }
 
 .portfolio-container{
+    margin-top: 10%;
     min-height: 720px;
     margin-bottom: 10vh;
     display: block;
@@ -193,7 +194,7 @@
 .portfolio-title{
     font-size: 80pt;
     text-align: center;
-    margin-top: 10%;
+    
     margin-bottom:2%;
     color: black;
 }
@@ -376,6 +377,7 @@
 .qualifications-title{
     margin: 1vh;
     margin-top: 12vh;
+    padding-top: 6vh;
     text-align: center;
     font-size: 60pt;
 }
@@ -413,16 +415,6 @@
     font-weight: bold;
     text-align: center;
     font-size: 24pt;
-}
-
-.k-card{
-    overflow: auto;
-    display: block;
-    margin: auto;
-    margin-bottom: 25px;
-    width: 50vw;
-    height:50px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px;
 }
 
 .appear{
@@ -736,6 +728,7 @@ footer p{
 
     .portfolio-container{
         margin-top: 5vh;
+        padding-top: 30%;
     }
 
     .k-card{
@@ -761,6 +754,15 @@ footer p{
     .info-card-picture{
         height: 15vh;
         justify-self: center;
+    }
+
+    .q-card-text{
+        font-size: 18pt;
+    }
+
+    .q-card{
+        height: 35px;
+        margin: 5px;
     }
 
 }
