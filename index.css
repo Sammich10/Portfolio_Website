@@ -380,6 +380,7 @@ body{
     height: 50px;
     width: 150px;
     margin: 10px;
+    border-radius: 3px;
     box-shadow: 1.5px 1.5px 1.5px 1.5px;
     transition: ease-in .5s;
 }
@@ -606,13 +607,13 @@ footer p{
 
 @media screen and (max-width:960px) {
     .navbar-items a{
-        font-size: 18px;    
+        font-size: 16pt;    
     }
     .hero h1{
         font-size: 68pt;
     }
     .hero p{
-        font-size: 20pt;
+        font-size: 24pt;
     }
     .info-card{
         left: 25px;
@@ -623,6 +624,13 @@ footer p{
     .view-content-button-container{
         padding-top: 100px;
     }
+
+    .about-me-content{
+        font-size: 18pt;
+        margin-top: 45px;
+        margin-bottom: 25px;
+    }
+
     .grid-pictures{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -636,6 +644,7 @@ footer p{
         grid-row-start: 1;
         grid-row-end: 6;
         object-fit: cover;
+        padding-top: 45px;
     }
 
     .image2 {
@@ -676,6 +685,7 @@ footer p{
         grid-row-start: 14;
         grid-row-end: 22;
         object-fit: cover;
+        padding-top: 45px;
     }
 
     .boxes {
@@ -714,30 +724,31 @@ footer p{
         font-size: 12pt;
     }
 
-    .card2content{
-        font-size: 12pt;
-    }
-
-    .card3content{
-        font-size: 12pt;
-    }
-
     .info-card{
         height: 15vh;
+        width: 90%;
     }
 
     .info-card-picture{
-        height: 15vh;
+        height: 100%;
+        width: 30%;
         justify-self: center;
     }
-
+    .q-card-container{
+        flex-direction: column;
+        padding-top: 15px;
+    }
     .q-card-text{
-        font-size: 18pt;
+        font-size: 20pt;
     }
 
     .q-card{
+        margin-top: 5px;
+        margin-bottom: 5px;
         height: 35px;
-        margin: 5px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
