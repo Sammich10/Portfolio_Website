@@ -110,7 +110,7 @@ body{
 }
 
 .hero h1{
-    font-size: 90pt;
+    font-size: 9rem;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -120,7 +120,7 @@ body{
 
 .hero p{
     margin-top: 8vh;
-    font-size: 24pt;
+    font-size: 3rem;
     text-align: center;
     color: rgb(220, 220, 220);
     margin-left: 100px;
@@ -140,7 +140,7 @@ body{
 
 .view-content-button{
     text-align: center;
-    font-size: 16pt;
+    font-size: 2rem;
     text-decoration: none;
     transition: ease .1s;
     color: rgb(220, 220, 220);
@@ -480,11 +480,13 @@ footer{
     min-height: 180px;
     text-align: center;
     background-color: lightgrey;
+    padding-bottom: px;
 }
 
 footer p{
     position: relative;
     padding-top: 80px;
+    font-size: 18pt;
 }
 
 .js-scroll {
