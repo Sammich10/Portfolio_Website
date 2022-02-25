@@ -99,7 +99,7 @@ body{
     justify-content: center;
     width: auto;
     height: auto;
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 .hero {
@@ -107,6 +107,7 @@ body{
     min-height: 540px;
     width: auto;
     justify-content: center;
+    padding-bottom: 5%;
 }
 
 .hero h1{
