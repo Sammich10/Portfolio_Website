@@ -23,7 +23,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     BAR_WIDTH = 20
     BAR_HEIGHT_CONST = 2
   }else{
-    document.write("not mobile device");
+    BAR_WIDTH = 26
+    BAR_HEIGHT_CONST = 1
   }
 
 function stop(){
