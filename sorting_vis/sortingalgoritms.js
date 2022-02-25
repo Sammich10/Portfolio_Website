@@ -14,6 +14,18 @@ const BUTTON_COLOR_DISABLED = "#2d7bc480"
 
 const BAR_COLOR = "deepskyblue"
 
+var BAR_WIDTH = 26
+
+var BAR_HEIGHT_CONST = 1
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    //adjust the bar width to be smaller when on mobile
+    BAR_WIDTH = 20
+    BAR_HEIGHT_CONST = 2
+  }else{
+    document.write("not mobile device");
+  }
+
 function stop(){
     document.getElementById("abortButton").disabled = true
     document.getElementById("abortButton").style.backgroundColor = BUTTON_COLOR_DISABLED;
@@ -50,7 +62,7 @@ function generatebars(num = 35) {
     bar.style.height = `${value * 5}px`;
   
     // Translate the bar towards positive X axis 
-    bar.style.transform = `translateX(${i * 26}px)`;
+    bar.style.transform = `translateX(${i * BAR_WIDTH}px)`;
       
     const barLabel = document.createElement("label");
   

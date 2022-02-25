@@ -14,6 +14,7 @@ body {
 	font-family: Verdana, sans-serif;
     display: block;
     justify-content: center;
+	min-width: 900px;
 }
 
 .div{
@@ -112,3 +113,34 @@ body {
        transform: scale(1);
     }
   } 
+
+@media screen and (max-width:960px) {
+	.body{
+		margin: auto;
+		width: 100%;
+	}
+	.data-container{
+		width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.button-container{
+		flex-direction: column;
+	}
+	.button{
+		height: 85px;
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 24pt;
+	}
+	.speedselectcontainer{
+		font-size: 24pt;
+	}
+	.speedselect{
+		font-size: 24pt;
+	}
+	.bar{
+		width: 18px;
+	}
+}  
