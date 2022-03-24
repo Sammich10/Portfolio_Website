@@ -37,11 +37,24 @@
 }
 .schematic-img{
     margin: 50px;
-    height: 500px;
+    height: auto;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
-
+.materiallist{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prototypeimage{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    height: auto;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 
 
