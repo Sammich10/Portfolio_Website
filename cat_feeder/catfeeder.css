@@ -43,9 +43,13 @@
     margin-left: auto;
 }
 .materiallist{
-    width: 25%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
+}
+.materiallist li{
+    padding:1px;
 }
 .prototypeimage{
     margin-top: 30px;
