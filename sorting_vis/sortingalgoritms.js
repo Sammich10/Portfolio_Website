@@ -8,13 +8,13 @@ var ABORT_ALGORITHM = false
 
 var SPEED_CONSTANT = 400
 
-const BUTTON_COLOR = "#2d7bc4"
+const BUTTON_COLOR = "#e12a2a"
 
-const BUTTON_COLOR_DISABLED = "#2d7bc480"
+const BUTTON_COLOR_DISABLED = "#e12a2a80"
 
 const BAR_COLOR = "deepskyblue"
 
-var BAR_WIDTH = 26
+var BAR_WIDTH = 27
 
 var BAR_HEIGHT_CONST = 1
 
@@ -23,7 +23,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     BAR_WIDTH = 20
     BAR_HEIGHT_CONST = 2
   }else{
-    BAR_WIDTH = 26
+    BAR_WIDTH = 27
     BAR_HEIGHT_CONST = 1
   }
 
@@ -60,7 +60,7 @@ function generatebars(num = 35) {
     bar.classList.add("bar");
   
     // Provide height to the bar
-    bar.style.height = `${value * 5}px`;
+    bar.style.height = `${value * (1/3)}vh`;
   
     // Translate the bar towards positive X axis 
     bar.style.transform = `translateX(${i * BAR_WIDTH}px)`;
