@@ -389,6 +389,7 @@ body{
     background-position: left 10% bottom;
     box-shadow: 2.5px 2.5px 2.5px 2.5px;
     transition: ease-out .5s;
+    cursor: pointer;
 }
 
 .q-card-text{
