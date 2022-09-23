@@ -199,6 +199,7 @@ body{
 }
 
 .info-card-picture{
+    box-shadow: 0 30px 40px rgba(0,0,0,.1);
     height: 30vh;
     border-radius: 10px 1px 1px 10px;
 }
@@ -237,13 +238,14 @@ body{
 }
 
 .card2header{
-    margin: 20px;
+    margin: 15px;
     padding-top: 15px;
 }
 
 .card2content{
     overflow: auto;
-    margin: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
     font-size: 110%;
 }
 

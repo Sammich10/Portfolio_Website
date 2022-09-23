@@ -18,9 +18,13 @@
                     <li class="navbar-items">
                         <a href="/index.html" class="navbar-link">Home</a>
                     </li>
-                    <li class="navbar-items">
-                        <a href="#content-container" class="navbar-link">Projects</a>
-                    </li>
+                    <div class="navbar-items dropbtn">
+                        <li class="dropbtn">Projects</li>
+                        <div class="dropdown-content">
+                            <a href="/sorting_vis/visualizer.html" target="_blank">Sorting Algorithm Visualizer</a>
+                            <a href="/cat_feeder/catfeederplus.html">Automated Cat Feeder</a>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </nav>
@@ -41,8 +45,8 @@
             <img src="/cat_feeder/images/Kahlua_Window.jpg" alt="">
             <img src="/cat_feeder/images/kahlua_desk.jpg" alt="">
         </div>
-        <h2 class="content-header">Hardware/Materials Used</h2>
-        <ul class ="materiallist">
+        <h2 class="content-header js-scroll fade-in">Hardware/Materials Used</h2>
+        <ul class ="materiallist js-scroll fade-in">
             <li><a href="https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052674622&src=raspberrypi" target="_blank">Raspberry Pi 4 Model B</a></li>
             <li><a href="https://www.amazon.com/gp/product/B07F8TGB9L/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1" target="_blank">12V 40rpm DC Worm Gear Motor</a></li>
             <li><a href="https://www.microcenter.com/product/613664/adafruit-industries-drv8871-dc-motor-driver-breakout-board-36a-max" target="_blank">Adafruit DRV8871 DC Motor Driver Breakout Board</a></li>
@@ -57,8 +61,8 @@
                 Cereal dispenser</a></li>
         </ul>
         <br>
-        <h2 class="content-header">The prototype</h2>
-        <div class="prototype-content-container">
+        <h2 class="content-header js-scroll fade-in">The prototype</h2>
+        <div class="prototype-content-container js-scroll fade-in">
             <br>
             <p>The actial chasis that houses all the components was made just using 
                 <a href="https://www.target.com/p/10pk-28-34-x-22-34-poster-board-white-up-38-up-8482/-/A-17089030" style="text-decoration: none; font-style:italic;" target="_blank">
@@ -66,18 +70,20 @@
                 This would be one of the first things I would try and improve, but given the limitations I had in my little apartment, it suffices. In any case, the point of the project 
                 is the hardware and software.
             </p>
-            <img src="/cat_feeder/images/prototype_front.jpg" alt="">
-            <img src="/cat_feeder/images/prototype_rear_closed.jpg" alt="">
+            <img id="img1" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_front.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_rear_closed.jpg" alt="">
             <p>Inside there is a Raspberry Pi that is connected to various other hardware devices. Two pins on the Pi are connected to the 12V motor driver, allowing the Pi 
                 to control the DC motor. There is a hardware switch directly inline with the 12V supply, so you can manually disconnect power without unplugging. The 12V power 
                 connects to the 12V motor driver and a 12V to 5V converter with a USB output so the Pi be powered easily. The distance sensor and character LCD are provided 5V
                  via the Pi. 
             </p>
-            <img src="/cat_feeder/images/prototype_back_1.jpg" alt="">
-            <img src="/cat_feeder/images/prototype_back_2.jpg" alt="">
+            <img id="img3" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_1.jpg" alt="">
+            <img id="img4" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_2.jpg" alt="">
         </div>
-        <h2 class="content-header">The software</h2>
+        <h2 class="content-header js-scroll fade-in">The software</h2>
+        <p>The code for this project can be viewed <a href="https://github.com/Sammich10/catFeed" target="_blank">here</a> on GitHub</p>
         <h2 class="content-header">Video Demo</h2>
     </div>
+    <script type="text/javascript" src="/cat_feeder/catfeeder.js"></script>
 </body>
 </html>
