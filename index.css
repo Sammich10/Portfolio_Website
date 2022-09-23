@@ -130,7 +130,6 @@ body{
 }
 
 .view-content-button-container{
-    
     width: 220px;
     bottom: 100px;
     text-align: center;
@@ -152,9 +151,7 @@ body{
     font-size: 17pt;
     opacity: 70%; 
     transition: ease .3s;
-    text-decoration: underline;
 }
-
 
 .website-bottom-section{
     min-height: 940px;
