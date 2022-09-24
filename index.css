@@ -494,6 +494,7 @@ footer p{
     animation: fade-out .5s;
     opacity: 0;
     transition: opacity .5s;
+    transition: .1s ease;
 }
 
 .js-scroll.scrolled {
