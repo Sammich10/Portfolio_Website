@@ -374,3 +374,44 @@ Animations
         opacity: 0;
     }
 }
+
+@media screen and (max-width:960px) {
+    .hero{
+        height: 18vh;
+    }
+    .hero-header{
+        font-size: 6rem;
+        font-size: 7vw;
+        margin-bottom: 6vh;
+    }
+    .content-container{
+        width: 90%;
+    }
+    .materiallist{
+        width: 90%;
+    }
+    .materiallist li{
+        font-size:1.6rem;
+    }
+    .cat-imgs-container{
+        width: 100%;
+    }
+    .cat-imgs-container img{
+        height:15vh;
+    }
+    .cat-imgs-container img:hover{
+        transform: scale(1.15);
+    }
+    .prototype-content-container img{
+        height: 20vh;
+        margin: .5vh;
+    }
+    .software-image{
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20px;
+    }
+    footer{
+        min-height: 120px;
+    }
+}
