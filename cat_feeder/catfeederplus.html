@@ -35,7 +35,7 @@
         
     <div id = "content-container" class="content-container">
         <h2 class="content-header">Project Summary</h2>
-        <p>This project was originally part of a group project for an ebmedded system class. I had the idea prior and saw it as an opportunity to try and create something cool and useful, as well as learn from.
+        <p>This project was originally part of a group project for an ebmedded system class. I had the idea prior and saw it as an opportunity to try and create something cool and useful, as well a valuable learning experience.
             I love my two cats dearly, so this was also a great way to make something that ensures they don't starve if I leave them home alone for a few days, or if I just forget. Not that that has ever happened...
         </p>
         <div class="cat-imgs-container">
@@ -72,10 +72,11 @@
             </p>
             <img id="img1" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_front.jpg" alt="">
             <img id="img2" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_rear_closed.jpg" alt="">
-            <p>Inside there is a Raspberry Pi that is connected to various other hardware devices. Two pins on the Pi are connected to the 12V motor driver, allowing the Pi 
+            <p>Inside there is a Raspberry Pi that is connected to various other hardware devices. Two pins on the Pi are connected to the 2 inputs on the motor driver board, allowing the Pi 
                 to control the DC motor. There is a hardware switch directly inline with the 12V supply, so you can manually disconnect power without unplugging. The 12V power 
-                connects to the 12V motor driver and a 12V to 5V converter with a USB output so the Pi be powered easily. The distance sensor and character LCD are provided 5V
-                 via the Pi. 
+                connects directly to the 12V motor driver and a 12V to 5V converter with a USB output so the Pi be powered easily with a USB C cable. The distance sensor and character LCD are provided 5V
+                 via the Pi. The LCD screen communicates with the Pi using I2C protocol. The Ultrasonic sensor is sent a "TRIGGER" signal, and we measure the response time of the "ECHO" signal to compute the 
+                 distance.
             </p>
             <img id="img3" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_1.jpg" alt="">
             <img id="img4" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_2.jpg" alt="">
