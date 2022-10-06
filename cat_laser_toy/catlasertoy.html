@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catlasertoy.css" class="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <title>Cat Laser Toy</title>
+</head>
+<body>
+    <div class="page-top">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <ul class="navbar-menu">
+                    <li class="navbar-items">
+                        <a href="/index.html" class="navbar-link">Home</a>
+                    </li>
+                    <div class="navbar-items dropbtn">
+                        <li class="dropbtn">Projects</li>
+                        <div class="dropdown-content">
+                            <a href="/sorting_vis/visualizer.html" target="_blank">Sorting Algorithm Visualizer</a>
+                            <a href="/cat_feeder/catfeederplus.html">Automated Cat Feeder</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1 class="hero-header">Motion Activated Cat Laser Toy</h1>
+        </div>
+    </div>
+        
+    <div id = "content-container" class="content-container">
+        <h2 class="content-header">Project Summary</h2>
+        <p>This project was inspired by other laser toys I had seen before on Amazon, and I decided to build one myself for the entertainment of my cats. (Also myself,
+            as it is quite fun to watch the cats play with this)
+        </p>
+        <div class="cat-imgs-container">
+            <img src="/cat_feeder/images/cats_in_window.jpg" alt="">
+            <img src="/cat_feeder/images/cats_on_bed.jpg" alt="">
+        </div>
+        <h2 class="content-header js-scroll fade-in">Hardware Used</h2>
+        <ul class ="materiallist js-scroll fade-in">
+            <li><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3" target="_blank">Arduino Uno</a></li>
+            <li><a href="https://www.amazon.com/Bracket-Support-Ultrasonic-Mounting-Fixed-Wing/dp/B07QZ3NSKX/ref=pd_lpo_2?pd_rd_i=B07QZ3NSKX&psc=1" target="_blank">Pan Tilt Servo Kit</a></li>
+            <li><a href="https://www.amazon.com/HiLetgo-10pcs-650nm-Diode-Laser/dp/B071FT9HSV/ref=sr_1_3?crid=2LPJ10IGQJ6X1&keywords=laser+diode&qid=1665087058&qu=eyJxc2MiOiI1LjYxIiwicXNhIjoiNC4yOSIsInFzcCI6IjMuNjMifQ%3D%3D&sprefix=laser+diode%2Caps%2C104&sr=8-3" target="_blank">Laser Diode</a></li>
+            <li><a href="https://www.amazon.com/Adafruit-LK-918O-SANV-FBACA-PIR-Motion-Sensor/dp/B00JOZTAC6" target="_blank">PIR Motion Sensor</a></li>
+            <li><a href="https://www.amazon.com/MCIGICM-Breadboard-Trim-Potentiometer-Arduino/dp/B07S69443J/ref=sr_1_5?keywords=arduino+potentiometer&qid=1665089598&qu=eyJxc2MiOiI0LjY5IiwicXNhIjoiNC42NSIsInFzcCI6IjQuNDEifQ%3D%3D&sr=8-5" target="_blank">Potentiometer</a></li>
+        </ul>
+        <br>
+        <h2 class="content-header js-scroll fade-in">The prototype</h2>
+        <div class="prototype-content-container js-scroll fade-in">
+            <br>
+            <p>
+                The design it pretty straightforward. There laser diode is mounted on the pan-tilt kit, and when the motion sensor detects enough motion to trigger it,
+                the pan-tilt kit will move around in the software defined patterns. The potentiometer is used to dim the laser diode to a comfortable level so as to limit
+                the risk of eye damage. 
+            </p>
+            <img id="img1" class = "js-scroll fade-in" src="/cat_laser_toy/images/front.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/back.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/inside.jpg" alt=""><br>
+            <video src="/cat_laser_toy/images/video.mp4" width="auto" height="600px" controls></video>
+        </div>
+        <h2 class="content-header js-scroll fade-in">The software</h2>
+        <p>The code for this project can be viewed <a href="https://github.com/Sammich10/catLaserToy" target="_blank">here</a> on GitHub</p>
+        <br><br><br>
+    </div>
+    <footer>
+        <p>
+            Samuel Michelsen
+            <br>
+            <a href="mailto: sammymichelsen@gmail.com">sammymichelsen@gmail.com</a><br>
+            Phone: (815)-904-4405
+        </p>
+    </footer>
+    <script type="text/javascript" src="/cat_feeder/catfeeder.js"></script>
+</body>
+</html>
