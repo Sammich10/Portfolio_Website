@@ -538,3 +538,13 @@ function enable(){
   document.getElementById("quickSortButton").disabled = false;
   document.getElementById("quickSortButton").style.backgroundColor = BUTTON_COLOR; 
 }
+
+function showDesc(algorithm){
+    d = document.getElementsByClassName("desc");
+    for (var i = 0; i<d.length; i++){
+        d[i].style.display="none";
+    }
+    if(algorithm == "bubble"){
+        document.getElementById('bubble-desc').style.display='inline';
+    }
+}

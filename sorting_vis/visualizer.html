@@ -21,7 +21,7 @@
     <section class="button-container">
       <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
       <button class="button" onclick="disable(),SelectionSort()" id="selectionSortButton" >Selection Sort</button>
-      <button class="button" onclick="disable(),bubbleSort()" id="bubbleSortButton">Bubble Sort</button>
+      <button class="button" onclick="disable(),bubbleSort(),showDesc('bubble')" id="bubbleSortButton">Bubble Sort</button>
       <button class="button" onclick="disable(),insertionSort()" id="insertionSortButton">Insertion Sort</button>
       <button class="button" onclick="disable(),mergeSort()" id="mergeSortButton">Merge Sort</button>
       <button class="button" onclick="disable(),quickSort()" id="quickSortButton">Quick Sort</button>
@@ -39,6 +39,17 @@
         <option value="400">400x</option>
     </select><br>
     <p>Note: Speed cannot be altered mid-execution</p>
+    </div>
+
+    <div id="bubble-desc" class = "desc">
+      <p>
+        Bubble sort works by iterating through each item in the array, and testing if it is smaller or larger than the element next to it. If the left element is larger, then the items are swapped,
+        thus the smaller items 'bubble' up to the top over each iteration of the array. The algorithm keeps track of weather a swap was made or not, and stops once it iterates throug the whole list 
+        without making a swap.
+      </p>
+      <br><br>
+      <p>Here's a simple implementation in C++</p>
+      <img src="/sorting_vis/images/bubble_sort_cpp.png">
     </div>
 
   </body>
