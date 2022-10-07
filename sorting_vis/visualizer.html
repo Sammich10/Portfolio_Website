@@ -22,7 +22,7 @@
       <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
       <button class="button" onclick="disable(),SelectionSort(),showDesc('selection')" id="selectionSortButton" >Selection Sort</button>
       <button class="button" onclick="disable(),bubbleSort(),showDesc('bubble')" id="bubbleSortButton">Bubble Sort</button>
-      <button class="button" onclick="disable(),insertionSort()" id="insertionSortButton">Insertion Sort</button>
+      <button class="button" onclick="disable(),insertionSort(),showDesc('insertion')" id="insertionSortButton">Insertion Sort</button>
       <button class="button" onclick="disable(),mergeSort()" id="mergeSortButton">Merge Sort</button>
       <button class="button" onclick="disable(),quickSort()" id="quickSortButton">Quick Sort</button>
       <button class="button" onclick="stopStartAlgorithm()" id="pauseButton" >Pause Algorithm</button>
@@ -53,11 +53,20 @@
     </div>
     <div class="desc" id = "selection-desc">
       <p>
-        Selection sort works by iterating through the list and 'selecting' the smallest value, and it places this value at the front of the sorted array.
+        Selection sort works by iterating through the list and 'selecting' the smallest value, and it places this value at the end of the sorted array.
       </p>
       <br><br>
       <p>Example implementation in C++</p>
       <img src="/sorting_vis/images/selection_sort_cpp.png" alt="">
+    </div>
+    <div class="desc" id="insertion-desc">
+      <p>
+        Insertion sort works by iterating through the unsorted list and sorting each item into it's correct ordered position by swapping the the element with the element to it's left
+        if the right element is smaller than the left, and continues until the element is 'inserted' into the correct position. 
+      </p>
+      <br><br>
+      <p>Example implementation is C++</p>
+      <img src="/sorting_vis/images/insertion_sort_cpp.png" alt="">
     </div>
     <br><br><br><br>
   </body>

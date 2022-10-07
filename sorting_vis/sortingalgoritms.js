@@ -550,4 +550,7 @@ function showDesc(algorithm){
     if(algorithm == "selection"){
         document.getElementById('selection-desc').style.display='inline';
     }
+    if(algorithm == "insertion"){
+        document.getElementById('insertion-desc').style.display='inline';
+    }
 }
