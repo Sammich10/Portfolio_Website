@@ -547,4 +547,7 @@ function showDesc(algorithm){
     if(algorithm == "bubble"){
         document.getElementById('bubble-desc').style.display='inline';
     }
+    if(algorithm == "selection"){
+        document.getElementById('selection-desc').style.display='inline';
+    }
 }

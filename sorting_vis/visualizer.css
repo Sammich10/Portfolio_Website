@@ -119,6 +119,13 @@ body {
 	height: auto;
 	margin-left: 35vw;
 	margin-right: auto;
+	border-radius: 15px;
+	transition: .5s ease;
+}
+.desc img:hover{
+	transition: 1.25s ease-out;
+	transform: scale(1.1);
+	box-shadow: 3px black;
 }
 
 @keyframes fadeOutShrink {
