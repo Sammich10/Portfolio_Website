@@ -349,13 +349,11 @@ async function mergeSort(){
             j++
         }
         for(var i = start; i <= end; i++){
-            
             //swap the value of the ith bar with sorted values in tempArray
             var newbarheight = parseInt(tempArray[i-start])
-            bars[i].style.height = `${newbarheight * 5}px`;
+            bars[i].style.height = `${newbarheight * 1/3}vh`;
             bars[i].childNodes[0].innerText = newbarheight
             bars[i].style.backgroundColor = BAR_COLOR
-
             //actually performing the algorithm
             valueArray[i] = tempArray[i - start]
         }
