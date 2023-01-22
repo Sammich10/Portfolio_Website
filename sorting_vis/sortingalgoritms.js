@@ -3,8 +3,8 @@ const MAX_VALUE = 100
 var runAlgorithm = true
 var ABORT_ALGORITHM = false
 var SPEED_CONSTANT = 400
-const BUTTON_COLOR = "#e12a2a"
-const BUTTON_COLOR_DISABLED = "#e12a2a80"
+const BUTTON_COLOR = "mediumblue"
+const BUTTON_COLOR_DISABLED = "mediumslateblue"
 const BAR_COLOR = "deepskyblue"
 const BAR_COLOR_2 = "darkblue"
 const BAR_COLOR_3 = "red"
@@ -29,7 +29,7 @@ function stop(){
     }
 }
 
-function generatebars(num = 40) { // function to generate bars
+function generatebars(num) { // function to generate bars
     document.getElementById("abortButton").disabled = false
     document.getElementById("abortButton").style.backgroundColor = BUTTON_COLOR; //reset the abort button
     ABORT_ALGORITHM = false //set the abort flag to false
@@ -40,6 +40,7 @@ function generatebars(num = 40) { // function to generate bars
         }
     }
     SPEED_CONSTANT = 400
+    document.getElementById("data-container").style.width = `${(num * 27)}px`;
     for (let i = 0; i < num; i += 1) { //generate 'num' amount of bars with random values from 1 to 'max_value'
         const value = Math.floor(Math.random() * MAX_VALUE) + 1;   
         const bar = document.createElement("div");
@@ -365,14 +366,14 @@ async function sleep(ms){
         resolve();
         }, ms)
     );
-}
-
-generatebars()//generate initial array when page is loaded  
+} 
 
  function generate() //generate a new array
 {
-  generatebars()
- }
+    var b = document.getElementById("bars")//modify speed on function call
+    var bn = parseInt(b.value)
+    generatebars(bn)
+}
 
 function disable() //disables buttons after they are clicked
 { 
@@ -435,3 +436,5 @@ function showDesc(algorithm){
         document.getElementById('insertion-desc').style.display='inline';
     }
 }
+
+generate()//generate initial array when page is loaded 

@@ -16,9 +16,9 @@
 
     <section class="head">Sorting Algorithm Visualizer</section>
    
-    <section class="data-container"></section> 
+    <section class="data-container" id = "data-container"></section> 
 
-    <section class="button-container">
+    <section class="button-container" >
       <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
       <button class="button" onclick="disable(),SelectionSort(),showDesc('selection')" id="selectionSortButton" >Selection Sort</button>
       <button class="button" onclick="disable(),bubbleSort(),showDesc('bubble')" id="bubbleSortButton">Bubble Sort</button>
@@ -38,7 +38,15 @@
         <option value="10">10x</option>
         <option value="100">100x</option>
         <option value="500">500x</option>
-    </select><br>
+    </select>
+    <label for="speed">Bars:</label>
+    <select id="bars" class="barselect">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="35" selected>35</option>
+        <option value="50">50</option>
+    </select>
+    <br>
     <p>Note: Speed cannot be altered mid-execution</p>
     </div>
 
