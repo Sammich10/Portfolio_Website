@@ -304,7 +304,8 @@ async function quickSort(){
             bars[j].style.backgroundColor = BAR_COLOR_2 //turn the current value being compared to pivot blue
             bars[i+1].style.backgroundColor = BAR_COLOR_3 //turn the current index to that the value being compared to pivot will be swapped to if it is less than pivot
             await sleep(SPEED_CONSTANT)
-            while(!runAlgorithm){await sleep(SPEED_CONSTANT)}
+            await pauseCheck();
+            abortCheck();
 
             bars[j].style.backgroundColor = BAR_COLOR
             bars[i+1].style.backgroundColor = BAR_COLOR
@@ -314,38 +315,22 @@ async function quickSort(){
                 var temp1 = array[i]
                 array[i] = array[j]
                 array[j] = temp1
-                
-                var temp1 = bars[i].style.height;
-                var temp2 = bars[i].childNodes[0].innerText;
-                bars[i].style.height = bars[j].style.height;
-                bars[j].style.height = temp1;
-                bars[i].childNodes[0].innerText = bars[j].childNodes[0].innerText;
-                bars[j].childNodes[0].innerText = temp2;
-                
+                swapBars(bars, i, j);                
             }
         }
-        //swap the values of the high 
-        var temp1 = bars[high].style.height;
-        var temp2 = bars[high].childNodes[0].innerText;
-        bars[high].style.height = bars[i+1].style.height;
-        bars[i+1].style.height = temp1;
-        bars[high].childNodes[0].innerText = bars[i+1].childNodes[0].innerText;
-        bars[i+1].childNodes[0].innerText = temp2;
-
+        swapBars(bars, high, i+1);//swap the values of the high 
         bars[high].style.backgroundColor = BAR_COLOR
         bars[i+1].style.backgroundColor = "lime"
-
         await sleep(SPEED_CONSTANT)
-        
         var temp3 = array[i+1]
         array[i+1] = array[high]
         array[high] = temp3
-
         return i+1
     }
 
     async function sort(array,low,high){
         abortCheck();
+        await pauseCheck();
         if(low<high){
             var pi = await partition(array,low,high)
             await sort(array, low, pi-1)
