@@ -67,6 +67,10 @@ function stopStartAlgorithm(){
 
 function abortCheck(){
     if(ABORT_ALGORITHM){
+        if(runAlgorithm == false){
+            runAlgorithm = true;
+            document.getElementById("pauseButton").innerHTML = "Pause Algorithm"
+        }
         enable();
         generate();
         return;
@@ -76,6 +80,7 @@ function abortCheck(){
 async function pauseCheck(){
     while(!runAlgorithm){
         await sleep(SPEED_CONSTANT);
+        abortCheck();
     }
     return new Promise((resolve) =>
         setTimeout(() => {
@@ -434,6 +439,12 @@ function showDesc(algorithm){
     }
     if(algorithm == "insertion"){
         document.getElementById('insertion-desc').style.display='inline';
+    }
+    if(algorithm == "merge"){
+        document.getElementById('merge-desc').style.display='inline';
+    }
+    if(algorithm == "quick"){
+        document.getElementById('quick-desc').style.display='inline';
     }
 }
 
