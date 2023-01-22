@@ -275,6 +275,7 @@ async function mergeSort(){
             valueArray[i] = tempArray[i - start];
         }
         if(tempArray.length == valueArray.length){//re-enables the buttons when the algorithm is finished
+            for(var i =0; i<bars.length; i++){bars[i].style.backgroundColor = BAR_COLOR_4}
             enable();
         }
     }
@@ -351,6 +352,7 @@ async function quickSort(){
             return true;
           }
         if(isArraySorted(temparray)){
+            for(var i =0; i<bars.length; i++){bars[i].style.backgroundColor = BAR_COLOR_4}
             enable()
         }
     }
