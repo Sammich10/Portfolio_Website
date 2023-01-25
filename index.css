@@ -495,16 +495,17 @@ body{
 }
 
 footer{
-    min-height: 180px;
+    min-height: 120px;
     text-align: center;
     background-color: lightgrey;
-    padding-bottom: px;
+    padding-bottom: 10px;
 }
 
 footer p{
+    text-align: center;
     position: relative;
-    padding-top: 80px;
-    font-size: 18pt;
+    padding-top: 20px;
+    font-size: 16pt;
 }
 
 .js-scroll {
