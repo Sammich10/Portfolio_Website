@@ -26,7 +26,7 @@ setTimeout(function() {
       setTimeout(type2, 70);
     }
   }());
-},4000);
+},3000);
 
 window.addEventListener("scroll", () => {
     const currentscroll = window.pageYOffset;
