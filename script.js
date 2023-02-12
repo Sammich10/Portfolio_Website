@@ -21,9 +21,15 @@ let j = 0;
 setTimeout(function() {
   (function type2() {
     if (j < sub_header.length) {
-      typedText_2.innerHTML += sub_header.charAt(j);
-      j++;
-      setTimeout(type2, 70);
+      if(sub_header.charAt(j) == ";"){
+        typedText_2.innerHTML += sub_header.charAt(j);
+        j++;
+        setTimeout(type2,300);
+      }else{
+        typedText_2.innerHTML += sub_header.charAt(j);
+        j++;
+        setTimeout(type2, 70);
+      }
     }
   }());
 },3000);
