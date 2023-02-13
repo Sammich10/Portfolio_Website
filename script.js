@@ -10,12 +10,18 @@ let i = 0;
 setTimeout(function() {
   (function type() {
     if (i < header.length) {
-      typedText.innerHTML += header.charAt(i);
-      i++;
-      setTimeout(type, 70);
+      if(header.charAt(i) == " "){
+        typedText.innerHTML += header.charAt(i);
+        i++;
+        setTimeout(type, 200);
+      }else{
+        typedText.innerHTML += header.charAt(i);
+        i++;
+        setTimeout(type, 70);
+      }
     }
   }());
-},750);
+},1000);
 
 let j = 0;
 setTimeout(function() {
@@ -32,14 +38,12 @@ setTimeout(function() {
       }
     }
   }());
-},3000);
+},3500);
 
 window.addEventListener("scroll", () => {
     const currentscroll = window.pageYOffset;
     if (currentscroll <= check) { 
-        opacity = 1 - (currentscroll / check); // If user scrolls past check, begin lowering the opacity
-    } else {
-        opacity = 0;
+        opacity = 1 - ((currentscroll / check)/1.35); // If user scrolls past check, begin lowering the opacity
     }
     document.querySelector(".website-top-section").style.opacity = opacity; //Updates opacity
 });
