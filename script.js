@@ -2,7 +2,7 @@
 const check = (window.innerHeight - 25); //Point at which fade animation ends (i.e. background will be fulled faded)
 const header = "Sam Michelsen's Website";
 const sub_header = "Software Engineer wannabe; Lover of cats"
-const typedText = document.getElementById("typed-text");
+const typedText = document.getElementById("typed-text1");
 const typedText_2 = document.getElementById("typed-text2")
 const cursor = document.querySelector('#cursor');
 
@@ -57,19 +57,18 @@ scrollElements.forEach((el) => {
     el.style.opacity = 0
   })
  
-  const elementInView = (el, scrollOffset = 0) => {
-    const elementTop = el.getBoundingClientRect().top;
-   
-    return (
-      elementTop <= 
-      ((window.innerHeight || document.documentElement.clientHeight) - scrollOffset)
-    );
-  };
+const elementInView = (el, scrollOffset = 0) => {
+  const elementTop = el.getBoundingClientRect().top; 
+  return (
+    elementTop <= 
+    ((window.innerHeight || document.documentElement.clientHeight) - scrollOffset)
+  );
+};
 
 const displayScrollElement = (element) => {
     element.classList.add("scrolled");
 };
- 
+
 const hideScrollElement = (element) => {
   element.classList.remove('scrolled');
 }
@@ -87,3 +86,32 @@ const handleScrollAnimation = (scrollElements) => {
 window.addEventListener('scroll', () => {
     handleScrollAnimation(scrollElements);
   })
+
+const typeElements = document.querySelectorAll('.js-type')
+
+typeElements.forEach(el=>{
+  text = el.getAttribute('data-text');
+  let typedText = el.querySelector('.typed-text');
+  let cursor = el.querySelector('.cursor')
+  let i = 0;
+
+  function type(){
+    if (i < text.length) {
+      typedText.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    }else{
+      setTimeout(removeCursor,2500)
+    }
+  }
+  function removeCursor(){
+    cursor.style.opacity = 0;
+  }
+
+  window.addEventListener('scroll',function(){
+    if(elementInView(el,150)){
+      setTimeout(type,1500);
+      window.removeEventListener('scroll',arguments.callee);
+    }
+  });
+});
