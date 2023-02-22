@@ -4,7 +4,7 @@ const header = "Sam Michelsen's Website";
 const sub_header = "Software Engineer wannabe; Lover of cats"
 const typedText = document.getElementById("typed-text1");
 const typedText_2 = document.getElementById("typed-text2")
-const cursor = document.querySelector('#cursor');
+
 
 let i = 0;
 setTimeout(function() {
@@ -19,6 +19,8 @@ setTimeout(function() {
         i++;
         setTimeout(type, 70);
       }
+    }else{
+      document.getElementById("cursor0").style.opacity = 0;
     }
   }());
 },1000);
@@ -26,6 +28,7 @@ setTimeout(function() {
 let j = 0;
 setTimeout(function() {
   (function type2() {
+    document.getElementById("cursor1").style.opacity = 1;
     if (j < sub_header.length) {
       if(sub_header.charAt(j) == ";"){
         typedText_2.innerHTML += sub_header.charAt(j);
@@ -115,3 +118,7 @@ typeElements.forEach(el=>{
     }
   });
 });
+
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
