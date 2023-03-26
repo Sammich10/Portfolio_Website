@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="catlasertoy.css" class="stylesheet">
+    <link rel="stylesheet" href="/scroll_behavior.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
@@ -36,36 +37,45 @@
         
     <div id = "content-container" class="content-container">
         <h2 class="content-header">Project Summary</h2>
-        <p>This project was inspired by other laser toys I had seen before on Amazon, and I decided to build one myself for the entertainment of my cats. (Also myself,
-            as it is quite fun to watch the cats play with this)
+        <p>This project was inspired by other automated laser toys I had seen before on Amazon, and I decided to build one myself for the entertainment of my cats (and also myself).
         </p>
         <div class="cat-imgs-container">
             <img src="/cat_feeder/images/cats_in_window.jpg" alt="">
-            <img src="/cat_feeder/images/cats_on_bed.jpg" alt="">
+            <img src="/cat_feeder/images/cats_on_bed.jpg" alt=" ">
         </div>
-        <h2 class="content-header js-scroll fade-in">Hardware Used</h2>
+        <h2 class="content-header js-scroll fade-in-bottom">Hardware Used</h2>
         <ul class ="materiallist js-scroll fade-in">
             <li><a href="https://store-usa.arduino.cc/products/arduino-uno-rev3" target="_blank">Arduino Uno</a></li>
             <li><a href="https://www.amazon.com/Bracket-Support-Ultrasonic-Mounting-Fixed-Wing/dp/B07QZ3NSKX/ref=pd_lpo_2?pd_rd_i=B07QZ3NSKX&psc=1" target="_blank">Pan Tilt Servo Kit</a></li>
             <li><a href="https://www.amazon.com/HiLetgo-10pcs-650nm-Diode-Laser/dp/B071FT9HSV/ref=sr_1_3?crid=2LPJ10IGQJ6X1&keywords=laser+diode&qid=1665087058&qu=eyJxc2MiOiI1LjYxIiwicXNhIjoiNC4yOSIsInFzcCI6IjMuNjMifQ%3D%3D&sprefix=laser+diode%2Caps%2C104&sr=8-3" target="_blank">Laser Diode</a></li>
-            <li><a href="https://www.amazon.com/Adafruit-LK-918O-SANV-FBACA-PIR-Motion-Sensor/dp/B00JOZTAC6" target="_blank">PIR Motion Sensor</a></li>
+            <li><a href="https://www.microcenter.com/product/422386/nte-electronics-round-push-button-spst-switch-red" target="_blank">Button</a></li>
             <li><a href="https://www.amazon.com/MCIGICM-Breadboard-Trim-Potentiometer-Arduino/dp/B07S69443J/ref=sr_1_5?keywords=arduino+potentiometer&qid=1665089598&qu=eyJxc2MiOiI0LjY5IiwicXNhIjoiNC42NSIsInFzcCI6IjQuNDEifQ%3D%3D&sr=8-5" target="_blank">Potentiometer</a></li>
         </ul>
         <br>
-        <h2 class="content-header js-scroll fade-in">The prototype</h2>
+        <h2 class="content-header js-scroll fade-in-bottom">The design</h2>
+        <div class="prototype-content-container js-scroll fade-in">
+            <p class="content-header js-scroll fade-in">The enclosure was designed using FreeCAD and 3D printed with my Ender 3 Pro. It's a simple cylindrical design with a flared base for 
+                stability and a detachable top for easy access to the internals. The top is held in place using a small peg, and I hot glued it in place to prevent it from falling out.
+            </p>
+            <img src="/cat_laser_toy/images/cad_1.png" alt="">
+            <img src="/cat_laser_toy/images/cad_2.png" alt="">
+            <img src="/cat_laser_toy/images/cad_3.png" alt="">
+        </div>
+        <h2 class="content-header js-scroll fade-in-bottom">The prototype</h2>
         <div class="prototype-content-container js-scroll fade-in">
             <br>
             <p>
-                The design it pretty straightforward. There laser diode is mounted on the pan-tilt kit, and when the motion sensor detects enough motion to trigger it,
+                The design it pretty straightforward. There laser diode is mounted on the pan-tilt kit, and when the button is pressed,
                 the pan-tilt kit will move around in the software defined patterns. The potentiometer is used to dim the laser diode to a comfortable level so as to limit
                 the risk of eye damage. 
             </p>
-            <img id="img1" class = "js-scroll fade-in" src="/cat_laser_toy/images/front.jpg" alt="">
-            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/back.jpg" alt="">
-            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/inside.jpg" alt=""><br>
-            <video src="/cat_laser_toy/images/video.mp4" width="auto" height="600px" controls></video>
+            <img id="img1" class = "js-scroll fade-in" src="/cat_laser_toy/images/pic_1.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/pic_2.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_laser_toy/images/pic_3.jpg" alt="">
+            <br>
+            <video src="/cat_laser_toy/images/cat_vid.mp4" width="auto" height="600px" controls></video>
         </div>
-        <h2 class="content-header js-scroll fade-in">The software</h2>
+        <h2 class="content-header js-scroll fade-in" style="margin-top: 65px;">The software</h2>
         <p>The code for this project can be viewed <a href="https://github.com/Sammich10/catLaserToy" target="_blank">here</a> on GitHub</p>
         <br><br><br>
     </div>
@@ -77,6 +87,6 @@
             Phone: (815)-904-4405
         </p>
     </footer>
-    <script type="text/javascript" src="/cat_feeder/catfeeder.js"></script>
+    <script type="text/javascript" src="/scroll_behavior.js"></script>
 </body>
 </html>

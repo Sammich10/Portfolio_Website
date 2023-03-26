@@ -14,7 +14,8 @@ a{
 }
 .page-top{
     background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(10, 10, 10) 55%, rgba(24,24,24,1) 90%, rgba(255,255,255,0) 100%);    
+    height: 45vh;
 }
 .navbar {
     height: 140px;
@@ -116,6 +117,11 @@ a{
     opacity: .5;
 }
 
+h2{
+    font-size: 2.5rem;
+    font-size: 3.5vw;
+}
+
 .hero{
     animation: none;
     height: 30vh;
@@ -127,7 +133,7 @@ a{
 }
 .hero-header{
     font-size: 6rem;
-    font-size: 7vw;
+    font-size: 6vw;
     animation: fade-in-bottom .8s ease-out;
     color: whitesmoke;
     margin-bottom: 10vh;
@@ -135,19 +141,23 @@ a{
 .content-container{
     justify-content: center;
     text-align: center;
-    width: 60%;
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 2vh;
     animation: fade-in 1s ease-in-out;
 }
 .content-header{
-    padding-top: 3vh;
+    padding-top: 1vh;
     padding-bottom: 3vh;
     font-size: 4.2rem;
+    animation: fade-in-bottom .8s ease-out;
 }
 .content-container p{
+    width: 60%;
+    margin: auto;
     font-size: 1.6rem;
+    margin-bottom: 2.5vh;
 }
 .materiallist{
     width: 40%;
@@ -168,26 +178,30 @@ a{
     margin-right: auto;
 }
 .cat-imgs-container img{
-    height:25vh;
+    height:35vh
+}
+
+img{
     width: auto;
     margin: 5px;
     border-radius: 1px;
     transition:ease-in-out .15s;
 }
-.cat-imgs-container img:hover{
+img:hover{
     transform: scale(1.05);
     transition:ease-out .25s;
 }
-.prototype-content-container{
 
-}
 .prototype-content-container img{
-    height: 40vh;
+    height: 50vh;
     width: auto;
     margin: 2vh;
 }
 pre{
     text-align: left;
+}
+video{
+    margin-top: 65px;
 }
 footer{
     min-height: 180px;
@@ -200,157 +214,6 @@ footer p{
     position: relative;
     padding-top: 80px;
     font-size: 18pt;
-}
-/*
-Scrolling behavior
-*/
-
-.js-scroll {
-    animation: fade-out .5s;
-    opacity: 0;
-    transition: opacity .5s;
-    transition: .1s ease;
-}
-
-.js-scroll.scrolled {
-    opacity: 1;
-}
-
-.scrolled.fade-in {
-    animation: fade-in 1s ease-in-out both;
-}
-
-.scrolled.fade-in-bottom {
-    animation: fade-in-bottom 1s ease-in-out both;
-}
-
-.scrolled.slide-left {
-    animation: slide-in-left .5s ease-in-out both;
-}
-
-.scrolled.slide-right {
-    animation: slide-in-right .5s ease-in-out both;
-}
-
-/***
-Animations
-***/
-
-@keyframes fadeIn{
-    from{
-        opacity: .5;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-       opacity: .5;
-    }
-  }
-
-  @keyframes slide-down{
-    from{transform: translateY(0);}
-    to{
-        transform: translateY(10%);
-        opacity: .9;
-    }
-}
-
-@keyframes slide-up{
-    from{
-        transform: translateY(10%);
-        opacity: .9;
-    }
-    to{transform: translateY(0);}
-}
-
-@keyframes fadeOutShrink {
-    from {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-    to {
-        opacity: .8;
-        -webkit-transform: scale(.90);
-        transform: scale(.90);
-    }
-}
-
-@keyframes fadeInExpand {
-    from {
-        opacity: .8;
-        -webkit-transform: scale(.9);
-        transform: scale(.9);
-    }
-    to {
-       opacity: 1;
-       -webkit-transform: scale(1);
-       transform: scale(1);
-    }
-  }  
-
-@keyframes slide-in-left {
-    0% {
-        -webkit-transform: translateX(-100px);
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-right {
-    0% {
-        -webkit-transform: translateX(100px);
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-bottom {
-    0% {
-        -webkit-transform: translateY(50px);
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    0%{
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
 }
 
 @media screen and (max-width:960px) {
