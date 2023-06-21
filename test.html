@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CPU and RAM</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .cpu {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      border: 2px solid black;
+      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+    
+    .ram {
+      width: 150px;
+      height: 100px;
+      border: 2px solid black;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+    
+    .bus {
+      width: 4px;
+      height: 20px;
+      background-color: black;
+      position: absolute;
+    }
+    
+    .bus-horizontal {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .bus-vertical {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .bus-horizontal.left {
+      left: 0;
+    }
+    
+    .bus-horizontal.right {
+      right: 0;
+    }
+    
+    .bus-vertical.top {
+      top: 0;
+    }
+    
+    .bus-vertical.bottom {
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cpu">
+      <div class="bus bus-horizontal top"></div>
+      <div class="bus bus-horizontal bottom"></div>
+      <div class="bus bus-vertical left"></div>
+      <div class="bus bus-vertical right"></div>
+      
+      <div class="bus bus-horizontal top" style="top: 20%;"></div>
+      <div class="bus bus-horizontal bottom" style="top: 20%;"></div>
+      <div class="bus bus-vertical left" style="left: 20%;"></div>
+      <div class="bus bus-vertical right" style="left: 20%;"></div>
+      
+      <div class="bus bus-horizontal top" style="top: 40%;"></div>
+      <div class="bus bus-horizontal bottom" style="top: 40%;"></div>
+      <div class="bus bus-vertical left" style="left: 40%;"></div>
+      <div class="bus bus-vertical right" style="left: 40%;"></div>
+      
+      <div class="bus bus-horizontal top" style="top: 60%;"></div>
+      <div class="bus bus-horizontal bottom" style="top: 60%;"></div>
+      <div class="bus bus-vertical left" style="left: 60%;"></div>
+      <div class="bus bus-vertical right" style="left: 60%;"></div>
+      
+      <h2>CPU</h2>
+    </div>
+    
+    <div class="ram">
+      <h2>RAM</h2>
+    </div>
+  </div>
+</body>
+</html>

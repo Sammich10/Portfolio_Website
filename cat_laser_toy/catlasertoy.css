@@ -188,10 +188,12 @@ img{
     margin: 5px;
     border-radius: 1px;
     transition:ease-in-out .15s;
+    border-radius: 7.5px;
 }
 img:hover{
     transform: scale(1.05);
     transition:ease-out .25s;
+
 }
 
 .prototype-content-container img{
