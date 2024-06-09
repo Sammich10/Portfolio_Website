@@ -12,23 +12,22 @@
     transition: opacity 1s ease-in-out;
 }
 
-.fade-in{
+.fade-in,
+.fade-in-bottom {
     opacity: 0;
     transition: opacity 1s ease-out;
 }
 
-.fade-in-bottom{
-    opacity: 0;
+.fade-in-bottom {
     transform: translateY(50px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 .scrolled.fade-in-bottom {
-    opacity: 1;
     transform: translateY(0);
 }
 
-.slide-left{
+.slide-left {
     opacity: 0;
     transform: translateX(-150px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -40,11 +39,11 @@
     transition: opacity 1s ease-in-out, transform .75s ease-in-out;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity: .45;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
@@ -54,79 +53,59 @@
         opacity: 1;
     }
     to {
-       opacity: .45;
+        opacity: 0;
     }
-  }
+}
 
-@keyframes slide-down{
-    from{transform: translateY(0);}
-    to{
+@keyframes slide-down {
+    from {
+        transform: translateY(0);
+    }
+    to {
         transform: translateY(10%);
         opacity: .9;
     }
 }
 
-@keyframes slide-up{
-    from{
+@keyframes slide-up {
+    from {
         transform: translateY(10%);
         opacity: .9;
     }
-    to{transform: translateY(0);}
+    to {
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeOutShrink {
     from {
         opacity: 1;
-        -webkit-transform: scale(1);
         transform: scale(1);
     }
     to {
         opacity: .8;
-        -webkit-transform: scale(.90);
-        transform: scale(.90);
+        transform: scale(.9);
     }
 }
 
 @keyframes fadeInExpand {
     from {
         opacity: .8;
-        -webkit-transform: scale(.9);
         transform: scale(.9);
     }
     to {
-       opacity: 1;
-       -webkit-transform: scale(1);
-       transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }  
+}
 
 @keyframes fade-in-bottom {
     0% {
-        -webkit-transform: translateY(50px);
         transform: translateY(50px);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    0%{
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
     }
 }

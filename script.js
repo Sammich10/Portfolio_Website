@@ -1,47 +1,43 @@
 
 const check = (window.innerHeight - 25); //Point at which fade animation ends (i.e. background will be fulled faded)
 const header = "Sam Michelsen's Website";
-const sub_header = "Software Engineer wannabe; Lover of cats"
 const typedText = document.getElementById("typed-text1");
-const typedText_2 = document.getElementById("typed-text2")
 
 
-let i = 0;
-setTimeout(function() {
-  (function type() {
-    if (i < header.length) {
-      if(header.charAt(i) == " "){
-        typedText.innerHTML += header.charAt(i);
-        i++;
-        setTimeout(type, 200);
-      }else{
-        typedText.innerHTML += header.charAt(i);
-        i++;
-        setTimeout(type, 70);
-      }
-    }else{
-      document.getElementById("cursor0").style.opacity = 0;
+/**
+ * Types out the header text one character at a time with a delay.
+ * Once the header text is fully typed out, it fades out the cursor.
+ * @param {string} text - The text to type out.
+ * @param {HTMLElement} element - The element to type into.
+ * @param {HTMLElement} cursor - The element to control the cursor.
+ * @param {function} delay - The function to delay the typing.
+ */
+function typeText(text, element, cursor, delay) {
+  let i = 0;
+
+  const typeChar = () => {
+    if (i < text.length) {
+      const char = text.charAt(i);
+      element.innerHTML += char;
+      i++;
+      delay(char === ' ' ? 200 : 70, typeChar);
+    } else {
+      cursor.style.opacity = 0;
     }
-  }());
-},1000);
+  };
 
-let j = 0;
-setTimeout(function() {
-  (function type2() {
-    document.getElementById("cursor1").style.opacity = 1;
-    if (j < sub_header.length) {
-      if(sub_header.charAt(j) == ";"){
-        typedText_2.innerHTML += sub_header.charAt(j);
-        j++;
-        setTimeout(type2,300);
-      }else{
-        typedText_2.innerHTML += sub_header.charAt(j);
-        j++;
-        setTimeout(type2, 70);
-      }
-    }
-  }());
-},3500);
+  delay(1000, typeChar);
+}
+
+/**
+ * Delays the execution of a function.
+ * @param {number} time - The time to delay in milliseconds.
+ * @param {function} func - The function to delay.
+ */
+function delay(time, func) {
+  setTimeout(func, time);
+}
+
 
 window.addEventListener("scroll", () => {
     const currentscroll = window.pageYOffset;
@@ -80,6 +76,22 @@ typeElements.forEach(el=>{
   });
 });
 
+function init()
+{
+  window.addEventListener("scroll", () => {
+    const currentscroll = window.pageYOffset;
+    if (currentscroll <= check) { 
+        opacity = 1 - ((currentscroll / check)/1.35); // If user scrolls past check, begin lowering the opacity
+    }
+    document.querySelector(".website-top-section").style.opacity = opacity; //Updates opacity
+  });
+  
+  typeText(header, typedText, document.getElementById("cursor0"), delay);
+
+}
+
 const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
+
+init();

@@ -6,109 +6,128 @@
           content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sorting Visualizer</title>
+    <link href="../index.css" rel="stylesheet" />
     <link href="visualizer.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
   </head>
-  
   <body >
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+          <ul class="navbar-menu">
+              <li class="navbar-items" style="color:rgb(0, 0, 0)">
+                  <a href="#about-section-container" class="navbar-link">// About</a>
+              </li>
+              <li class="navbar-items">
+                  <a href="#qualifications" class="navbar-link">// Qualifications</a>
+              </li>
+              <li class="navbar-items">
+                  <a href="#portfolio-container" class="navbar-link">// Projects</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <!-- Header -->
+  <section class="head">Sorting Algorithm Visualizer</section>
+  <!-- Data Visualizer Container -->
+  <section class="data-container" id = "data-container"></section> 
+  <!-- Button Container -->
+  <section class="button-container" >
+    <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
+    <button class="button" onmouseenter="showDesc('selection')" onclick="disable(),SelectionSort(),showDesc('selection')" id="selectionSortButton" >Selection Sort</button>
+    <button class="button" onmouseenter="showDesc('bubble')" onclick="disable(),bubbleSort(),showDesc('bubble')" id="bubbleSortButton">Bubble Sort</button>
+    <button class="button" onmouseenter="showDesc('insertion')" onclick="disable(),insertionSort(),showDesc('insertion')" id="insertionSortButton">Insertion Sort</button>
+    <button class="button" onmouseenter="showDesc('merge')" onclick="disable(),mergeSort(),showDesc('merge')" id="mergeSortButton">Merge Sort</button>
+    <button class="button" onmouseenter="showDesc('quick')" onclick="disable(),quickSort(),showDesc('quick')" id="quickSortButton">Quick Sort</button>
+    <button class="button" onclick="stopStartAlgorithm()" id="pauseButton" >Pause Algorithm</button>
+    <button class="button" onclick="stop()" id="abortButton">Abort Execution</button>
+  </section>
+  <!-- Speed Selector -->
+  <div class="speedselectcontainer">
+  <label for="speed">Speed:</label>
+  <select id="speed" class="speedselect" onchange="changeSpeed()">
+      <option value="1">1x</option>
+      <option value="2">2x</option>
+      <option value="5">5x</option>
+      <option value="10">10x</option>
+      <option value="100">100x</option>
+      <option value="500">500x</option>
+  </select>
+  <label for="speed">Bars:</label>
+  <select id="barselect" class="barselect">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="35" selected>35</option>
+      <option value="50">50</option>
+      <option value="500">500</option>
+  </select>
+  <br>
+  <div class="miscTextContainer">
+    <p class="miscText" id="miscAlgorithmDescText"></p>
+  </div>
+  </div>
 
-    <section class="head">Sorting Algorithm Visualizer</section>
-   
-    <section class="data-container" id = "data-container"></section> 
+  <div id="bubble-desc" class = "desc">
+    <p>
+      Bubble sort works by iterating through each item in the array, and testing if it is smaller or larger than the element next to it. If the right element is smaller, then the items are swapped,
+      thus the smaller items 'bubble' up to the left-hand side each iteration of the array. The algorithm keeps track of weather a swap was made or not, and stops once it iterates through the whole list 
+      without making a swap, indicating the array is correctly sorted. 
+      <br><br>
+      Bubble sort has a worst case and average case time complexity of O(n<sup>2</sup>), and a best case time complexity of O(n).
+    </p>
+    <br><br>
+    <p>Example implementation in C++</p>
+    <img src="/sorting_vis/images/bubble_sort_cpp.png">
+  </div>
+  <div class="desc" id = "selection-desc">
+    <p>
+      Selection sort works by iterating through the unsorted list and 'selecting' the smallest value, and it places this value at the end of the sorted array.
+      <br><br>
+      Selection sort has a best case, average case, and worst case time complexity of O(n<sup>2</sup>).
+    </p>
+    <br><br>
+    <p>Example implementation in C++</p>
+    <img src="/sorting_vis/images/selection_sort_cpp.png" alt="">
+  </div>
+  <div class="desc" id="insertion-desc">
+    <p>
+      Insertion sort works by iterating through the unsorted list and 'inserting' each item into it's correct ordered position by swapping the the element with the element to it's left
+      if the left element is larger than the itself, and continues until the array is sorted. 
+      <br><br>
+      Insertion sort has a worst case and average case time complexity of O(n<sup>2</sup>) and a best case time complexity of O(n). 
+    </p>
+    <br><br>
+    <p>Example implementation in C++</p>
+    <img src="/sorting_vis/images/insertion_sort_cpp.png" alt="">
+  </div>
+  <div class="desc" id = "merge-desc">
+    <p>
+      Merge sort works by diving the array into smaller and smaller sub-arrays, sorting the sub-arrays, and then merging back together. The algorithm recursively calls itself on the front and back half 
+      of the array that is given until it reaches a base-case of 1 element (an array of 1 element is considered sorted), and then works back up. It merges the arrays by comparing the first element in each sorted sub-array and adding the
+      smaller one to the new sorted sub-array until one of the sorted sub-arrays are empty, at which point the rest of the elements in the other sorted sub-array are appended to the new sorted sub-array.
+      <br><br>
+      Merge sort has a worst case, average case, and best case time complexity of O(n*log(n)).
+    </p>
+    <br><br>
+    <p>Example implementation in C++</p>
+    <img src="/sorting_vis/images/merge_sort_cpp.PNG" alt="">
+  </div>
+  <div class="desc" id="quick-desc">
+    <p>
+      Quick sort works by selecting a 'pivot' value, and then 'partitioning' the array. The partition process simply puts all the values in the unsorted array that are less than the 'pivot' value
+      on the left hand side, and ignores the values greater. After the partition, the 'pivot' value can be placed immediately to the right of all the elements that are less than it. This guarantees that the 
+      'pivot' value is now in its sorted position, because all the values to the left of it are less than it, and all the values to the right are greater than it.
+    </p>
+    <br><br>
+    <p>Quick sort has a worst case time complexity of O(n<sup>2</sup>) and a best case and average case time complexity of O(n*log(n))</p>\
+    <br><br>
+    <p>Example implementation in C++</p>
+    <img src="/sorting_vis/images/quick_sort_cpp.PNG" alt="">
+  </div>
+  <br><br><br><br>
+</body>
 
-    <section class="button-container" >
-      <button  class="button" onclick="generate()" id="generateButton" >Generate New Array</button>   
-      <button class="button" onmouseenter="showDesc('selection')" onclick="disable(),SelectionSort(),showDesc('selection')" id="selectionSortButton" >Selection Sort</button>
-      <button class="button" onmouseenter="showDesc('bubble')" onclick="disable(),bubbleSort(),showDesc('bubble')" id="bubbleSortButton">Bubble Sort</button>
-      <button class="button" onmouseenter="showDesc('insertion')" onclick="disable(),insertionSort(),showDesc('insertion')" id="insertionSortButton">Insertion Sort</button>
-      <button class="button" onmouseenter="showDesc('merge')" onclick="disable(),mergeSort(),showDesc('merge')" id="mergeSortButton">Merge Sort</button>
-      <button class="button" onmouseenter="showDesc('quick')" onclick="disable(),quickSort(),showDesc('quick')" id="quickSortButton">Quick Sort</button>
-      <button class="button" onclick="stopStartAlgorithm()" id="pauseButton" >Pause Algorithm</button>
-      <button class="button" onclick="stop()" id="abortButton">Abort Execution</button>
-    </section>
-
-    <div class="speedselectcontainer">
-    <label for="speed">Speed:</label>
-    <select id="speed" class="speedselect">
-        <option value="1">1x</option>
-        <option value="2">2x</option>
-        <option value="5">5x</option>
-        <option value="10">10x</option>
-        <option value="100">100x</option>
-        <option value="500">500x</option>
-    </select>
-    <label for="speed">Bars:</label>
-    <select id="bars" class="barselect">
-        <option value="10">10</option>
-        <option value="25">25</option>
-        <option value="35" selected>35</option>
-        <option value="50">50</option>
-    </select>
-    <br>
-    <p>Note: Speed cannot be altered mid-execution</p>
-    </div>
-
-    <div id="bubble-desc" class = "desc">
-      <p>
-        Bubble sort works by iterating through each item in the array, and testing if it is smaller or larger than the element next to it. If the right element is smaller, then the items are swapped,
-        thus the smaller items 'bubble' up to the left-hand side each iteration of the array. The algorithm keeps track of weather a swap was made or not, and stops once it iterates through the whole list 
-        without making a swap, indicating the array is correctly sorted. 
-        <br><br>
-        Bubble sort has a worst case and average case time complexity of O(n<sup>2</sup>), and a best case time complexity of O(n).
-      </p>
-      <br><br>
-      <p>Example implementation in C++</p>
-      <img src="/sorting_vis/images/bubble_sort_cpp.png">
-    </div>
-    <div class="desc" id = "selection-desc">
-      <p>
-        Selection sort works by iterating through the unsorted list and 'selecting' the smallest value, and it places this value at the end of the sorted array.
-        <br><br>
-        Selection sort has a best case, average case, and worst case time complexity of O(n<sup>2</sup>).
-      </p>
-      <br><br>
-      <p>Example implementation in C++</p>
-      <img src="/sorting_vis/images/selection_sort_cpp.png" alt="">
-    </div>
-    <div class="desc" id="insertion-desc">
-      <p>
-        Insertion sort works by iterating through the unsorted list and 'inserting' each item into it's correct ordered position by swapping the the element with the element to it's left
-        if the left element is larger than the itself, and continues until the array is sorted. 
-        <br><br>
-        Insertion sort has a worst case and average case time complexity of O(n<sup>2</sup>) and a best case time complexity of O(n). 
-      </p>
-      <br><br>
-      <p>Example implementation in C++</p>
-      <img src="/sorting_vis/images/insertion_sort_cpp.png" alt="">
-    </div>
-    <div class="desc" id = "merge-desc">
-      <p>
-        Merge sort works by diving the array into smaller and smaller sub-arrays, sorting the sub-arrays, and then merging back together. The algorithm recursively calls itself on the front and back half 
-        of the array that is given until it reaches a base-case of 1 element (an array of 1 element is considered sorted), and then works back up. It merges the arrays by comparing the first element in each sorted sub-array and adding the
-        smaller one to the new sorted sub-array until one of the sorted sub-arrays are empty, at which point the rest of the elements in the other sorted sub-array are appended to the new sorted sub-array.
-        <br><br>
-        Merge sort has a worst case, average case, and best case time complexity of O(n*log(n)).
-      </p>
-      <br><br>
-      <p>Example implementation in C++</p>
-      <img src="/sorting_vis/images/merge_sort_cpp.PNG" alt="">
-    </div>
-    <div class="desc" id="quick-desc">
-      <p>
-        Quick sort works by selecting a 'pivot' value, and then 'partitioning' the array. The partition process simply puts all the values in the unsorted array that are less than the 'pivot' value
-        on the left hand side, and ignores the values greater. After the partition, the 'pivot' value can be placed immediately to the right of all the elements that are less than it. This guarantees that the 
-        'pivot' value is now in its sorted position, because all the values to the left of it are less than it, and all the values to the right are greater than it.
-      </p>
-      <br><br>
-      <p>Quick sort has a worst case time complexity of O(n<sup>2</sup>) and a best case and average case time complexity of O(n*log(n))</p>\
-      <br><br>
-      <p>Example implementation in C++</p>
-      <img src="/sorting_vis/images/quick_sort_cpp.PNG" alt="">
-    </div>
-    <br><br><br><br>
-  </body>
-  
-  <script src="sortingalgoritms.js"></script>
+<script src="sortingalgoritms.js"></script>
 </html>

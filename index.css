@@ -201,14 +201,14 @@ body{
     text-align: center;
     font-size: 26pt;
     font-size: 2.6vh;
-    width: 65%;
+    width: 75%;
     margin: auto;
     margin-top: 50px;
 }
 
 .grid-pictures{
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
     margin-bottom: 45px;
     display: grid;
     justify-content: center;
