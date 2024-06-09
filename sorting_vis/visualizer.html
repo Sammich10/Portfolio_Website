@@ -6,11 +6,12 @@
           content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sorting Visualizer</title>
-    <link href="../index.css" rel="stylesheet" />
+    <link href="../scroll_behavior.css" rel="stylesheet" />
     <link href="visualizer.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
+    
   </head>
   <body >
     <!-- Navbar -->
@@ -18,13 +19,15 @@
       <div class="navbar-container">
           <ul class="navbar-menu">
               <li class="navbar-items" style="color:rgb(0, 0, 0)">
-                  <a href="#about-section-container" class="navbar-link">// About</a>
+                  <a href="../index.html" class="navbar-link">// Home</a>
               </li>
-              <li class="navbar-items">
-                  <a href="#qualifications" class="navbar-link">// Qualifications</a>
-              </li>
-              <li class="navbar-items">
-                  <a href="#portfolio-container" class="navbar-link">// Projects</a>
+              <li class="navbar-items dropdown">
+                  <a href="#" class="navbar-link">// Other Projects</a>
+                  <div class="dropdown-content">
+                    <a href="../cat_feeder/catfeederplus.html">Cat Feeder</a>
+                    <a href="../cat_laser_toy/catlasertoy.html">Cat Laser Toy</a>
+                    <a href="../index.html">Sudoku Solver</a>
+                  </div>
               </li>
           </ul>
       </div>
@@ -41,8 +44,8 @@
     <button class="button" onmouseenter="showDesc('insertion')" onclick="disable(),insertionSort(),showDesc('insertion')" id="insertionSortButton">Insertion Sort</button>
     <button class="button" onmouseenter="showDesc('merge')" onclick="disable(),mergeSort(),showDesc('merge')" id="mergeSortButton">Merge Sort</button>
     <button class="button" onmouseenter="showDesc('quick')" onclick="disable(),quickSort(),showDesc('quick')" id="quickSortButton">Quick Sort</button>
-    <button class="button" onclick="stopStartAlgorithm()" id="pauseButton" >Pause Algorithm</button>
-    <button class="button" onclick="stop()" id="abortButton">Abort Execution</button>
+    <button class="button" onclick="toggleAlgorithmExecution()" id="pauseButton" >Pause Algorithm</button>
+    <button class="button" onclick="stopExecution()" id="abortButton">Abort Execution</button>
   </section>
   <!-- Speed Selector -->
   <div class="speedselectcontainer">
@@ -54,6 +57,7 @@
       <option value="10">10x</option>
       <option value="100">100x</option>
       <option value="500">500x</option>
+      <option value="1000">1000x</option>
   </select>
   <label for="speed">Bars:</label>
   <select id="barselect" class="barselect">
@@ -61,7 +65,11 @@
       <option value="25">25</option>
       <option value="35" selected>35</option>
       <option value="50">50</option>
+      <option value="75">75</option>
+      <option value="100">100</option>
+      <option value="150">250</option>
       <option value="500">500</option>
+      
   </select>
   <br>
   <div class="miscTextContainer">
@@ -117,7 +125,7 @@
   <div class="desc" id="quick-desc">
     <p>
       Quick sort works by selecting a 'pivot' value, and then 'partitioning' the array. The partition process simply puts all the values in the unsorted array that are less than the 'pivot' value
-      on the left hand side, and ignores the values greater. After the partition, the 'pivot' value can be placed immediately to the right of all the elements that are less than it. This guarantees that the 
+      on the left hand side of the array, and ignores the values greater. After the partition, the 'pivot' value can be placed immediately to the right of all the elements that are less than it. This guarantees that the 
       'pivot' value is now in its sorted position, because all the values to the left of it are less than it, and all the values to the right are greater than it.
     </p>
     <br><br>
@@ -130,4 +138,5 @@
 </body>
 
 <script src="sortingalgoritms.js"></script>
+<script src="../navbar_behavior.js"></script>
 </html>
