@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width , initial-scale=1">
     <title>Sam Michelsen's Website</title>
     <link rel="stylesheet" href="index.css" class="stylesheet">
-    <link rel="stylesheet" href="scroll_behavior.css" class="stylesheet">
+    <link rel="stylesheet" href="./shared/scroll_behavior.css" class="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Top Section -->
 <div class="top-section">
     <nav class="navbar">
         <div class="navbar-container">
@@ -31,105 +33,97 @@
     <div class="header-container">
         <header class="typed-text-header">
             <h1 style="color:rgb(0, 238, 52);">~</h1><h1>$&nbsp;</h1>
-            <h1 id="typed-text1"></h1>
+            <h1 id="typed-text1" data-text="Sam's Website"></h1>
             <span class="cursor" id="cursor0"></span>
         </header>
     </div>
     <div class="view-content-button-container">
-        <a href="#portfolio-container" class="view-content-button">View Portfolio</a>
+        <a href="#portfolio-container" class="view-content-button" id="view-content-button">View Portfolio</a>
     </div>
 </div>
-    <div class="about-section-container" id="about-section-container">
-        <h1 class="about-me-header">A little about me</h1>
-        <p class="about-me-content">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error dolorum nulla saepe veniam amet sunt illo magni natus repudiandae praesentium autem soluta fuga ratione, quasi expedita. Inventore pariatur quos mollitia!
-        <br><br>
-        </p>
-        <div class="grid-pictures">
-            <div class="grid-image image1 js-scroll fade-in"><img src="/images/pic8.JPEG" alt=""></div>
-            <div class="grid-image image2 js-scroll fade-in"><img src="images/pic1.png" alt=""></div>
-            <div class="grid-image image3 js-scroll fade-in"><img src="images/pic2.png" alt=""></div>
-            <div class="grid-image image4 js-scroll fade-in"><img src="images/pic4.png" alt=""></div>
-            <div class="grid-image image5 js-scroll fade-in"><img src="images/family_picture.jpg" alt=""></div>
-            <div class="grid-image image6 js-scroll fade-in"><img src="images/PIC9.JPEG" alt=""></div>
-            <div class="grid-image image7 js-scroll fade-in"><img src="images/pic3.png" alt=""></div>
-            
-            
+<!-- End of Top Section -->
+
+<!-- Portfolio Section -->
+<div class="portfolio-container" id="portfolio-container">
+    <header class="js-type" data-text="Projects!">
+        <h1 class="portfolio-title typed-text js-scroll fade-in" ></h1>
+        <span class="cursor" id="cursor2"></span>
+    </header>
+    <p class="portfolio-description js-scroll fade-in-bottom">Here are some projects I've worked on</p>
+    <div class="js-scroll slide-left">
+        <div class="info-card">
+            <img src="images/sortingvisualizerpicture.PNG" alt="sorting visualizer picture" class="info-card-picture">
+            <div class="card1content">
+                <h2 class="card1header"><a href="sorting_vis/visualizer.html" class="card-header-link" target="_blank">Sorting Visualizer</a></h2>
+                <p class="card1content">This is a sorting visualizer that I extended from
+                    <a href="https://www.geeksforgeeks.org/selection-sort-visualizer-in-javascript/" target = "_blank">this</a> 
+                    online tutorial. I added more algorithms, a way to pause/resume algorithm execution, and a way to stop the execution of an algorithm. 
+                    This project is written using just HTML, CSS, and JavaScript. It features 5 sorting algorithms: selection sort, bubble sort, insertion sort, merge sort, and quick sort.<br><br>
+                    <a href="sorting_vis/visualizer.html" class="" target="_blank">Click here to open!</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="qualifications-section">
-    <h1 class="qualifications-title js-scroll fade-in" id="qualifications">Qualifications</h1>
-    <h2 class="q-header js-scroll fade-in">Languages I have some level of experience with:</h2>
-    <div class="q-card-container js-scroll fade-in">
-        <div class="q-card"><h1 class="q-card-text">C/C++</h1></div>
-        <div class="q-card"><h1 class="q-card-text">Python</h1></div>
-        <!--<div class="q-card"><h1 class="q-card-text">Java</h1></div>-->
-        <div class="q-card"><h1 class="q-card-text">HTML/CSS</h1></div>
-        <div class="q-card"><h1 class="q-card-text">JavaScript</h1></div>
-        <div class="q-card"><h1 class="q-card-text">SQL</h1></div>
+    <div class="js-scroll slide-left">
+        <div class="info-card">
+            <img src="/images/kahlua_desk_cropped.jpg" alt="automated cat feeder" class="info-card-picture">
+            <div class="card2content">
+                <h2 class="card2header"><a href="/cat_feeder/catfeederplus.html" class="card-header-link" target="_blank">catFeed: Automated Cat Feeder</a></h2>
+                <p class="card2content">This is an automated cat feeding device that I built, powered by a Raspberry Pi. The project features
+                    a Flask web application hosted with Apache to allow for easy programming and use of the feeder via a network connection. The feeder also 
+                    tracks feeds so you can ensure your cat is being fed regularly. There is also an easy to read LCD screen on the feeder that tells you 
+                    the scheduled feed times, as well as roughly how much food remains in the feeder.
+                <br>
+                <br><a href="/cat_feeder/catfeederplus.html" target="_blank">More information </a><br>
+                <a href="https://github.com/Sammich10/catFeed" target="_blank">GitHub Repository</a></p><br>
+            </div>
+        </div>
     </div>
-    <p class="js-scroll fade-in">Below are links to my LinkedIn and GitHub profiles, as well as a download link for my resume</p>
+    <div class="js-scroll slide-left">
+        <div class="info-card">
+            <img src="/images/kahlua_playing_laser.jpg" alt="motion activated laser toy" class="info-card-picture">
+            <div class="card2content">
+                <h2 class="card2header"><a href="/cat_laser_toy/catlasertoy.html" class="card-header-link" target="_blank">Motion Activated Cat Laser Toy</a></h2>
+                <p class="card2content">This is a simple device designed to entertain cats and humans alike. When it detects motion it will turn the laser on and begin
+                    pseudo-randomly moving the laser in different patterns.
+                <br>
+                <br><a href="/cat_laser_toy/catlasertoy.html" target="_blank">Check it out</a><br>
+                <a href="https://github.com/Sammich10/catLaserToy" target="_blank">GitHub Repository</a></p><br>
+            </div>
+        </div>
+    <div class="js-scroll slide-left"></div>
+    </div>
+</div>
+<!-- End of Portfolio Section -->
+
+<!-- About Section -->
+<div class="about-section-container" id="about-section-container">
+    <h1 class="about-me-header">A little about me</h1>
+    <p class="about-me-content">
+        I hold a degree in Computer Engineering from the Illinois Institute of Technology. 
+        Throughout my academic and professional careers, I have developed a solid foundation 
+        in both software and hardware disciplines. I am primarily interested in working with software, 
+        in particular embedded software, operating systems, digital signal processing hardware/software, 
+        distributed systems, and IoT. 
+        <br><br>
+    </p>
+    <div class="grid-pictures">
+        <div class="grid-image image1 js-scroll fade-in"><img src="images/pic2.png" alt=""></div>
+        <div class="grid-image image2 js-scroll fade-in"><img src="images/pic4.png" alt=""></div>
+        <div class="grid-image image3 js-scroll fade-in"><img src="images/family_picture.jpg" alt=""></div>
+        <div class="grid-image image4 js-scroll fade-in"><img src="images/PIC9.JPEG" alt=""></div>
+    </div>
+
+    </div>
+    <p class="about-me-content js-scroll fade-in">Below are links to my LinkedIn and GitHub profiles, as well as a download link for my resume</p>
     <div class="contact-links js-scroll fade-in">
         <a class="contact-link" href="https://www.linkedin.com/in/sam-m-09b6a711a/" target="_blank"><div class="box1 boxes"></div></a>
         <a class="contact-link" href="https://github.com/Sammich10" target="_blank"><div class="box2 boxes"></div></a>
         <a href="downloads/Michelsen, Samuel Resume 2022v3.pdf" download rel="noopener noreferrer" target="_blank" class="download-link" alt="download link for resume"><div class="box3"></div></a>
     </div>
-</div>
 
-        <div class="portfolio-container" id="portfolio-container">
-            <header class="js-type" data-text="Projects!">
-                <h1 class="portfolio-title typed-text js-scroll fade-in" ></h1>
-                <span class="cursor" id="cursor2"></span>
-            </header>
-            <p class="portfolio-description js-scroll fade-in-bottom">Here are some projects I've worked on</p>
-            <div class="js-scroll slide-left">
-                <div class="info-card">
-                    <img src="images/sortingvisualizerpicture.PNG" alt="sorting visualizer picture" class="info-card-picture">
-                    <div class="card1content">
-                        <h2 class="card1header"><a href="sorting_vis/visualizer.html" class="card-header-link" target="_blank">Sorting Visualizer</a></h2>
-                        <p class="card1content">This is a sorting visualizer that I extended from
-                            <a href="https://www.geeksforgeeks.org/selection-sort-visualizer-in-javascript/" target = "_blank">this</a> 
-                            online tutorial. I added more algorithms, a way to pause/resume algorithm execution, and a way to stop the execution of an algorithm. 
-                            This project is written using just HTML, CSS, and JavaScript. It features 5 sorting algorithms: selection sort, bubble sort, insertion sort, merge sort, and quick sort.<br><br>
-                            <a href="sorting_vis/visualizer.html" class="" target="_blank">Click here to open!</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="js-scroll slide-left">
-                <div class="info-card">
-                    <img src="/images/kahlua_desk_cropped.jpg" alt="automated cat feeder" class="info-card-picture">
-                    <div class="card2content">
-                        <h2 class="card2header"><a href="/cat_feeder/catfeederplus.html" class="card-header-link" target="_blank">catFeed: Automated Cat Feeder</a></h2>
-                        <p class="card2content">This is an automated cat feeding device that I built, powered by a Raspberry Pi. The project features
-                            a Flask web application hosted with Apache to allow for easy programming and use of the feeder via a network connection. The feeder also 
-                            tracks feeds so you can ensure your cat is being fed regularly. There is also an easy to read LCD screen on the feeder that tells you 
-                            the scheduled feed times, as well as roughly how much food remains in the feeder.
-                        <br>
-                        <br><a href="/cat_feeder/catfeederplus.html" target="_blank">More information </a><br>
-                        <a href="https://github.com/Sammich10/catFeed" target="_blank">GitHub Repository</a></p><br>
-                    </div>
-                </div>
-            </div>
-            <div class="js-scroll slide-left">
-                <div class="info-card">
-                    <img src="/images/kahlua_playing_laser.jpg" alt="motion activated laser toy" class="info-card-picture">
-                    <div class="card2content">
-                        <h2 class="card2header"><a href="/cat_laser_toy/catlasertoy.html" class="card-header-link" target="_blank">Motion Activated Cat Laser Toy</a></h2>
-                        <p class="card2content">This is a simple device designed to entertain cats and humans alike. When it detects motion it will turn the laser on and begin
-                            pseudo-randomly moving the laser in different patterns.
-                        <br>
-                        <br><a href="/cat_laser_toy/catlasertoy.html" target="_blank">Check it out</a><br>
-                        <a href="https://github.com/Sammich10/catLaserToy" target="_blank">GitHub Repository</a></p><br>
-                    </div>
-                </div>
-            <div class="js-scroll slide-left"></div>
-        </div>
-    </div>
 </div>
-
+<!-- End of About Section -->
 <footer>
     <p>
         Samuel Michelsen
@@ -138,7 +132,6 @@
         Phone: (815)-904-4405
     </p>
 </footer>
-<script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="scroll_behavior.js"></script>
+<script type="text/javascript" src="./shared/scroll_behavior.js"></script>
 </body>
 </html>
