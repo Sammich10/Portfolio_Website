@@ -11,23 +11,23 @@
     <title>Automated Cat Feeder Project</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <ul class="navbar-menu">
-                <li class="navbar-items">
-                    <a href="/index.html" class="navbar-link">Home</a>
-                </li>
-                <div class="navbar-items dropbtn">
-                    <li class="dropbtn">Projects</li>
-                    <div class="dropdown-content">
-                        <a href="/sorting_vis/visualizer.html" target="_blank">Sorting Algorithm Visualizer</a>
-                        <a href="/cat_laser_toy/catlasertoy.html">Motion Activated Laser Toy</a>
-                    </div>
-                </div>
-            </ul>
-        </div>
-    </nav>
     <div class="page-top">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <ul class="navbar-menu">
+                    <li class="navbar-items">
+                        <a href="/index.html" class="navbar-link">Home</a>
+                    </li>
+                    <div class="navbar-items dropbtn">
+                        <li class="dropbtn">Projects</li>
+                        <div class="dropdown-content">
+                            <a href="/sorting_vis/visualizer.html" target="_blank">Sorting Algorithm Visualizer</a>
+                            <a href="/cat_laser_toy/catlasertoy.html">Motion Activated Laser Toy</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
         <div class="hero">
             <h1 class="hero-header">Automated Cat Feeder</h1>
         </div>
@@ -35,8 +35,16 @@
         
     <div id = "content-container" class="content-container">
         <h2 class="content-header">Project Summary</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore sapiente doloribus maxime deserunt cum aliquam omnis obcaecati numquam inventore temporibus rem non, assumenda nam saepe, iusto magni neque vel nisi.
+        <p>This project was originally part of a group project for an ebmedded system class. I had the idea prior and saw it as an opportunity to try and create something cool and useful, as well a valuable learning experience.
+            I love my two cats dearly, so this was also a great way to make something that ensures they don't starve if I leave them home alone for a few days, or if I just forget. Not that that has ever happened...
         </p>
+        <div class="cat-imgs-container">
+            <img src="/cat_feeder/images/cats_in_window.jpg" alt="">
+            <img src="/cat_feeder/images/gwen_blanket.jpg" alt="">
+            <img src="/cat_feeder/images/cats_on_bed.jpg" alt="">
+            <img src="/cat_feeder/images/Kahlua_Window.jpg" alt="">
+            <img src="/cat_feeder/images/kahlua_desk.jpg" alt="">
+        </div>
         <h2 class="content-header js-scroll fade-in">Hardware Used</h2>
         <ul class ="materiallist js-scroll fade-in">
             <li><a href="https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052674622&src=raspberrypi" target="_blank">Raspberry Pi 4 Model B</a></li>
@@ -53,20 +61,33 @@
                 Cereal dispenser</a></li>
         </ul>
         <br>
-        <h2 class="content-header js-scroll fade-in">FreeCad Chassis Design</h2>
-
-        <h2 class="content-header js-scroll fade-in">Hardware Configuration & Control</h2>
-        
-        <h2 class="content-header js-scroll fade-in">Python Hardware Interface</h2>
-
-        <h2 class="content-header js-scroll fade-in">Flask Web Application</h2>
-        
+        <h2 class="content-header js-scroll fade-in">The prototype</h2>
+        <div class="prototype-content-container js-scroll fade-in">
+            <br>
+            <p>The actial chasis that houses all the components was made just using 
+                <a href="https://www.target.com/p/10pk-28-34-x-22-34-poster-board-white-up-38-up-8482/-/A-17089030" style="text-decoration: none; font-style:italic;" target="_blank">
+                PosterBoard material from Target</a>. It is, by no means, a <i>great</i> or even really <i>good</i> chasis, it was just cheap and easy to make (using only a box cutter, hot glue gun, and some electrical tape). 
+                This would be one of the first things I would try and improve, but given the limitations I had in my little apartment, it suffices. In any case, the point of the project 
+                is the hardware and software.
+            </p>
+            <img id="img1" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_front.jpg" alt="">
+            <img id="img2" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_rear_closed.jpg" alt="">
+            <p>Inside there is a Raspberry Pi that is connected to various other hardware devices. Two pins on the Pi are connected to the 2 inputs on the motor driver board, allowing the Pi 
+                to control the DC motor. There is a hardware switch directly inline with the 12V supply, so you can manually disconnect power without unplugging. The 12V power 
+                connects directly to the 12V motor driver and a 12V to 5V converter with a USB output so the Pi be powered easily with a USB C cable. The distance sensor and character LCD are provided 5V
+                 via the Pi. The LCD screen communicates with the Pi using I2C protocol. The Ultrasonic sensor is sent a "TRIGGER" signal, and the response time of the "ECHO" signal is used to compute the 
+                 distance. 
+            </p>
+            <img id="img3" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_1.jpg" alt="">
+            <img id="img4" class = "js-scroll fade-in" src="/cat_feeder/images/prototype_back_2.jpg" alt="">
+        </div>
+        <h2 class="content-header js-scroll fade-in">The software</h2>
         <div class="soft-imgs-container">
-            <img src="./graphics/Webapp_login_screenshot.PNG" class="software-image js-scroll fade-in" alt="login screen">
+            <img src="/cat_feeder/images/Webapp_login_screenshot.PNG" class="software-image js-scroll fade-in" alt="login screen">
             <br><p>The web app has a simple login feature. It's not very advanced, the username and password are hard coded, but this system is intended for local network usage, so that's fine.</p><br>
-            <img src="./graphics/Webapp_home_screenshot.PNG" class="software-image js-scroll fade-in" alt="home page">
+            <img src="/cat_feeder/images/Webapp_home_screenshot.PNG" class="software-image js-scroll fade-in" alt="home page">
             <br><p>You can set 2 different automated feed times, and trigger a manual feed with 3 different size options.</p><br>
-            <img src="./graphics/Webapp_log_screenshot.PNG" class="software-image js-scroll fade-in" alt="log viewer">
+            <img src="/cat_feeder/images/Webapp_log_screenshot.PNG" class="software-image js-scroll fade-in" alt="log viewer">
             <br><p>There is a log viewer so you can track feeds as well.</p> <br>
         </div>
         <p>The code for this project can be viewed <a href="https://github.com/Sammich10/catFeed" target="_blank">here</a> on GitHub</p>
