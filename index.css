@@ -17,11 +17,14 @@ body{
 .top-section {
     font-family: 'Ubuntu Mono', monospace;
     background: rgb(10,10,10);
-    background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(10, 10, 10) 55%, rgba(24,24,24,1) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(10, 10, 10) 55%, rgba(34,34,34,1) 100%);
     width:100%;
     height: 110vh;
     min-height: 1200px;
     animation: fade-in .25s;
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+    border-bottom-color: rgba(13, 255, 0, 0.6);
 }
 
 .navbar {
@@ -87,7 +90,7 @@ body{
 }
 
 .header-container h1{
-    font-size: 4vw;
+    font-size: 5vw;
 }
 
 .typed-text-header{
@@ -127,7 +130,7 @@ body{
     background-color: rgb(200, 200, 200);
     color: rgb(200, 200, 200);
     width: 2vw;
-    height: 4.0vw;
+    height: 5.0vw;
     margin-left: 5px;
     font-size: 4vw;
     font-weight: bold;
@@ -169,11 +172,11 @@ body{
 
 .view-content-button{
     text-align: center;
+    opacity: 0;
     font-size: 2rem;
     text-decoration: none;
     transition: ease .1s;
     color: rgb(180, 180, 180);
-    animation: fade-in .75s ease-in-out both;
 }
 
 .view-content-button:hover{
@@ -182,9 +185,137 @@ body{
     transition: ease .3s;
 }
 
+#cursor2{
+    margin-bottom: 3%;
+    height: 90px;
+}
+
+.portfolio-container{
+    background: rgb(10,10,10);
+    background: linear-gradient(180deg, rgba(34,34,34,1) 0, rgba(10,10,10,1) 55%, rgba(10,10,10,1) 100%);
+    padding-top: 10%;
+    padding-bottom: 10%;
+    min-height: 720px;
+    padding-bottom: 20vh;
+    display: block;
+    justify-content: center;
+    color: rgb(200, 200, 200);
+    padding-bottom: 40vh;
+    margin-bottom: 20vh;
+    border-bottom: solid;
+    border-bottom-width: 20px;
+    border-bottom-color: rgba(13, 255, 0, 0.6);
+}
+
+.portfolio-title{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 80pt;
+    text-align: center;
+    margin-bottom:2%;
+    padding-left:2vw;
+}
+
+.portfolio-description{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 16pt;
+    text-align: center;
+}
+.info-card {
+    display: flex;
+    height: 40vh;
+    min-height: 160px;
+    width: 80vw;
+    min-width: 480px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(13, 255, 0, 0.658);
+    border-radius: 5px;
+    transition: all .15s ease ;
+    background-color: #212121;
+    color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    border-color:rgba(0, 255, 94, 0.668)
+}
+
+.info-card p{
+    font-size: 2vh;
+}
+
+.portfolio-container .info-card:hover {
+    transform: translate3D(0,-1px,0) scale(1.05) ;
+    transition: all .15s ease ;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.30), 0 6px 6px rgba(0, 0, 0, 0.22);
+}
+
+.info-card-picture{
+    box-shadow: 0 19px 38px rgba(0,0,0,.30), 0 15px 12px rgba(0,0,0,.22);
+    height: 100%;
+    width: 35%;
+    border-radius: 3px;
+}
+
+.card-header-link{
+    color: #ffffff;
+
+    text-decoration: none;
+    font-style: none;
+}
+
+.card-header-link:hover{
+    color: inherit;
+    text-decoration: none;
+    transform:scale(1.025);
+    transition: ease-out 1s;
+}
+
+.info-card a{
+    color: #ffffff;
+
+    font-style: italic;
+}
+
+.card1header{
+    margin: 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card1content{
+    overflow: auto;
+    margin: 15px;
+    font-size: 110%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card2header{
+    margin: 15px;
+    padding-top: 15px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card2content{
+    overflow: auto;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 110%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card3header{
+    margin: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card3content{
+    margin: 15px;
+}
+
 .about-section-container{
     font-family: 'Roboto Condensed', sans-serif;
-    min-height: 100vh;
+    margin-bottom: 15vh;
     display: block;
     justify-content: center;
     margin-top: 3vh;
@@ -201,20 +332,20 @@ body{
     text-align: center;
     font-size: 26pt;
     font-size: 2.6vh;
-    width: 65%;
+    width: 75%;
     margin: auto;
     margin-top: 50px;
 }
 
 .grid-pictures{
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
     margin-bottom: 45px;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(8, 10vh);
-    grid-template-rows: repeat(8, 2vw);
-    grid-gap: 20px;
+    grid-template-columns: repeat(5, 25vh);
+    grid-template-rows: 25vh;
+    grid-gap: 1vw;
 }
 
 .grid-image{
@@ -235,125 +366,38 @@ body{
 }
 
 .grid-image:hover{
-    transform: scale(1.02);
+    transform: scale(1.05);
     transition: ease-out 1s;
 }
 
 .image1 {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 5;
-    object-fit: cover;
-    padding-top: -30px;
-    
+    grid-row-end: 2;
 }
 
 .image2 {
-    grid-column-start: 5;
-    grid-column-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 5;
-    object-fit: cover;
+    grid-row-end: 2;
 }
 
 .image3 {
-    grid-column-start: 7;
-    grid-column-end: 9;
+    grid-column-start: 3;
+    grid-column-end: 5;
     grid-row-start: 1;
-    grid-row-end: 5;
-    object-fit: cover;
+    grid-row-end: 2;
+    object-fit:fill;
+    padding-top: 25%;
 }
 
 .image4 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 5;
-    grid-row-end: 9;
-    object-fit: cover;
-}
-
-.image5 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 5;
-    grid-row-end: 9;
-    object-fit: fill;
-    padding-top: 5px;
-}
-
-.image6{
     grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 5;
-    grid-row-end: 9;
-    object-fit: cover;
-}
-
-.image7 {
-    grid-column-start: 7;
-    grid-column-end: 9;
-    grid-row-start: 5;
-    grid-row-end: 9;
-    object-fit: cover;
-}
-
-.qualifications-section{
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    min-height: 100vh;
-}
-
-.qualifications-title{
-    margin: 1vh;
-    margin-top: 5vh;
-    padding-top: 6vh;
-    text-align: center;
-    font-size: 60pt;
-    font-size: 9vh;
-}
-
-.q-header{
-    margin: 3vh;
-    margin-top: 3vh;
-    text-align: center;
-    font-size: 20pt;
-    font-size: 3vh;
-}
-
-.q-card-container{
-    display: flex;
-    justify-content: center;
-}
-
-.q-card{
-    background: linear-gradient(to right, rgb(24, 235, 102) 34%, white 65%);
-    background-size: 300% 100%;
-    background-position: right bottom;
-    height: 50px;
-    width: 150px;
-    margin: 10px;
-    border-radius: 3px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px;
-    transition: ease-in .5s;
-}
-
-.q-card:hover{
-    background-position: left 10% bottom;
-    box-shadow: 2.5px 2.5px 2.5px 2.5px;
-    transition: ease-out .5s;
-    cursor: pointer;
-}
-
-.q-card-text{
-    font-weight: bold;
-    text-align: center;
-    font-size: 24pt;
-}
-
-.qualifications-section p{
-    margin: 2vh;
-    font-size: 2.4vh;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .contact-links{
@@ -426,18 +470,6 @@ body{
     text-align: center;
 }
 
-.portfolio-container{
-    background: rgb(10,10,10);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(34,34,34,1) 2%, rgba(10,10,10,1) 55%, rgba(10,10,10,1) 100%);
-    margin-top: 10%;
-    padding-top: 10%;
-    min-height: 720px;
-    padding-bottom: 20vh;
-    display: block;
-    justify-content: center;
-    color: rgb(200, 200, 200);
-}
-
 .js-type{
     display: flex;
     align-items: flex-end;
@@ -448,106 +480,6 @@ body{
     animation: type 2s;
 }
 
-#cursor2{
-    margin-bottom: 3%;
-    height: 90px;
-}
-
-.portfolio-title{
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 80pt;
-    text-align: center;
-    margin-bottom:2%;
-    padding-left:2vw;
-}
-
-.portfolio-description{
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 16pt;
-    text-align: center;
-}
-
-.info-card {
-    display: flex;
-    height: 30vh;
-    min-height: 160px;
-    width: 80vw;
-    min-width: 480px;
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, .5);
-    border-radius: 14px;
-    transition: all .75s ease ;
-    background-color: rgb(212, 212, 212);
-    color: black;
-}
-
-.info-card p{
-    font-size: 2vh;
-}
-
-.portfolio-container .info-card:hover {
-    transform: translate3D(0,-1px,0) scale(1.05) ;
-    transition: all .4s ease ;
-}
-
-.info-card-picture{
-    box-shadow: 0 30px 40px rgba(0,0,0,.1);
-    height: 30vh;
-    border-radius: 10px 1px 1px 10px;
-}
-
-
-.card-header-link{
-    color: inherit;
-    text-decoration: none;
-    font-style: none;
-}
-
-.card-header-link:hover{
-    color: inherit;
-    text-decoration: none;
-    transform:scale(1.025);
-    transition: ease-out 1s;
-}
-
-.info-card a{
-    color: inherit;
-    font-style: italic;
-}
-
-.card1header{
-    margin: 10px;
-}
-
-.card1content{
-    overflow: auto;
-    margin: 15px;
-    font-size: 110%;
-}
-
-.card2header{
-    margin: 15px;
-    padding-top: 15px;
-}
-
-.card2content{
-    overflow: auto;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 110%;
-}
-
-.card3header{
-    margin: 20px;
-    padding-top: 15px;
-}
-
-.card3content{
-    margin: 15px;
-}
 
 footer{
     min-height: 120px;
