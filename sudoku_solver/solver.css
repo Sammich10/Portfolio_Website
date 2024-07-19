@@ -1,0 +1,83 @@
+body {
+    background-color: rgb(64, 96, 120);
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 3rem;    
+    margin-bottom: 150px;
+}
+
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    width: 100%;
+}
+
+.grid-container {
+    gap: 10px;
+    position: relative; /* Need this for padding-bottom to work */
+    height: 100%;
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.puzzle{
+    border-collapse: collapse;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.puzzle tr:nth-child(3),
+.puzzle tr:nth-child(6) {
+    border-bottom: 2px solid black;
+}
+
+
+.puzzle td:nth-child(3),
+.puzzle td:nth-child(6){
+    border-right: 2px solid black;
+}
+
+.puzzle tr,
+.puzzle tr td {
+    width: 11.11111%;
+    height: 11.11111%;
+    border: 1px solid black;
+    border-color: rgba(0,0,0,0.6);
+}
+
+.puzzle td {
+    text-align: center;
+    cursor: pointer;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.buttons{
+    background-color: seagreen;
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    height: auto;
+}
+
+.buttons button{
+    margin: 5px;
+}
+
+.solve-button {
+    display: flex;
+    justify-content: center;
+}
