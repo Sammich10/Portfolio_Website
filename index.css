@@ -286,6 +286,8 @@ body{
     font-style: normal;
     font-variation-settings:
         "slnt" 1;
+    min-height: 80vh;
+
 }
 
 .about-me-header{
@@ -376,6 +378,7 @@ body{
     font-style: normal;
     font-variation-settings:
         "slnt" 1;
+    min-height: 80vh;
 }
 
 .contact-header{
