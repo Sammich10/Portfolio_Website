@@ -1,13 +1,9 @@
 *{
     box-sizing: border-box;
-    margin:0;
-    padding:0;
     font-family: 'Kumbh Sans', sans-serif;
     scroll-behavior: smooth;
     font-family: 'Georama', sans-serif;
-    animation: fade-in .4s ease-out;
     scroll-behavior: smooth;
-    transition: .1s ease;
 }
 a{
     color:rgba(14,14,14,0.7)
@@ -16,31 +12,26 @@ a{
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(255,255,255,1) 100%);
 }
+
+body {
+    background-color: rgb(243, 243, 243);
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 900px;
+    margin: 0;
+}
+
 .navbar {
-    height: 50px;
-    z-index: 99999;
     display: flex;
     justify-content: center;
-    font-size: 20pt;
-}
-
-.navbar a{
-    color: white;
-}
-
-.navbar li{
-    color:white;
-    cursor: pointer;
-}
-
-.navbar-container {
-    justify-content: center;
-    display:flex;
-    height: 50px;
-    z-index: 999;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 60px;
     width: 100%;
-    margin: auto;
-    padding: 0 50px;
+    position: relative;
 }
 
 .navbar-menu {
@@ -49,89 +40,93 @@ a{
     list-style: none;
     min-width: 360px;
     justify-content: center;
-    animation: fadeInExpand 1.15s ease-in-out;
 }
 
-.navbar-items { 
-    width: 160px;
+.navbar-items {
+    display: flex;
     justify-content: center;
-    margin-left: 1vw;
-    margin-right: 1vw;
+	align-content: flex-end;
+    width: 15vw;
     position: relative;
-    top:30%;
-    text-align: center;
-}
-.navbar-items a{
-    text-decoration: none;
-}
-
-.navbar-items:hover li{
-    animation: fadeOut 1.15s ease-out;
-    opacity: .5;
-}
-
-.navbar-link:hover{
-    animation: fadeOut 1.15s ease-out;
-    opacity: .5;
-}
-/*dropdown menu content*/
-.dropdown-content a {
-    float: none;
-    display: block;
 }
 
 .dropdown-content {
-    animation: fadeOutShrink .25s ease-in;
     display: none;
     position: absolute;
-    z-index: 999;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    background-color: white;
-    border-radius: 25px;
-}
-
-.dropbtn:hover .dropdown-content{
-    padding-top: 15%;
-    display:block;
-    animation: fadeInExpand .25s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    right: -30%;
-    left: -30%;
-    z-index: 999;
-    opacity: 1;
-    background-color: black;
-}
-
-.dropdown-content{
-    font-size: 1.4rem;
-}
-.dropdown-content a{
-    margin-bottom:10%
-}
-/*dropdown menu content*/
-
-.hero{
-    animation: none;
-    height: 30vh;
+    top:100%;
+    transform: translateY(10px);
+    opacity: 0;
+    background-color: aliceblue;
+	box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
     width: 100%;
-    display:flex;
+    left: 0;
+    right: 0;
+	transition: all 0.5s ease;
+}
+  
+.navbar-items.dropdown:hover .dropdown-content {
+	display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+	opacity: 1;
+	transform: translateY(0);
 }
-.hero-header{
-    font-size: 6rem;
-    font-size: 7vw;
-    animation: fade-in-bottom .8s ease-out;
-    color: whitesmoke;
-    margin-bottom: 10vh;
+
+.dropdown-content a {
+	transition: all 0.3s ease;
+	display: block;
+	padding: 10px;
+	color: black;
+	text-decoration: none;
+	position: relative;
+	z-index: 999;
+	margin:20px;
+  }
+
+.navbar-items a {
+    color: black;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+	text-decoration: none;
 }
+
+.navbar-items a:hover {
+	color: deepskyblue;
+}
+
+.header-container{
+    margin: 3vh;
+    font-size: 4.4vh;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor{
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    width: 2vw;
+    height: 5.0vw;
+    margin-left: 5px;
+    font-size: 4vw;
+    font-weight: bold;
+    bottom: 0;
+    right: -10px;
+    animation: cursor 1s step-end infinite;
+    visibility: hidden;
+    position: relative;
+    top: -5px;
+}
+
+@keyframes cursor {
+    from, to { visibility: hidden; }
+    35% { visibility: visible; }
+}
+
 .content-container{
     justify-content: center;
     text-align: center;
@@ -148,6 +143,78 @@ a{
 }
 .content-container p{
     font-size: 1.6rem;
+}
+.tabs {
+	list-style: none;
+	margin-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	width: 100%;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 8px;
+	display: flex;
+	justify-content: space-between;
+}
+.tab-nav {
+	background-color: #ffffff;
+	width: 33%;
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	border-radius: 6px 6px 0 0;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: ease-in-out 0.4s;
+}
+.tab-nav a{
+	text-decoration: none;
+	color: var(--primary-text-color);
+	display: block;
+    padding: 2.4%;
+    width: 100%;
+    height: 100%;
+}
+.tab-nav.active {
+	opacity: 1;
+	border-radius: 12px 12px 0 0;
+	transition: ease-in 0.2s;
+}
+.tab-nav:hover{
+	opacity: 1;
+	border-radius: 12px 12px 0 0;
+	cursor: pointer;
+	transition: ease-in 0.2s;
+}
+.tab-content.active {
+
+}
+.tab-content.hidden{
+	opacity: 0;
+	transition: all ease-out var(--tab-transition_time);
+}
+.tab-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	opacity: 1;
+	transition: all ease-in var(--tab-transition_time);
+	border-left: 2px solid var(--pimrary-app-window-border-color);;
+	border-right: 2px solid var(--pimrary-app-window-border-color);;
+	border-bottom: 2px solid var(--pimrary-app-window-border-color);;
+	border-radius: 0 0 12px 12px;
+	width: 75%;
+	background-color: var(--primary-app-window-color);
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 50vh;
+}
+.tab-nav, .tab-content{
+	box-sizing: border-box;
+	border-width: 2px;
 }
 .schematic-img{
     margin: 50px;
@@ -376,14 +443,6 @@ Animations
 }
 
 @media screen and (max-width:960px) {
-    .hero{
-        height: 18vh;
-    }
-    .hero-header{
-        font-size: 6rem;
-        font-size: 7vw;
-        margin-bottom: 6vh;
-    }
     .content-container{
         width: 90%;
     }

@@ -3,7 +3,6 @@
     margin:0;
     padding:0;
     scroll-behavior: smooth;
-      
 }
 
 body{
@@ -11,7 +10,6 @@ body{
     width: 100%;
     min-width: 530px;
     max-width: 100%;
-    
 }
 
 .top-section {
@@ -19,12 +17,8 @@ body{
     background: rgb(10,10,10);
     background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(10, 10, 10) 55%, rgba(34,34,34,1) 100%);
     width:100%;
-    height: 110vh;
-    min-height: 1200px;
+    height: 100vh;
     animation: fade-in .25s;
-    border-bottom-style: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: rgba(13, 255, 0, 0.6);
 }
 
 .navbar {
@@ -61,20 +55,30 @@ body{
     position: relative;
     top:30%;
     text-align: center;
-    animation: fadeIn .25s ease-in;
+    transition: .55s ease-out;
+    
 }
 
 .navbar-items:hover{
-    animation: fadeOut .75s ease-out;
-    opacity: .45;
+    transform: scaleX(1.1);
+    transition: .55s ease-in-out;
+}
+
+.navbar-items a:hover{
+    color:rgb(0, 255, 94);
+    opacity: .65;
+    cursor: pointer;
+    transform: scaleX(1.1);
+    transition: .55s ease-in-out;
 }
 
 .navbar-items a{
     text-align: center;
-    font-size: 16pt;
+    font-size: 2vw;
     font-size: 1.2vw;
     color: white;
     text-decoration: none;
+    transition: all 0.5s ease-out;
 }
 
 .header-container{
@@ -90,40 +94,7 @@ body{
 }
 
 .header-container h1{
-    font-size: 5vw;
-}
-
-.typed-text-header{
-    display: flex;
-    padding-left: 2vw;
-}
-
-.typed-text-intro{
-    display: flex;
-    justify-content: center;
-    padding-left: 1.2vw;
-    position: relative;
-    top: 5vh;
-}
-
-#typed-text1{
-    color: rgb(200, 200, 200);
-    animation:type 2s;
-    white-space: pre;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-}
-
-#typed-text2{
-    color: rgb(200, 200, 200);
-    font-size: 2.2vw;
-    animation:type 2s;
-    white-space: pre;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    font-size: 2vw;
+    font-size: 6vw;
 }
 
 .cursor{
@@ -142,17 +113,6 @@ body{
     top: -5px;
 }
 
-#cursor1{
-    opacity: 0;
-    height: 2.2vw;
-    width: 1.2vw;
-    position:relative; 
-    top: -.2vw;
-}
-
-@keyframes type{
-    from {width: 0;}
-}
 @keyframes cursor {
     from, to { visibility: hidden; }
     35% { visibility: visible; }
@@ -161,164 +121,171 @@ body{
 .view-content-button-container{
     position: relative;
     top: 30vh;
-    width: 220px;
+    width: 10vw;
     bottom: -15vh;
     text-align: center;
     width: 50%;
     margin: 0 auto;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    padding-left: auto;
+    padding-right: auto;
+    transition: .55s ease-out;
+}
+
+.view-content-button-container:hover{
+    transform: scaleX(1.1);
+    transition: .55s ease-in-out;
 }
 
 .view-content-button{
     text-align: center;
-    opacity: 0;
-    font-size: 2rem;
+    font-size: 2vw;
+    font-size: 1.8vw;
+    color: white;
     text-decoration: none;
-    transition: ease .1s;
-    color: rgb(180, 180, 180);
+    transition: all 0.5s ease-out;
 }
 
 .view-content-button:hover{
-    font-size: 1.9rem;
-    opacity: 70%; 
-    transition: ease .3s;
+    color:rgb(0, 255, 94);
+    opacity: .65;
+    cursor: pointer;
+    transition: .55s ease-in-out;
 }
 
-#cursor2{
-    margin-bottom: 3%;
-    height: 90px;
-}
-
-.portfolio-container{
+.project-container{
     background: rgb(10,10,10);
     background: linear-gradient(180deg, rgba(34,34,34,1) 0, rgba(10,10,10,1) 55%, rgba(10,10,10,1) 100%);
-    padding-top: 10%;
-    padding-bottom: 10%;
-    min-height: 720px;
-    padding-bottom: 20vh;
+    padding-top: 5%;
     display: block;
     justify-content: center;
     color: rgb(200, 200, 200);
-    padding-bottom: 40vh;
-    margin-bottom: 20vh;
-    border-bottom: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: rgba(13, 255, 0, 0.6);
+    padding-bottom: 5%;
 }
 
-.portfolio-title{
+.project-title{
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 80pt;
+    font-size: 8vw;
     text-align: center;
     margin-bottom:2%;
     padding-left:2vw;
 }
 
-.portfolio-description{
+.project-description{
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 16pt;
+    font-size: 1.2vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     text-align: center;
 }
+
 .info-card {
     display: flex;
+    flex-direction: row;
     height: 40vh;
-    min-height: 160px;
     width: 80vw;
-    min-width: 480px;
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    box-shadow: 0 4px 4px rgba(13, 255, 0, 0.658);
-    border-radius: 5px;
-    transition: all .15s ease ;
-    background-color: #212121;
-    color: #ffffff;
     border-style: solid;
-    border-width: 2px;
-    border-color:rgba(0, 255, 94, 0.668)
+    border-width: 1px;
+    border-color:rgba(13, 255, 0, 0.295);
+    box-shadow: 0 3px 3px 1px rgba(13, 255, 0, 0.295);
+    border-radius: 5px;
+    transition: all .35s ease ;
+    background-color: #212121;
 }
 
 .info-card p{
+    color: #ffffff;
     font-size: 2vh;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 1;
 }
 
-.portfolio-container .info-card:hover {
-    transform: translate3D(0,-1px,0) scale(1.05) ;
-    transition: all .15s ease ;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.30), 0 6px 6px rgba(0, 0, 0, 0.22);
+.project-container .info-card:hover {
+    transform: scale(1.02) ;
+    box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.30);
+    transition: .35s ease;
 }
 
 .info-card-picture{
-    box-shadow: 0 19px 38px rgba(0,0,0,.30), 0 15px 12px rgba(0,0,0,.22);
     height: 100%;
     width: 35%;
-    border-radius: 3px;
+    object-fit: contain;
+    background-color: black;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
 }
 
-.card-header-link{
-    color: #ffffff;
+.card-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
 
-    text-decoration: none;
+.card-content h2{
+    font-size: 3.2vh;
+    margin-bottom: 1vh;
+}
+
+.card-content h2 a{
+    margin: 0;
+}
+
+.card-content p{
+    font-size: 2vh;
+    margin-bottom: 2vh;
+}
+
+.card-content a{
     font-style: none;
+    text-decoration: none;
+    color: #ffffff;
+    height: auto;
+    margin-bottom: 1vh;
+}
+
+.card-content p a{
+    font-style: none;
+    text-decoration: none;
+    color: rgb(0, 255, 94);
 }
 
 .card-header-link:hover{
-    color: inherit;
+    color: rgb(0, 255, 94);
     text-decoration: none;
     transform:scale(1.025);
     transition: ease-out 1s;
 }
 
-.info-card a{
+.card-header-link{
     color: #ffffff;
-
-    font-style: italic;
+    text-decoration: none;
+    font-style: none;
+    cursor: pointer;
+    transition: ease-in-out .35s;
 }
 
-.card1header{
-    margin: 10px;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.card1content{
-    overflow: auto;
-    margin: 15px;
-    font-size: 110%;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.card2header{
-    margin: 15px;
-    padding-top: 15px;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.card2content{
-    overflow: auto;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 110%;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.card3header{
-    margin: 20px;
-    padding-top: 15px;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.card3content{
-    margin: 15px;
+.spacer{
+    background: linear-gradient(rgba(10,10,10,1) 0%, rgb(4, 85, 22) 35%, #ffffff5c 100%);
+    height: 25vh;
 }
 
 .about-section-container{
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-bottom: 15vh;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 3vh;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 1;
 }
 
 .about-me-header{
@@ -330,42 +297,43 @@ body{
 
 .about-me-content{
     text-align: center;
-    font-size: 26pt;
-    font-size: 2.6vh;
+    font-size: 2.8vh;
     width: 75%;
     margin: auto;
-    margin-top: 50px;
+    padding-top: 8vh;
+    padding-bottom: 6vh;
 }
 
 .grid-pictures{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(5, 25vh);
-    grid-template-rows: 25vh;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
     grid-gap: 1vw;
+    width: 80vw;
 }
 
 .grid-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     transform: scale(1);
     transition: ease-out 1s;
     border-radius: 3px;
+    aspect-ratio: 1/1;
 }
 
 .grid-image img{
     flex-shrink: 0;
-    min-width: 100%;
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
     max-width: 100%;
+    object-fit: cover;
     transition: ease-out 1s;
 }
 
-.grid-image:hover{
+.grid-image img:hover{
     transform: scale(1.05);
     transition: ease-out 1s;
 }
@@ -374,61 +342,89 @@ body{
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 1;
 }
 
 .image2 {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 1;
 }
 
 .image3 {
     grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 2;
-    object-fit:fill;
-    padding-top: 25%;
+    grid-row-end: 1;
 }
 
 .image4 {
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 1;
+}
+
+.contact-section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3vh;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 1;
+}
+
+.contact-header{
+    text-align: center;
+    font-size: 44pt;
+    font-size: 8vh;
+    padding-top: 50px;
+}
+
+.contact-content{
+    text-align: center;
 }
 
 .contact-links{
-    padding-top: 5vh;
-    padding-bottom:10vh;
-    height:300px;
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
 }
 
-.boxes {
-    margin: 25px;
-    animation: fadeInExpand .5s ease-out;
-    background-color: white;
-    border-radius: 15px;
-    height: 200px;
-    width: 200px;
+.contact-link {
+    height: 20vh;
+    width: 20vh;
+    margin-left: 2.4vw;
+    margin-right: 2.4vw;
+    transition: ease-in-out 1s;
+    text-align: center;
+    text-decoration: none;
 }
 
-.boxes:hover{
-    animation: fadeOutShrink .5s ease-in-out;
+.contact-link p{
+    margin-top: 3px;
+    color: black;
+    font-size: 2vh;
+}
+
+.contact-link:hover{
     opacity: .8;
     transform: scale(.9);
+    transition: 0.5s ease-in-out;
 }
 
-.contact-link{
-    margin-left: 15px;
-    margin-right: 15px;
+.icon-link {
+    margin: 0;
+    animation: fadeInExpand .5s ease-out;
+    height: 20vh;
+    width: 20vh;
 }
 
-.box1{
+.LinkedIn-link{
     background-image:url("images/linkedinlogo.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -436,31 +432,25 @@ body{
 }
 
 
-.box2{
+.GitHub-link{
     background-image:url("images/githublogo.png");
     background-repeat: no-repeat;
     background-size: 135% 80%;
     background-position: center;
 }
 
-.box3{
-    margin: 25px;
-    background-color: white;
-    border-radius: 15px;
-    height: 200px;
-    width: 200px;
+.Resume-link{
     background-image: url("images/downloadicon.png");
     background-repeat: no-repeat;
     background-size: 80% 80%;
     background-position: center;
-    animation: slide-up .25s ease-in-out;
+    transition: 1.25s ease-in-out;
 }
 
-.box3:hover{
-    animation: slide-down .5s ease-in;
+.Resume-link:hover{
     transform: translateY(10%);
     opacity: .9;
-    
+    transition: 0.25s ease-in-out;
 }
 
 .download-link{
@@ -480,12 +470,12 @@ body{
     animation: type 2s;
 }
 
-
 footer{
     min-height: 120px;
     text-align: center;
     background-color: rgb(160, 160, 160);
     padding-bottom: 10px;
+    margin-top: 20vh;
 }
 
 footer p{
@@ -623,20 +613,20 @@ footer p{
         height: 120px;
     }
 
-    .portfolio-title{
+    .project-title{
         font-size: 52pt;
         margin-bottom: 2vh;
     }
 
-    .portfolio-description{
+    .project-description{
         margin-bottom: 2vh;
     }
 
-    .portfolio-container{
+    .project-container{
         margin-top: 5vh;
         padding-top: 30%;
     }
-    .portfolio-container.slide-left{
+    .project-container.slide-left{
         transform: translateX(10px);
     }
 

@@ -24,12 +24,32 @@
                 <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
             </table>
         </div>
+        <div class="stats" id="statis-display">
+            <h1 class="stats-title">Statistics</h1>
+            <p class="stats-text" id="stats-text"></p>
+        </div>
     </div>
     <div class="bottom">
-        <button class="buttons" onclick="solvePuzzle()" id="solve-button">
-            <h2 class="solve-button-text">Solve</h2>
-        </button>
+        <div class="buttons-container">
+            <button type="button" class="buttons" onclick="solvePuzzle()" id="solve-button">
+                <h2 class="solve-button-text">Solve</h2>
+            </button>
+            <button type="button" class="buttons" onclick="clearPuzzle()" id="clear-button">
+                <h2 class="clear-button-text">Clear</h2>
+            </button>
+        </div>
+        
+        <label for="showTries">
+            <input type="checkbox" onchange="toggleCheckbox(this)" name="showTries" id="checkbox">
+            Show Tries</label>
+        <div class="algorithm-select">
+            <select title="Algorithm" id="algorithm" class="algorithmselect">
+                <option value="0">Brute Force</option>
+                <option value="1">CSP Backtracking</option>
+                <option value="2">CSP Backtracking with MRV Heuristic</option>
+            </select>
+        </div>
     </div>
-</body>
+    </body>
 <script type="text/javascript" src="solver.js"></script>
 </html>
