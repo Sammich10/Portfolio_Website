@@ -2,8 +2,8 @@ import { handleTypeAnimation } from '../shared/typed_text.js';
 import { handleScrollAnimation } from '../shared/scroll_behavior.js';
 import { handleNavClick } from '../shared/navbar_behavior.js';
 
-const default_tab = 'tabPrototypeNav';
-const default_tab_content = 'tabPrototype';
+const default_tab = 'tabHistoryNav';
+const default_tab_content = 'tabHistory';
 
 document.addEventListener('DOMContentLoaded', async function() {
     // Get all the elements marked with the class .js-type

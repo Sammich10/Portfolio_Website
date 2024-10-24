@@ -9,6 +9,11 @@ dropdownLink.addEventListener('mouseout', () => {
   dropdownMenu.style.display = 'none';
 });
 
+/**
+ * Handles a click event on a tab navigation element
+ * @param {MouseEvent} e - The event object of the click event
+ */
+
 export async function handleNavClick(e)
 {
   // Get a list of all the tab navigation elements

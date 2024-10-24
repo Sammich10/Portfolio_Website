@@ -1,7 +1,7 @@
 import { elementInView } from "./utils.js";
 
 // Set how many visible pixels must be in view for an element to be displayed
-const scrollOffset = 150; 
+const scrollOffset = 1; 
 
 /**
  * Handle scroll animations for all elements with class "js-scroll"

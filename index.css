@@ -55,21 +55,12 @@ body{
     position: relative;
     top:30%;
     text-align: center;
-    transition: .55s ease-out;
-    
+    transition: transform 1.5s ease-in-out;
 }
 
 .navbar-items:hover{
     transform: scaleX(1.1);
-    transition: .55s ease-in-out;
-}
-
-.navbar-items a:hover{
-    color:rgb(0, 255, 94);
-    opacity: .65;
-    cursor: pointer;
-    transform: scaleX(1.1);
-    transition: .55s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
 .navbar-items a{
@@ -78,7 +69,13 @@ body{
     font-size: 1.2vw;
     color: white;
     text-decoration: none;
-    transition: all 0.5s ease-out;
+    transition: color 1.5s ease-in-out;
+}
+
+.navbar-items a:hover{
+    color:rgb(0, 255, 94);
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
 }
 
 .header-container{
@@ -190,10 +187,10 @@ body{
     border-style: solid;
     border-width: 1px;
     border-color:rgba(13, 255, 0, 0.295);
-    box-shadow: 0 3px 3px 1px rgba(13, 255, 0, 0.295);
+    box-shadow: 0 2px 1px 1px rgba(13, 255, 0, 0.295);
     border-radius: 5px;
-    transition: all .35s ease ;
     background-color: #212121;
+    transition: opacity 3s ease-in-out, transform .35s ease-in-out;
 }
 
 .info-card p{
