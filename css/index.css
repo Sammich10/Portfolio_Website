@@ -3,7 +3,6 @@
     margin:0;
     padding:0;
     scroll-behavior: smooth;
-      
 }
 
 body{
@@ -11,23 +10,20 @@ body{
     width: 100%;
     min-width: 530px;
     max-width: 100%;
-    
 }
 
-.top-section {
+.header-content {
     font-family: 'Ubuntu Mono', monospace;
     background: rgb(10,10,10);
     background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(10, 10, 10) 55%, rgba(34,34,34,1) 100%);
     width:100%;
     height: 110vh;
     min-height: 1200px;
-    animation: fade-in .25s;
-    border-bottom-style: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: rgba(13, 255, 0, 0.6);
+    animation: fade-in 2.25s;
 }
 
 .navbar {
+    animation: fadeIn .5s ease-in;
     height: 90px;
     z-index: 99999;
     display: flex;
@@ -56,103 +52,131 @@ body{
     height: 30px;
     width: 15vw;
     justify-content: center;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 1vh;
+    margin-right: 1vh;
     position: relative;
     top:30%;
     text-align: center;
-    animation: fadeIn .25s ease-in;
+    transition: opacity .5s ease-in-out;;
 }
 
-.navbar-items:hover{
-    animation: fadeOut .75s ease-out;
-    opacity: .45;
+.navbar-items:hover .navbar-link{
+    opacity: 0.65;
+    transition: opacity .5s ease-in-out;;
 }
 
 .navbar-items a{
+    color: white;
     text-align: center;
     font-size: 16pt;
-    font-size: 1.2vw;
-    color: white;
+    font-size: 1.5rem;
     text-decoration: none;
+    padding-bottom: 2vh;
 }
 
-.header-container{
-    display: flex;
+.navbar-items a .chevron-down{
+    position: relative;
+    height: 1.5rem;
+    transform: rotate(180deg);
+    transition: ease-out .6s;
+    top: 5px;
+    left: 5px;
+}
+
+.navbar-items:hover a .chevron-down{
+    transform: rotate(0deg);
+    transition: .3s ease-in-out;
+}
+
+.navbar-items .dropdown-content a{
+    color: white;
+    text-align: center;
+    font-size: 16pt;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 15vw;
+    height: fit-content;
+}
+
+.navbar-items .dropdown-content {
+    display: none;
+    position: relative;
+    padding-left: 1.2vh;
+    padding-right: 1.2vh;
+    margin-top: 2vh;
+    max-width: 15vw;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd;
+    opacity: 1;
+}
+
+.navbar-items:hover .dropdown-content {
+    display: block;
+    transform: opacity .5s ease-in-out;
+    opacity: 1;
+}
+
+.navbar-items .dropdown-content li {
+    list-style: none;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.navbar-items .dropdown-content li:hover{
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+
+.navbar-items .dropdown-content li:hover a{
+    color: black;
+    transition: all .5s ease-in-out;
+}
+
+.header-title{
+    animation: fadeIn 1s ease-in;
     width: auto;
-    height:500px;
-    height: 40vh;
+    height:35vh;
     padding-top: 20vh;
     text-align: center;
-    margin: auto;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     color: rgb(200, 200, 200);
-}
-
-.header-container h1{
     font-size: 5vw;
 }
 
-.typed-text-header{
+.header-typed-text-container{
+    animation: fadeIn 1s ease-in;
     display: flex;
-    padding-left: 2vw;
-}
-
-.typed-text-intro{
-    display: flex;
+    flex-direction: row;
+    align-content: center;
     justify-content: center;
-    padding-left: 1.2vw;
-    position: relative;
-    top: 5vh;
-}
-
-#typed-text1{
-    color: rgb(200, 200, 200);
-    animation:type 2s;
-    white-space: pre;
-    font-weight: bold;
+    margin-top: 3vh;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    position: relative;
-}
-
-#typed-text2{
+    height: 5.4vh;
+    font-size: 5vh;
     color: rgb(200, 200, 200);
-    font-size: 2.2vw;
-    animation:type 2s;
-    white-space: pre;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    font-size: 2vw;
 }
 
 .cursor{
     background-color: rgb(200, 200, 200);
     color: rgb(200, 200, 200);
-    width: 2vw;
-    height: 5.0vw;
-    margin-left: 5px;
-    font-size: 4vw;
+    width: 1.6vh;
+    height: 88%;
+    margin-left: 0.5vh;
     font-weight: bold;
-    bottom: 0;
+    top: 0px;
     right: -10px;
     animation: cursor 1s step-end infinite;
     visibility: hidden;
     position: relative;
-    top: -5px;
 }
 
-#cursor1{
-    opacity: 0;
-    height: 2.2vw;
-    width: 1.2vw;
-    position:relative; 
-    top: -.2vw;
-}
-
-@keyframes type{
-    from {width: 0;}
-}
 @keyframes cursor {
     from, to { visibility: hidden; }
     35% { visibility: visible; }
@@ -161,22 +185,34 @@ body{
 .view-content-button-container{
     position: relative;
     top: 30vh;
-    width: 220px;
+    width: fit-content;
     bottom: -15vh;
     text-align: center;
-    width: 50%;
-    margin: 0 auto;
     margin-top: 3vh;
     margin-bottom: 3vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .view-content-button{
+    padding: 2vh 2vw 2vh 2vw;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
     font-size: 2rem;
     text-decoration: none;
     transition: ease .1s;
     color: rgb(180, 180, 180);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.view-content-button img{
+    position: relative;
+    top: 0.5vh;
+    width: 1.5rem;
+    transition: ease-out .6s;
 }
 
 .view-content-button:hover{
@@ -185,9 +221,10 @@ body{
     transition: ease .3s;
 }
 
-#cursor2{
-    margin-bottom: 3%;
-    height: 90px;
+.view-content-button:hover img{
+    transform: translateY(1vh);
+    transition: ease .3s;
+    opacity: 70%;
 }
 
 .portfolio-container{
@@ -209,16 +246,21 @@ body{
 
 .portfolio-title{
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 80pt;
+    font-size: 16vh;
     text-align: center;
-    margin-bottom:2%;
-    padding-left:2vw;
+    transition: all .5s ease-in-out;
 }
 
 .portfolio-description{
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 16pt;
+    font-size: 2.8vh;
     text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: rgb(200, 200, 200);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    
 }
 .info-card {
     display: flex;
@@ -429,7 +471,7 @@ body{
 }
 
 .box1{
-    background-image:url("images/linkedinlogo.png");
+    background-image:url("../img/linkedinlogo.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position:0px 0px;
@@ -437,7 +479,7 @@ body{
 
 
 .box2{
-    background-image:url("images/githublogo.png");
+    background-image:url("../img/githublogo.png");
     background-repeat: no-repeat;
     background-size: 135% 80%;
     background-position: center;
@@ -449,7 +491,7 @@ body{
     border-radius: 15px;
     height: 200px;
     width: 200px;
-    background-image: url("images/downloadicon.png");
+    background-image: url("../img/downloadicon.png");
     background-repeat: no-repeat;
     background-size: 80% 80%;
     background-position: center;
@@ -502,7 +544,7 @@ footer p{
     .navbar-items a{
         font-size: 2.25vw;    
     }
-    .header-container h1{
+    .header-title h1{
         font-size: 5vw;
     }
     #typed-text2{

@@ -5,6 +5,7 @@
 
 .js-scroll.scrolled {
     opacity: 1;
+    transition: opacity .75s ease-in-out;
 }
 
 .scrolled.fade-in {

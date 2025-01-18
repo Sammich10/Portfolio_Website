@@ -5,54 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width , initial-scale=1">
     <title>Sam Michelsen's Website</title>
-    <link rel="stylesheet" href="index.css" class="stylesheet">
-    <link rel="stylesheet" href="./shared/scroll_behavior.css" class="stylesheet">
+    <link rel="stylesheet" href="css/index.css" class="stylesheet">
+    <link rel="stylesheet" href="css/scroll_behavior.css" class="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <script type="module" src="js/index.js"></script>
 </head>
 <body>
 
-<!-- Top Section -->
-<div class="top-section">
+<!-- Header Section -->
+ <header class = "header-content">
     <nav class="navbar">
         <div class="navbar-container">
             <ul class="navbar-menu">
                 <li class="navbar-items">
-                    <a href="#about-section-container" class="navbar-link">// About</a>
+                    <a href="#about-section-container" class="navbar-link">// About
+                        <img class = "chevron-down" src="img/chevron-down-white.png" alt="chevron down" class="chevron-down">
+                    </a>
+                        <ul class="dropdown-content">
+                            <li><a href="https://www.linkedin.com/in/sam-m-09b6a711a/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/Sammich10" target="_blank">GitHub</a></li>
+                            <li><a href="downloads/Michelsen, Samuel Resume 2022v3.pdf" download rel="noopener noreferrer" target="_blank" alt="download link for resume">Resume</a></li>
+                        </ul>
                 </li>
-                <li class="navbar-items">
+                <!-- <li class="navbar-items">
                     <a href="#qualifications" class="navbar-link">// Qualifications</a>
-                </li>
+                </li> -->
                 <li class="navbar-items">
-                    <a href="#portfolio-container" class="navbar-link">// Projects</a>
+                    <a href="#portfolio-container" class="navbar-link">
+                        // Projects
+                        <img class = "chevron-down" src="img/chevron-down-white.png" alt="chevron down" class="chevron-down">
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="sorting_vis/visualizer.html">Sorting Visualizer</a></li>
+                        <li><a href="cat_feeder/catfeederplus.html">Cat Feeder</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="header-container">
-        <header class="typed-text-header">
-            <h1 style="color:rgb(0, 238, 52);">~</h1><h1>$&nbsp;</h1>
-            <h1 id="typed-text1" data-text="Sam's Website"></h1>
-            <span class="cursor" id="cursor0"></span>
-        </header>
+    <h1 class="header-title">Sam Michelsen</h1>
+    <div class = "header-typed-text-container">
+        <span style="color:rgb(0, 238, 52);">~</span>
+        <span>$&nbsp;</span>
+        <span id="typed-text-header"></span>
+        <span class="cursor"></span>
     </div>
     <div class="view-content-button-container">
-        <a href="#portfolio-container" class="view-content-button" id="view-content-button">View Portfolio</a>
+        <a href="#portfolio-container" class="view-content-button" id="view-content-button">
+            View Portfolio
+            <img class = "chevron-down" src="img/chevron-down-white.png" alt="chevron down" class="chevron-down">
+        </a>
     </div>
-</div>
-<!-- End of Top Section -->
+</header>
+<!-- End of Header Section -->
 
 <!-- Portfolio Section -->
 <div class="portfolio-container" id="portfolio-container">
-    <header class="js-type" data-text="Projects!">
-        <h1 class="portfolio-title typed-text js-scroll fade-in" ></h1>
+    <header class="js-type portfolio-title" data-text="Projects!">
         <span class="cursor" id="cursor2"></span>
     </header>
-    <p class="portfolio-description js-scroll fade-in-bottom">Here are some projects I've worked on</p>
+    <p class="portfolio-description js-scroll fade-in-bottom">Some projects I've worked on</p>
     <div class="js-scroll slide-left">
         <div class="info-card">
-            <img src="images/sortingvisualizerpicture.PNG" alt="sorting visualizer picture" class="info-card-picture">
+            <img src="img/sortingvisualizerpicture.PNG" alt="sorting visualizer picture" class="info-card-picture">
             <div class="card1content">
                 <h2 class="card1header"><a href="sorting_vis/visualizer.html" class="card-header-link" target="_blank">Sorting Visualizer</a></h2>
                 <p class="card1content">This is a sorting visualizer that I extended from
@@ -66,7 +83,7 @@
     </div>
     <div class="js-scroll slide-left">
         <div class="info-card">
-            <img src="/images/kahlua_desk_cropped.jpg" alt="automated cat feeder" class="info-card-picture">
+            <img src="/img/kahlua_desk_cropped.jpg" alt="automated cat feeder" class="info-card-picture">
             <div class="card2content">
                 <h2 class="card2header"><a href="/cat_feeder/catfeederplus.html" class="card-header-link" target="_blank">catFeed: Automated Cat Feeder</a></h2>
                 <p class="card2content">This is an automated cat feeding device that I built, powered by a Raspberry Pi. The project features
@@ -81,7 +98,7 @@
     </div>
     <div class="js-scroll slide-left">
         <div class="info-card">
-            <img src="/images/kahlua_playing_laser.jpg" alt="motion activated laser toy" class="info-card-picture">
+            <img src="/img/kahlua_playing_laser.jpg" alt="motion activated laser toy" class="info-card-picture">
             <div class="card2content">
                 <h2 class="card2header"><a href="/cat_laser_toy/catlasertoy.html" class="card-header-link" target="_blank">Motion Activated Cat Laser Toy</a></h2>
                 <p class="card2content">This is a simple device designed to entertain cats and humans alike. When it detects motion it will turn the laser on and begin
@@ -108,10 +125,10 @@
         <br><br>
     </p>
     <div class="grid-pictures">
-        <div class="grid-image image1 js-scroll fade-in"><img src="images/pic2.png" alt=""></div>
-        <div class="grid-image image2 js-scroll fade-in"><img src="images/pic4.png" alt=""></div>
-        <div class="grid-image image3 js-scroll fade-in"><img src="images/family_picture.jpg" alt=""></div>
-        <div class="grid-image image4 js-scroll fade-in"><img src="images/PIC9.JPEG" alt=""></div>
+        <div class="grid-image image1 js-scroll fade-in"><img src="img/pic2.png" alt=""></div>
+        <div class="grid-image image2 js-scroll fade-in"><img src="img/pic4.png" alt=""></div>
+        <div class="grid-image image3 js-scroll fade-in"><img src="img/family_picture.jpg" alt=""></div>
+        <div class="grid-image image4 js-scroll fade-in"><img src="img/PIC9.JPEG" alt=""></div>
     </div>
 
     </div>
@@ -132,6 +149,10 @@
         Phone: (815)-904-4405
     </p>
 </footer>
-<script type="text/javascript" src="./shared/scroll_behavior.js"></script>
 </body>
+<script> 
+    import('./js/index.js').then(module => {
+        module.init();
+    });
+</script>
 </html>
