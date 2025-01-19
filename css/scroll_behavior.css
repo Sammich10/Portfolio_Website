@@ -49,6 +49,18 @@
     transition: opacity 1s ease-in-out, transform .75s ease-in-out;
 }
 
+.slide-right {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.scrolled.slide-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1s ease-in-out, transform .75s ease-in-out;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

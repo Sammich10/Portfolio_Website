@@ -20,6 +20,9 @@ export async function init()
         addTypeListener(el, text);
     });
 
+    // Trigger a scroll event to start the animations
+    window.dispatchEvent(new Event('scroll'));
+
     await sleep(2500);
 
     // Query the element with id "typed-text-header"
