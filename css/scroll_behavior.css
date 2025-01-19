@@ -8,6 +8,15 @@
     transition: opacity .75s ease-in-out;
 }
 
+.js-type {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.js-type.typed {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
 .scrolled.fade-in {
     opacity: 1;
     transition: opacity 1s ease-in-out;

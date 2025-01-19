@@ -9,17 +9,31 @@ const scrollOffset = 150;
  * @param {HTMLElement} element - The element to type into.
  * @param {string} text - The text to type out.
  */
-export function addTypeListener(element, text) {
+export async function addTypeListener(element, text) {
   window.addEventListener('scroll', function() {
     const elInView = elementInView(element, scrollOffset);
-    if (elInView && !element.classList.contains('typed')) {
+    const typed = element.classList.contains('typed');
+    if (elInView && !typed) {
       element.classList.add('typed');
-      typeText(text, element);
-    }else if (!elInView){
-      element.innerHTML = '';
+      if(element.textContent == "")
+      {
+        typeElement(element, text);
+      }
+    } else if (!elInView && typed) {
       element.classList.remove('typed');
     }
   });
+}
+
+/**
+ * Types out the text into the element, and adds the "typed" class to the element.
+ * @param {HTMLElement} element - The element to type into.
+ * @param {string} text - The text to type out.
+ */
+async function typeElement(element, text)
+{
+  element.classList.add('typed');
+  await typeText(text, element);
 }
 
 /**
@@ -58,9 +72,16 @@ export async function deleteText(element) {
 
 const headerTextCycles = [
   "Embedded Software Engineer",
-  "Digital Signal Processing Engineer",
+  "Digital Signal Processing Fan",
   "Cat Lover",
-  "Corgi Enthusiast"
+  "Corgi Enthusiast",
+  "Video Gamer",
+  "Performance Nerd",
+  "Operating Systems Buff",
+  "Problem Solver",
+  "Tool Creator",
+  "Lifelong Learner",
+  "Powered by Coffee"
 ];
 
 export async function cycleHeaderText(element) {
