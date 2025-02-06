@@ -448,6 +448,98 @@ footer p{
     font-size: 16pt;
 }
 
-@media screen and (max-width:960px) {
-    
+@media screen and (max-width:960px) {    
+    .navbar-items{
+        width: 33%;
+    }
+    .navbar-items a{
+        font-size: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-items .dropdown-content{
+        max-width: fit-content;
+    }
+    .navbar-items .dropdown-content a{
+        font-size: 4vw;
+    }
+    .navbar-items a .chevron-down{
+        height: 3vw;
+        vertical-align: middle;
+        top: 0px;
+        left: 8px;
+    }
+    .header-title{
+        font-size: 8vw;
+    }
+    .header-typed-text-container{
+        font-size: 5vw;
+    }
+    .cursor{
+        height: 5vw;
+        width: 2vw;
+    }
+    .view-content-button-container a{
+        font-size: 6vw;
+    }
+    .projects-container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .projects-title{
+        font-size: 8vw;
+    }
+    .projects-description{
+        font-size: 4vw;
+    }
+    .projects-content{
+        flex-direction: column;
+    }
+    .projects-cards{
+        width: 100%;
+    }
+    .info-card{
+        width: 96vw;
+        height: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info-card h2{
+        font-size: 3vw;
+    }
+    .info-card .card-content{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 2vw;
+    }
+    .contact-title{
+        font-size: 8vw;
+    }
+    .contact-info{
+        width: 96vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-info h2{
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    .contact-info .about-me-header{
+        font-size: 6vw;
+    }
+    .contact-info .about-me-content{
+        font-size: 3vw;
+    }
+    .contact-links{
+        height: 5vw;
+    }
+    .link-box a{
+        height: 10vw;
+        width: 10vw;
+    }
+    .link-box img{
+        height: 10vw;
+        width: 10vw;
+    }
 }
