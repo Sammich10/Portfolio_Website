@@ -1,8 +1,16 @@
+:root {
+    --card-border-color: rgba(255, 255, 255, 0.668);
+    --card-border-shadow-color: rgb(255, 255, 255);
+    --card-box-shadow-size: 0 2px 2px;
+    --title-font: 'Ubuntu Mono', monospace;
+}
+
 *{
     box-sizing: border-box;
     margin:0;
     padding:0;
     scroll-behavior: smooth;
+
 }
 
 body{
@@ -10,6 +18,10 @@ body{
     width: 100%;
     min-width: 530px;
     max-width: 100%;
+}
+
+h2{
+    font-family: var(--title-font);
 }
 
 .header-content {
@@ -242,11 +254,9 @@ body{
     align-content: center;
     justify-content: center;
     color: rgb(200, 200, 200);
-    padding-bottom: 40vh;
-    padding-left: 5vw;
-    border-bottom: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: rgba(13, 255, 0, 0.6);
+    padding-bottom: 10vh;
+    padding-left: auto;
+    padding-right: auto;
 }
 
 .projects-title{
@@ -276,19 +286,19 @@ body{
     display: flex;
     height: 20vw;
     min-height: 160px;
-    width: 64vw;
-    margin-left: 4vw;
-    margin-right: 2vw;
+    width: 84vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 4vh;
     position: relative;
-    box-shadow: 0 4px 4px rgba(13, 255, 0, 0.658);
+    box-shadow: var(--card-box-shadow-size) var(--card-border-shadow-color);
     border-radius: 5px;
     transition: all .15s ease ;
     background-color: #030303;
     color: #ffffff;
     border-style: solid;
     border-width: 2px;
-    border-color:rgba(0, 255, 94, 0.668)
+    border-color:var(--card-border-color)
 }
 
 .info-card:hover {
@@ -336,52 +346,80 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
-.contact-info{
+.about-container{
     background: rgb(10,10,10);
-    background: linear-gradient(180deg, rgba(34,34,34,1) 0, rgba(10,10,10,1) 55%, rgba(10,10,10,1) 100%);
-    height: 100%;
-    width: 28vw;
-    margin-right: 4vw;
-    padding-top: 3.2vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 4px rgba(13, 255, 0, 0.658);
-    border-radius: 5px;
-    transition: all .15s ease ;
-    background-color: #212121;
-    color: #ffffff;
-    border-style: solid;
-    border-width: 2px;
-    border-color:rgba(0, 255, 94, 0.668)
+    height: auto;
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.about-container header
+{
+    color: white;
+    font-size: 8vh;
+}
+
+.contact-content-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.contact-content-container h2{
+    color: white;
+    font-size: 6vh;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+}
+
+.contact-content-container p{
+    width: 80%;
+    color: white;
+    font-size: 2.8vh;
+    margin-top: 1.2vh;
+    text-align: center;
+    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 }
 
 #profile-picture{
-    height: 12vh;
+    height: 16vh;
     border-radius: 50%;
-    padding-bottom: 1.2vh;
+    margin: 1vh;
+    margin-right: 2vw;
 }
 
-.contact-links{
-    height: 4vw;
+.media-links{
+    height: fit-content;
     width: 100%;
-    margin: 2vh 0 2vh 0;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 1.2vh;
+    padding-bottom: 3.2vh;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+.media-links :hover{
+    cursor: pointer;
 }
 
 .link-box {
-    margin: .4vw;
-    animation: fadeInExpand .5s ease-out;
-    background-color: transparent;
-    border-radius: 8px;
-    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2vw;
+    animation: fadeInExpand .5s ease-out;
+    background-color: transparent;
+    border-radius: 8px;
+    max-width: 12vw;
 }
 
 .link-box:hover{
@@ -406,10 +444,12 @@ body{
 }
 
 #resume-link{
+    max-width: 4vw;
     animation: none;
     transform: translateY(0%);
-    opacity: 1;
     transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+    animation: fadeInExpand .5s ease-out;
+    background-color: transparent;
 }
 
 #resume-link:hover{
