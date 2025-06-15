@@ -346,7 +346,7 @@ h2{
     font-family: 'Roboto Mono', monospace;
 }
 
-.contact-container{
+.about-container{
     background: rgb(10,10,10);
     display: flex;
     flex-direction: column;
@@ -358,7 +358,7 @@ h2{
     padding-bottom: 10vh;
 }
 
-.contact-container header
+.about-container header
 {
     color: white;
     font-size: 8vh;
