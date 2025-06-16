@@ -16,7 +16,6 @@
 body{
     position: relative;
     width: 100%;
-    min-width: 530px;
     max-width: 100%;
 }
 
@@ -397,7 +396,7 @@ h2{
 }
 
 .media-links{
-    height: fit-content;
+    height: auto;
     width: 100%;
     padding-top: 1.2vh;
     padding-bottom: 3.2vh;
@@ -419,7 +418,7 @@ h2{
     animation: fadeInExpand .5s ease-out;
     background-color: transparent;
     border-radius: 8px;
-    max-width: 12vw;
+    max-width: 16vw;
 }
 
 .link-box:hover{
@@ -439,8 +438,6 @@ h2{
 .link-box a{
     cursor: pointer;
     position: absolute;
-    height: 4vw;
-    width: 4vw;
 }
 
 #resume-link{
@@ -456,21 +453,6 @@ h2{
     transform: translateY(10%);
     opacity: .9;
     transition: transform .5s ease-in-out, opacity .5s ease-in-out;
-}
-
-.contact-info .about-me-header{
-    text-align: center;
-    font-size: 2vw;
-    padding-top: 3.2vh;
-}
-
-.contact-info .about-me-content{
-    text-align: center;
-    font-size: 1vw;
-    width: 95%;
-    margin: auto;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
 }
 
 footer{
@@ -540,8 +522,8 @@ footer p{
         width: 100%;
     }
     .info-card{
-        width: 96vw;
-        height: 50vw;
+        width: 84vw;
+        height: 40vw;
         margin-left: auto;
         margin-right: auto;
     }
@@ -553,33 +535,32 @@ footer p{
         margin-bottom: 0;
         font-size: 2vw;
     }
-    .contact-title{
-        font-size: 8vw;
-    }
-    .contact-info{
-        width: 96vw;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .contact-info h2{
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-    .contact-info .about-me-header{
-        font-size: 6vw;
-    }
-    .contact-info .about-me-content{
-        font-size: 3vw;
-    }
-    .contact-links{
-        height: 5vw;
-    }
     .link-box a{
         height: 10vw;
         width: 10vw;
     }
-    .link-box img{
-        height: 10vw;
-        width: 10vw;
+    #profile-picture {
+        height: 16vw;
+        margin-right: 4vw;
+    }
+    .about-container header{
+        font-size: 12vw;
+    }
+    .about-container h2{
+        font-size: 8vw;
+    }
+    .about-container p{
+        width: 90%;
+        font-size: 4vw;
+    }
+    .about-container .media-links{
+        height: auto;
+    }
+    .about-container .link-box{
+        max-width: 20vw;
+        margin: 2.4vh;
+    }
+    .about-container #resume-link{
+        max-width: 10vw;
     }
 }

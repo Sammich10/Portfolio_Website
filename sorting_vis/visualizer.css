@@ -9,7 +9,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 900px;
     margin: 0;
 }
 
@@ -28,15 +27,14 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    min-width: 360px;
     justify-content: center;
 }
 
 .navbar-items {
     display: flex;
     justify-content: center;
-	align-content: flex-end;
-    width: 15vw;
+	align-content: center;
+    width: fit-content;
     position: relative;
 }
 
@@ -93,44 +91,38 @@ body {
 }
 
 .data-container {
-    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 45vh;
     width: 80vw;
-    min-width: 600px;
-    position: relative;
-    margin-top: 10vh;
-    margin-bottom: 2vh;
+    margin-bottom: 2rem;
 }
 
 .bar {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background-color: deepskyblue;
     transition: 0.15s all ease;
-}
-
-.bar p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 999;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px 4px 2px 2px;
+    flex-grow: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .bar label {
 	position: absolute;
-	top: -2vh;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	margin: 0;
-	font-size: 1rem;
-	font-weight: 999;
+    display: none;
 }
 
 .bar:hover {
     transition: all ease .1s;
-    transform: scale(.85);
+    transform: scale(.95);
     opacity: 75%;
 }
 
@@ -162,18 +154,35 @@ body {
 }
 
 .speedselectcontainer {
-    margin: 2rem;
-    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speedselectcontainer *{
+    margin: .5vh;
+    font-size: 2.2vh;
 }
 
 .miscTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2vh;
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
+.miscTextContainer p{
+    text-align: center;
+    font-size: 2.2vh;
+}
+
 .desc {
     display: none;
+    flex-direction: column;
     justify-content: center;
     font-size: 1.2rem;
     margin: 2rem;
@@ -185,9 +194,9 @@ body {
 }
 
 .desc img {
-    width: 30vw;
+    width: 40vw;
     height: auto;
-    margin-left: 35vw;
+    margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
     transition: .5s ease;
@@ -221,14 +230,41 @@ sup {
         width: 100%;
     }
 
-    .data-container {
-        width: 700px;
+    .navbar-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
     }
 
+    .head{
+        font-size: 6.4vw;
+        margin-bottom: 2vh;
+    }
+
+    .data-container{
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vh;
+        margin-bottom: 0vh;
+    }
+
+    .data-container {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bar label{
+        display: none;
+    }
+
     .button-container {
         flex-direction: column;
+        width: 80vw;
     }
 
     .button {
@@ -236,21 +272,28 @@ sup {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        font-size: 1.5rem;
+        font-size: 4vw;
+        margin-top: 1.2vh;
     }
 
     .speedselectcontainer {
-        font-size: 1.5rem;
+        font-size: 6vw;
+    }
+
+    .speedselectcontainer select{
+        height: 6vw;
+        font-size: 4.8vw;
     }
 
     .speedselect {
         font-size: 1.5rem;
     }
 
-    .bar {
-        width: 10px;
+    .desc img {
+        width: 80vw;
     }
 }
+
 
 @keyframes fadeIn {
     from {

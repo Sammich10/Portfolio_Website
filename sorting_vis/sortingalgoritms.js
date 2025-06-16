@@ -32,7 +32,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 else
 {
     BAR_SPACING_MODIFIER = 0.15;
-    BAR_HEIGHT_MODIFIER = 0.4;
+    BAR_HEIGHT_MODIFIER = 0.2;
 }
 /**
  * Disables the "abortButton" and sets its background color to the disabled color.
@@ -113,18 +113,14 @@ function generatebars(num) {
 
         // Set the height of the bar based on the value
         bar.style.height = `${value/MAX_VALUE * BAR_HEIGHT}vh`;
-        
-        // Translate the bar towards positive X axis
-        bar.style.transform = `translateX(${i * BAR_SPACING}vw)`;
-        bar.style.width = `${BAR_WIDTH}vw`;
 
         // Create a label element to display the value of the bar
+        // if the number of bars is greater than 50, make the text hidden
         const barLabel = document.createElement("label");
         barLabel.classList.add("bar_id");
         barLabel.innerHTML = value;
-        // if the number of bars is greater than 50, make the text hidden
-        if (num > 50) {
-            barLabel.style.visibility = "hidden";
+        if (num > 100) {
+            barLabel.style.display = "none";
         }
         bar.appendChild(barLabel);
         
@@ -604,19 +600,19 @@ function showDesc(algorithm){
         d[i].style.display="none";
     }
     if(algorithm == "bubble"){
-        document.getElementById('bubble-desc').style.display='inline';
+        document.getElementById('bubble-desc').style.display='flex';
     }
     if(algorithm == "selection"){
-        document.getElementById('selection-desc').style.display='inline';
+        document.getElementById('selection-desc').style.display='flex';
     }
     if(algorithm == "insertion"){
-        document.getElementById('insertion-desc').style.display='inline';
+        document.getElementById('insertion-desc').style.display='flex';
     }
     if(algorithm == "merge"){
-        document.getElementById('merge-desc').style.display='inline';
+        document.getElementById('merge-desc').style.display='flex';
     }
     if(algorithm == "quick"){
-        document.getElementById('quick-desc').style.display='inline';
+        document.getElementById('quick-desc').style.display='flex';
     }
 }
 
