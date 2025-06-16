@@ -72,16 +72,15 @@ export async function deleteText(element) {
 
 const headerTextCycles = [
   "Embedded Software Engineer",
-  "Digital Signal Processing Fan",
+  "Digital Signal Processing",
+  "Operating Systems",
   "Cat Lover",
   "Corgi Enthusiast",
   "Video Gamer",
-  "Performance Nerd",
-  "Operating Systems Buff",
+  "Optimize Code",
   "Problem Solver",
   "Tool Creator",
-  "Lifelong Learner",
-  "Powered by Coffee"
+  "Lifelong Learner"
 ];
 
 export async function cycleHeaderText(element) {
