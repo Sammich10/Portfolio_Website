@@ -6,12 +6,11 @@
           content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sorting Visualizer</title>
-    <link href="../shared/scroll_behavior.css" rel="stylesheet" />
+    <link href="../css/scroll_behavior.css" rel="stylesheet" />
     <link href="visualizer.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
-    
   </head>
   <body >
     <!-- Navbar -->
@@ -19,15 +18,7 @@
       <div class="navbar-container">
           <ul class="navbar-menu">
               <li class="navbar-items" style="color:rgb(0, 0, 0)">
-                  <a href="../index.html" class="navbar-link">// Home</a>
-              </li>
-              <li class="navbar-items dropdown">
-                  <a href="#" class="navbar-link">// Other Projects</a>
-                  <div class="dropdown-content">
-                    <a href="../cat_feeder/catfeederplus.html">Cat Feeder</a>
-                    <a href="../cat_laser_toy/catlasertoy.html">Cat Laser Toy</a>
-                    <a href="../index.html">Sudoku Solver</a>
-                  </div>
+                  <a href="../index.html" class="navbar-link">Back To Homepage</a>
               </li>
           </ul>
       </div>
@@ -67,14 +58,12 @@
       <option value="50">50</option>
       <option value="75">75</option>
       <option value="100">100</option>
-      <option value="150">250</option>
-      <option value="500">500</option>
-      
+      <option value="150">250</option>      
   </select>
   <br>
+</div>
   <div class="miscTextContainer">
     <p class="miscText" id="miscAlgorithmDescText"></p>
-  </div>
   </div>
 
   <div id="bubble-desc" class = "desc">
@@ -129,7 +118,7 @@
       'pivot' value is now in its sorted position, because all the values to the left of it are less than it, and all the values to the right are greater than it.
     </p>
     <br><br>
-    <p>Quick sort has a worst case time complexity of O(n<sup>2</sup>) and a best case and average case time complexity of O(n*log(n))</p>\
+    <p>Quick sort has a worst case time complexity of O(n<sup>2</sup>) and a best case and average case time complexity of O(n*log(n))</p>
     <br><br>
     <p>Example implementation in C++</p>
     <img src="/sorting_vis/images/quick_sort_cpp.PNG" alt="">
@@ -138,5 +127,4 @@
 </body>
 
 <script src="sortingalgoritms.js"></script>
-<script src="../shared/navbar_behavior.js"></script>
 </html>
