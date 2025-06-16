@@ -436,8 +436,10 @@ h2{
 }
 
 .link-box a{
-    cursor: pointer;
-    position: absolute;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #resume-link{
